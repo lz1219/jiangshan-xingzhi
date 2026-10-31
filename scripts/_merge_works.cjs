@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * 把 atlas_poems.js 的「主对象 + 三个补丁块」合并成单一数据结构。
+ * 把 atlas_works.js 的「主对象 + 三个补丁块」合并成单一数据结构。
  *
  * 做法：在 Node 里把模块跑一遍，拿到补丁应用后的最终对象，
  * 按固定字段顺序重新序列化，再用新文件重新加载、与旧快照逐字段比对。
@@ -11,7 +11,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const TARGET = path.resolve(__dirname, '..', 'js', 'atlas_poems.js');
+const TARGET = path.resolve(__dirname, '..', 'js', 'atlas_works.js');
 
 const FIELD_ORDER = [
   'alias',
@@ -38,7 +38,7 @@ function loadPoems(file) {
   delete require.cache[require.resolve(file)];
   global.window = {};
   require(file);
-  return global.window.ATLAS_POEMS;
+  return global.window.ATLAS_WORKS;
 }
 
 function reorder(source, order) {
@@ -72,7 +72,7 @@ function normalize(poems) {
 function serialize(poems) {
   const body = JSON.stringify(poems, null, 2);
   return `/**
- * 诗歌数据层 · 江山诗卷（江山时序改造层）
+ * 诗歌数据层 · 江山行止（江山时序改造层）
  *
  * 一个对象，一种结构。字段顺序固定：
  *   alias → 标题三件套 → 作者 → 年份地点 → 文体与系年 → 正文
@@ -89,7 +89,7 @@ function serialize(poems) {
  *      界面以「推测」标出，basis 必须能落在本条 background / source 里。
  *   4. 赏析全部自撰（by: 本站自撰），不引用任何点校本。
  */
-window.ATLAS_POEMS = ${body};
+window.ATLAS_WORKS = ${body};
 `;
 }
 

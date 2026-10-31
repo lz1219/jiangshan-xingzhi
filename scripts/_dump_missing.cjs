@@ -6,10 +6,10 @@ const ROOT = path.resolve(__dirname, '..');
 
 global.window = {};
 require(path.join(ROOT, 'js', 'lore_data.js'));
-require(path.join(ROOT, 'js', 'atlas_poems.js'));
+require(path.join(ROOT, 'js', 'atlas_works.js'));
 
 const J = window.ATLAS_LORE_DATA.HISTORICAL_JOURNEYS || [];
-const POEMS = window.ATLAS_POEMS || {};
+const POEMS = window.ATLAS_WORKS || {};
 
 const covered = (title) => {
   if (POEMS[title]) return true;

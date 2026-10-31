@@ -24,13 +24,13 @@
 
 | 文件 | 作用 |
 |---|---|
-| `js/atlas_poems.js` | 作品数据层：诗词赋史 50 条，含正文、大意、注释、写作背景、赏析（含推测与依据）、出处 |
-| `js/atlas_poetry.js` | 诗歌层交互：把人物行迹里的摘句变成可点链接，弹出阅读器；并把作品注入主搜索索引 |
+| `js/atlas_works.js` | 作品数据层：诗词赋史 50 条，含正文、大意、注释、写作背景、赏析（含推测与依据）、出处 |
+| `js/atlas_reader.js` | 诗歌层交互：把人物行迹里的摘句变成可点链接，弹出阅读器；并把作品注入主搜索索引 |
 | `scripts/_serve.cjs` | 本地静态服务 |
 | `scripts/_gap_report.cjs` | 作品覆盖率盘点 |
 | `scripts/_dump_missing.cjs` | 从基线数据导出未收录作品的原文引句 |
 | `scripts/_add_missing.cjs` | 批量补录作品（原文逐字取自基线，不手抄） |
-| `scripts/_merge_poems.cjs` | 数据文件结构合并工具 |
+| `scripts/_merge_works.cjs` | 数据文件结构合并工具 |
 
 ### 修改文件
 

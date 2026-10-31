@@ -1,10 +1,12 @@
 // 数据缺口盘点：他的行迹引文里引了哪些作品，我们已有哪些全文
+const path = require('path')
+const ROOT = path.resolve(__dirname, '..')
 global.window = {}
-require('D:/WorkSpace/opencode/jiangshan-map/js/lore_data.js')
-require('D:/WorkSpace/opencode/jiangshan-map/js/atlas_poems.js')
+require(path.join(ROOT, 'js', 'lore_data.js'))
+require(path.join(ROOT, 'js', 'atlas_works.js'))
 
 const J = (window.ATLAS_LORE_DATA && window.ATLAS_LORE_DATA.HISTORICAL_JOURNEYS) || []
-const POEMS = window.ATLAS_POEMS || {}
+const POEMS = window.ATLAS_WORKS || {}
 
 const works = new Map() // 作品名 -> { count, journeys:Set, sample }
 let stops = 0

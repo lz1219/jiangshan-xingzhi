@@ -11,14 +11,14 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
-const TARGET = path.join(ROOT, 'js', 'atlas_poems.js');
+const TARGET = path.join(ROOT, 'js', 'atlas_works.js');
 
 global.window = {};
 require(path.join(ROOT, 'js', 'lore_data.js'));
 require(TARGET);
 
 const JOURNEYS = window.ATLAS_LORE_DATA.HISTORICAL_JOURNEYS || [];
-const POEMS = window.ATLAS_POEMS || {};
+const POEMS = window.ATLAS_WORKS || {};
 
 const META = {
   '史记·秦始皇本纪': {
@@ -324,7 +324,7 @@ for (const [title, info] of Object.entries(collected)) {
 // ---------- 序列化 ----------
 const header = fs
   .readFileSync(TARGET, 'utf8')
-  .split('window.ATLAS_POEMS =')[0];
-fs.writeFileSync(TARGET, header + 'window.ATLAS_POEMS = ' + JSON.stringify(POEMS, null, 2) + ';\n');
+  .split('window.ATLAS_WORKS =')[0];
+fs.writeFileSync(TARGET, header + 'window.ATLAS_WORKS = ' + JSON.stringify(POEMS, null, 2) + ';\n');
 
 console.log(JSON.stringify({ 新增: added, 总条目: Object.keys(POEMS).length }, null, 2));

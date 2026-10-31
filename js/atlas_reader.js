@@ -1,11 +1,11 @@
 /**
- * 诗歌层 · 江山诗卷（改造新增模块）
+ * 诗歌层 · 江山行止（改造新增模块）
  *
  * 作用：把人物行迹卡片里那句摘句（.person-ev-quote）变成可点链接，
  *      点开是一首完整的诗 —— 竖排、分阕、注释、写作背景、系年确定性。
  *
  * 做法：不改 app.js 一行。用他的 mixin 注册机制挂载，再用 MutationObserver
- *      监听行迹列表重绘，把带《书名》且能在 ATLAS_POEMS 里命中的引文包成链接。
+ *      监听行迹列表重绘，把带《书名》且能在 ATLAS_WORKS 里命中的引文包成链接。
  */
 (function () {
   'use strict';
@@ -100,7 +100,7 @@
   }
 
   function findPoem(quoteText) {
-    var poems = window.ATLAS_POEMS;
+    var poems = window.ATLAS_WORKS;
     if (!poems) return null;
     var m = /《([^》]+)》/.exec(quoteText);
     var title = m ? m[1] : '';
@@ -132,7 +132,7 @@
   /** 把作品条目追加进主搜索索引（幂等，同一数组只追加一次） */
   function appendWorkEntries(index, ctx) {
     if (!Array.isArray(index) || index.__poemsAppended) return;
-    var poems = window.ATLAS_POEMS || {};
+    var poems = window.ATLAS_WORKS || {};
     var dynasties = ctx && Array.isArray(ctx.dynasties) ? ctx.dynasties : [];
     Object.keys(poems).forEach(function (key) {
       var p = poems[key];
@@ -196,10 +196,10 @@
   }
 
   function install(Ctrl) {
-    if (window.__ATLAS_POETRY__) return;
-    window.__ATLAS_POETRY__ = true;
+    if (window.__ATLAS_READER__) return;
+    window.__ATLAS_READER__ = true;
 
-    // ---------- 作品检索：把 ATLAS_POEMS 注入主搜索索引 ----------
+    // ---------- 作品检索：把 ATLAS_WORKS 注入主搜索索引 ----------
     // 不改搜索算法，只加一个 kind === 'work' 的条目类型；
     // 标签在 app.js 的 kindLabel 里登记为「作品」。
     var proto = Ctrl.prototype;
@@ -240,35 +240,46 @@
       var prev = document.getElementById('atlas-poetry-reader');
       if (prev) prev.parentNode.removeChild(prev);
 
-      // 全部文体统一横排：竖排只在多阕长调里好看，七绝竖起来反而更难读
-      var isProse = poem.genre === 'wen' || poem.genre === 'history';
-      var bodyHtml;
-      if (isProse) {
-        bodyHtml =
-          '<div class="poetry-prose">' +
-          (poem.text || [])
-            .map(function (t) {
-              return '<p>' + esc(t) + '</p>';
-            })
-            .join('') +
-          '</div>';
-      } else {
-        bodyHtml =
-          '<div class="poetry-body">' +
-          (poem.text || [])
-            .map(function (stanza) {
-              var lines = wrapLines(stanza);
-              return (
-                lines
-                  .map(function (l) {
-                    return '<p class="poetry-line">' + esc(l) + '</p>';
-                  })
-                  .join('') + '<div class="poetry-stanza-gap"></div>'
-              );
-            })
-            .join('') +
-          '</div>';
+      // 文体 → 渲染器注册表。
+      // 新增文体（人物志、碑刻、书画题跋…）只需往 ATLAS_READER_RENDERERS 里注册一个函数，
+      // 再在 GENRE_KIND 里登记映射，不必改动本文件的主流程。
+      var RENDERERS =
+        window.ATLAS_READER_RENDERERS || (window.ATLAS_READER_RENDERERS = {});
+      if (!RENDERERS.verse) {
+        RENDERERS.verse = function (p) {
+          return (
+            '<div class="poetry-body">' +
+            (p.text || [])
+              .map(function (stanza) {
+                return (
+                  wrapLines(stanza)
+                    .map(function (l) {
+                      return '<p class="poetry-line">' + esc(l) + '</p>';
+                    })
+                    .join('') + '<div class="poetry-stanza-gap"></div>'
+                );
+              })
+              .join('') +
+            '</div>'
+          );
+        };
       }
+      if (!RENDERERS.prose) {
+        RENDERERS.prose = function (p) {
+          return (
+            '<div class="poetry-prose">' +
+            (p.text || [])
+              .map(function (t) {
+                return '<p>' + esc(t) + '</p>';
+              })
+              .join('') +
+            '</div>'
+          );
+        };
+      }
+      var GENRE_KIND = { shi: 'verse', ci: 'verse', fu: 'verse', wen: 'prose', history: 'prose' };
+      var bodyKind = GENRE_KIND[poem.genre] || 'prose';
+      var bodyHtml = (RENDERERS[bodyKind] || RENDERERS.prose)(poem);
 
       var notesHtml =
         poem.notes && poem.notes.length
@@ -299,19 +310,20 @@
         kickerLabel +
         '">' +
         '<button type="button" class="poetry-close" aria-label="关闭">×</button>' +
-        '<div class="poetry-kicker">' +
-        kickerLabel +
-        ' · 江山诗卷</div>' +
+        '<div class="poetry-kicker">笺 · 江山行止</div>' +
         '<h2 class="poetry-title">' +
         esc(poem.titleZh) +
         '</h2>' +
         (poem.titleEn ? '<p class="poetry-subtitle">' + esc(poem.titleEn) + '</p>' : '') +
         '<div class="poetry-meta">' +
         metaHtml +
+        '<span class="dot">·</span><span class="poetry-cert">' +
+        kickerLabel +
+        '</span>' +
         (poem.certainty
           ? '<span class="dot">·</span><span class="poetry-cert">系年 ' + esc(poem.certainty) + '</span>'
           : '') +
-        (isProse ? '<span class="dot">·</span><span class="poetry-cert">摘录</span>' : '') +
+        (bodyKind === 'prose' ? '<span class="dot">·</span><span class="poetry-cert">摘录</span>' : '') +
         '</div>' +
         bodyHtml +
         (poem.meaning
