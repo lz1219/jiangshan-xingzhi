@@ -23,7 +23,10 @@ global.window = {};
 require(path.join(ROOT, 'js', 'atlas_works.js'));
 require(path.join(ROOT, 'js', 'atlas_journeys.js'));
 require(path.join(ROOT, 'js', 'lore_data.js'));
-// 行迹补录（我们把上游没有的人物推入 HISTORICAL_JOURNEYS / PERSON_PROFILES）
+// 先记住「上游原有」的行迹，再载入补录层，才能区分哪些站是我们写的
+const UPSTREAM_KEYS = new Set(
+  (window.ATLAS_LORE_DATA.HISTORICAL_JOURNEYS || []).map((j) => j.key)
+);
 require(path.join(ROOT, 'js', 'atlas_overlay.js'));
 
 const WORKS = window.ATLAS_WORKS || {};
@@ -82,6 +85,20 @@ Object.keys(JOURNEYS).forEach((key) => {
     if (stopCount && Number(n) > stopCount) err(`${at2}: 站序号越界（该行迹仅 ${stopCount} 站）`);
     if (!item || !item.text) err(`${at2}: 缺 text`);
     if (!item || !item.source) err(`${at2}: 缺 source（叙述必须有据）`);
+  });
+});
+
+// ---------- 补录行迹（上游没有的人物）----------
+// 这些站的叙述是我们写的，必须逐站带 source；上游的站不强制（不是我们写的）
+Object.keys(JOURNEYS).forEach((key) => {
+  if (UPSTREAM_KEYS.has(key)) return;
+  const journey = (window.ATLAS_LORE_DATA.HISTORICAL_JOURNEYS || []).find((j) => j.key === key);
+  if (!journey) return;
+  (journey.stops || []).forEach((stop, i) => {
+    const at = `补录行迹 "${key}" 第 ${i + 1} 站（${stop.ancientZh || '?'} ${stop.year}）`;
+    if (!stop.source) err(`${at}: 缺 source（补录站的叙述必须给出处）`);
+    if (!stop.descZh) err(`${at}: 缺 descZh`);
+    if (!Array.isArray(stop.coord) || stop.coord.length !== 2) err(`${at}: coord 非法`);
   });
 });
 

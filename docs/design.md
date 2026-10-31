@@ -96,6 +96,8 @@
 | [AGENTS.md](../AGENTS.md) | 动手前要知道的命令、铁律、禁区、DoD | 操作指南 |
 | [design.md](design.md) | 为什么做、不做什么、哪些决定不可逆 | 解释 |
 | [dev-guide.md](dev-guide.md) | 扩展点在哪、数据契约、三个已知的坑 | 解释 + 参考 |
+| [method-journey.md](method-journey.md) | 一条行迹怎么考据：五步法、证据分级、落库检查表 | 操作指南 |
+| [sources.md](sources.md) | 哪些数据源能用、许可如何、怎么访问、冲突样例 | 参考 |
 | [backlog.md](backlog.md) | 还有什么没做、怎么算做完 | 参考 |
 | [progress.md](progress.md) | 现在在做什么、下一步是什么 | 参考 |
 | [specs/README.md](specs/README.md) | 大改动的需求 / 设计 / 任务三件套怎么开 | 操作指南 |
