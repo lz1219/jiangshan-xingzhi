@@ -210,3 +210,43 @@ node variant-discover.cjs --work '一剪梅·舟过吴江'
 真正的 CHGIS 数据在哈佛/复旦的下载页（需注册，且当前网络不通），所以地名层先用上游自带数据 + CBDB 名称拼起来。
 
 CBDB 那 2 万个地名**没有坐标**——要用的话得另找地理编码源，这是当前已知缺口。
+
+## 8. CHGIS 真数据（Harvard Dataverse）
+
+**关键教训**：`cga-harvard/chgis` 仓库是**网站**（Bootstrap + 会议论文 + 无关 zip），不含数据集。
+真正的数据在 Harvard Dataverse，`v6.md` 里有下载地址。
+
+| 数据集 | DOI | 内容 |
+|---|---|---|
+| V6 Time Series Prefecture Points | `10.7910/DVN/WW1PD6` | 历代府州治所（5,226 条） |
+| V6 Time Series County Points | `10.7910/DVN/Q9VOF5` | 历代县级治所（10,522 条） |
+| V6 Data Dictionary | `10.7910/DVN/SNCEAU` | 字段说明 |
+| CHGIS V6 EULA | `10.7910/DVN/FDLFJ3` | 许可 |
+
+字段（写 shapefile 解析器时用到）：
+
+| 字段 | 含义 |
+|---|---|
+| `NAME_CH` / `NAME_FT` | 简体名 / 繁体名（繁体用于与 CBDB 对齐） |
+| `X_COOR` / `Y_COOR` | WGS84 经纬度 |
+| `BEG_YR` / `END_YR` | 该建置的起止年 |
+| `BEG_CHG_TY` / `END_CHG_TY` | 变更类型（新建/更名/撤销） |
+| `PRES_LOC` | 今地描述 |
+| `SYS_ID` | CHGIS 记录号，可回溯 |
+
+入库结果：府州 5,220 + 县级 10,515，**全部带坐标**。
+
+**许可**：学术研究免费，**禁止商业使用、转售、再分发**。内部考据可用，对外分发需注意。
+
+### 与 CBDB 地名的匹配
+
+CBDB 的 21,729 个地名（仅繁体名、无坐标）按 `NAME_FT` 匹配 CHGIS：
+
+| 结果 | 条数 | 占比 |
+|---|---|---|
+| 已匹配 | 3,880 | 17.9% |
+| 其中坐标唯一、已回填 | 2,051 | 9.4% |
+| 多义待定（同名异地） | 1,829 | 8.4% |
+| 未匹配 | 17,849 | 82.1% |
+
+未匹配高的原因：CBDB 地址含大量非行政地名（山、水、寺、桥、村），CHGIS 只覆盖府州县级治所。

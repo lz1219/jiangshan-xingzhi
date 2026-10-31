@@ -267,3 +267,10 @@ COMMENT ON COLUMN place.aliases IS '同名异写/别称（如「洛邑」的「�
 COMMENT ON COLUMN place.is_capital IS '是否为该朝都城；影响地图标注层级';
 COMMENT ON COLUMN place.note IS '备注：都城沿革、地名来源、是否仅存名无坐标';
 COMMENT ON COLUMN place.source IS '来源：上游 settlements / 上游地名索引 / CBDB 地址名';
+
+-- ── v5：地名时间序列键 ────────────────────────────────
+-- 同一地名在不同时期是不同记录，唯一键必须带起始年
+ALTER TABLE place ADD COLUMN IF NOT EXISTS from_key int GENERATED ALWAYS AS (coalesce(valid_from, -99999)) STORED;
+DROP INDEX IF EXISTS place_key;
+CREATE UNIQUE INDEX IF NOT EXISTS place_key ON place (ancient, modern, source, from_key);
+COMMENT ON COLUMN place.from_key IS '生成列：valid_from 的 null 安全副本，仅用于唯一键（同一地名不同时期是不同记录）';
