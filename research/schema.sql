@@ -274,3 +274,24 @@ ALTER TABLE place ADD COLUMN IF NOT EXISTS from_key int GENERATED ALWAYS AS (coa
 DROP INDEX IF EXISTS place_key;
 CREATE UNIQUE INDEX IF NOT EXISTS place_key ON place (ancient, modern, source, from_key);
 COMMENT ON COLUMN place.from_key IS '生成列：valid_from 的 null 安全副本，仅用于唯一键（同一地名不同时期是不同记录）';
+
+-- ── v6：语料层（校对用，与 work 分开）────────────────
+CREATE TABLE IF NOT EXISTS corpus_poem (
+  id serial PRIMARY KEY,
+  book_id int REFERENCES book(id) ON DELETE SET NULL,
+  genre text,                 -- shi|ci|qu
+  author text,
+  title text,
+  body text,                  -- 段落以换行分隔
+  body_simplified text,       -- OpenCC t2s，供比对
+  ext_id text,                -- 语料原始 id
+  UNIQUE (book_id, ext_id)
+);
+CREATE INDEX IF NOT EXISTS corpus_author ON corpus_poem (author);
+CREATE INDEX IF NOT EXISTS corpus_title_trgm ON corpus_poem USING gin (title gin_trgm_ops);
+CREATE INDEX IF NOT EXISTS corpus_body_trgm ON corpus_poem USING gin (body_simplified gin_trgm_ops);
+
+COMMENT ON TABLE corpus_poem IS '语料层：全唐诗/元曲等外部诗库，只用于校对与查重，不是我们的策展作品';
+COMMENT ON COLUMN corpus_poem.genre IS 'shi=诗, ci=词, qu=曲；与 work.genre 对应但独立';
+COMMENT ON COLUMN corpus_poem.body_simplified IS '简体检索列，校验时与 work 文本比对';
+COMMENT ON COLUMN corpus_poem.ext_id IS '语料原始 id（或 作者|标题 合成键），用于幂等重灌';
