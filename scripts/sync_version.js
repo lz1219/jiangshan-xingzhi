@@ -35,6 +35,7 @@ const STATIC_TAG_ASSETS = [
   'js/atlas_journeys.js',
   'js/atlas_chronicle.js',
   'js/atlas_works.js',
+  'js/atlas_links.js',
   'js/atlas_reader.js',
   ...CONTROLLER_SCRIPTS,
 ];

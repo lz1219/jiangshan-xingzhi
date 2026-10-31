@@ -70,6 +70,18 @@
     }
     if (!stops.length) return;
 
+    var jkey = resolveJourneyKey(ctx);
+
+    // 文献站入口（放在导语之后、首站之前）
+    if (window.ATLAS_LINKS && jkey) {
+      var more = document.createElement('li');
+      more.className = 'cr-link cr-more';
+      more.innerHTML =
+        '<a href="' + window.ATLAS_LINKS.corpusPerson(jkey) +
+        '" target="_blank" rel="noopener">在文献站查此人 ↗</a>';
+      list.appendChild(more); // 先渲染，随后插到导语/首站正确位置
+    }
+
     // 导语置顶
     if (data.intro && data.intro.text) {
       var intro = document.createElement('li');
@@ -79,6 +91,9 @@
         '<p class="cr-text">' + esc(data.intro.text) + '</p>' +
         (data.intro.source ? '<span class="cr-src">据 ' + esc(data.intro.source) + '</span>' : '');
       list.insertBefore(intro, stops[0]);
+      var mv = list.querySelector('.cr-more');
+      if (mv) list.insertBefore(mv, stops[0]);
+
     }
 
     // 站间承接语

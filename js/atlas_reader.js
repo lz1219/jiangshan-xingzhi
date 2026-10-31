@@ -41,6 +41,9 @@
     '.poetry-block{margin-top:20px;}',
     '.poetry-block h3{margin:0 0 7px;font-size:10.5px;font-weight:500;letter-spacing:.28em;color:#a83824;}',
     '.poetry-block p{margin:0;font-size:12.5px;line-height:2;color:#6a5c47;text-align:justify;}',
+    '.poetry-more{margin:10px 0 0;text-align:right;}',
+    '.poetry-more a{font-size:11px;color:#a83824;text-decoration:none;border-bottom:1px dotted rgba(168,56,36,.5);}',
+    '.poetry-more a:hover{border-bottom-style:solid;}',
     '.poetry-by{margin-top:8px;font-size:11px;color:#9c8d74;text-align:right;}',
     '.poetry-lic{margin-left:8px;padding:1px 5px;border:1px solid rgba(43,36,26,.18);border-radius:2px;font-size:9.5px;}',
     '.poetry-block .poetry-inference{margin-top:10px;padding:9px 11px;border-left:2px dashed rgba(168,56,36,.55);',
@@ -99,6 +102,12 @@
     return out;
   }
 
+  // 作品对象的键名就是它的 key；补到对象上，供跨站链接使用（不污染原数据）
+  function withKey(poem, key) {
+    if (poem && key && !poem.__key) poem.__key = key;
+    return poem;
+  }
+
   function findPoem(quoteText) {
     var poems = window.ATLAS_WORKS;
     if (!poems) return null;
@@ -107,22 +116,22 @@
     var keys = Object.keys(poems);
     var i;
     if (title) {
-      if (poems[title]) return poems[title];
+      if (poems[title]) return withKey(poems[title], title);
       for (i = 0; i < keys.length; i++) {
         var p = poems[keys[i]];
         var aliases = p.alias || [];
         for (var j = 0; j < aliases.length; j++) {
-          if (aliases[j] === title) return p;
+          if (aliases[j] === title) return withKey(p, keys[i]);
         }
       }
       for (i = 0; i < keys.length; i++) {
-        if (title.indexOf(keys[i]) >= 0 || keys[i].indexOf(title) >= 0) return poems[keys[i]];
+        if (title.indexOf(keys[i]) >= 0 || keys[i].indexOf(title) >= 0) return withKey(poems[keys[i]], keys[i]);
       }
     }
     // 兜底：整句里出现某首诗的全名
     for (i = 0; i < keys.length; i++) {
       var q = poems[keys[i]];
-      if (q.titleZh && quoteText.indexOf(q.titleZh) >= 0) return q;
+      if (q.titleZh && quoteText.indexOf(q.titleZh) >= 0) return withKey(q, keys[i]);
     }
     return null;
   }
@@ -379,6 +388,11 @@
           : '') +
         notesHtml +
         (poem.source ? '<p class="poetry-source">' + esc(poem.source) + '</p>' : '') +
+        (window.ATLAS_LINKS && poem.__key
+          ? '<p class="poetry-more"><a href="' +
+            window.ATLAS_LINKS.corpusWork(poem.__key) +
+            '" target="_blank" rel="noopener">在文献站读全篇 ↗</a></p>'
+          : '') +
         '</div>';
       document.body.appendChild(wrap);
 
