@@ -138,6 +138,25 @@ node text-import.cjs --file KR2a0032_338.txt --book 宋史 --juan 卷三百三�
 
 归并异体字是校正用字；归并异文就是篡改史料。这条界线不能混。
 
+### 人物 → 卷：自动圈段 + 人工确认
+
+```bash
+node person-annotate.cjs        # 用 787 个别名 + CBDB 异名，把人物相关段标成 pending
+```
+
+- 名单来源三层：`person.zh` → `person_name`（仓库别名/字号）→ `cbdb.altname_data`（CBDB 异名）
+- 结果落 `person_source`，`status = pending`，`method = auto`
+- 人工确认后改 `confirmed`；确认过的不会被下次自动跑覆盖（`method` 区分）
+
+### 异体/异文自动发现
+
+```bash
+node variant-discover.cjs --work '一剪梅·舟过吴江'
+```
+
+对校验未过句，滑动窗口找原文最相似片段，逐字比对并写入 `text_variant`，
+同时可用于发现**新的异体字**（同一对字反复出现即候选）。
+
 ## 6. 已知的建模坑（库里抓出来的）
 
 《史记·秦始皇本纪》的 `year` 是**所述之年**（前 238），不是司马迁的**作年**。
