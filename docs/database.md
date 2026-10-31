@@ -37,6 +37,23 @@ node pg-load.cjs      # 把仓库里的 JS 数据重新装载（幂等）
 
 ## 3. 表结构
 
+**每个表、每个字段都有注释**（`research/schema-comments*.sql`、`research/cbdb-comments.sql`）。
+注释回答"为什么需要它"，不是重复列名。
+
+查看注释：
+
+```sql
+-- 某张表的所有列注释
+SELECT a.attname AS 列, col_description(a.attrelid, a.attnum) AS 注释
+FROM pg_attribute a
+WHERE a.attrelid = 'person'::regclass AND a.attnum > 0 AND NOT a.attisdropped
+ORDER BY a.attnum;
+
+-- 全部表注释
+SELECT c.relname, obj_description(c.oid, 'pg_class')
+FROM pg_class c WHERE c.relnamespace = 'public'::regnamespace AND c.relkind = 'r';
+```
+
 ```
 person   人物（含 CBDB / Wikidata ID、生卒精度、生卒备注）
   └ journey 行迹（origin: upstream | overlay）
