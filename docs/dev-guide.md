@@ -229,6 +229,7 @@ window.atlasProbe(name, ok, note)   // 每个依赖点登记一行
 
 | 项 | 影响 | 建议 |
 |---|---|---|
-| 外部字体阻塞 `load` | app 在 `load` 里初始化，字体超时会**整个面板空白** | 自托管字体（对应 `D-2`） |
+| ~~外部字体阻塞 `load`~~ | 已解决（`D-2`）：移除 Google Fonts，`load` 4.6s → 0.64s | — |
+| 第三方统计脚本 | 已改为 `load` 之后注入，不再阻塞初始化 | — |
 | 全局名 `ATLAS_LORE_DATA` / `ATLAS_WORKS` / `ATLAS_JOURNEYS` | 上游若改全局名，全挂 | 概率极低，暂不做 |
 | `?v=` 缓存戳 | 忘记跑 `sync_version.js` 会拿到旧脚本 | 提交前跑 `--check` |

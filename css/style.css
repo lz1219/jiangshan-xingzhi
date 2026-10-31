@@ -1,3 +1,6 @@
+/* 字体：不引用任何外部 CDN（Google Fonts 在大陆网络会长时间挂起，
+   曾导致 app 的 load 事件延迟、人物面板空白）。
+   本地可用的系统字体依次回落：macOS Songti/STKaiti，Windows SimSun/KaiTi。 */
 :root {
   --bg-parchment: #f3eee4;
   --bg-parchment-alt: #ebe4d6;
@@ -12,9 +15,9 @@
   --hairline: rgba(43, 38, 34, 0.12);
   --card-shadow: 0 10px 30px rgba(43, 38, 34, 0.14), 0 1px 2px rgba(43, 38, 34, 0.08);
   --corner-radius: 14px;
-  --serif-stack: 'Noto Serif SC', 'Songti SC', 'SimSun', serif;
-  --sans-stack: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-  --calligraphy-stack: 'Ma Shan Zheng', 'STKaiti', 'KaiTi', var(--serif-stack);
+  --serif-stack: 'Songti SC', 'SimSun', 'Noto Serif SC', serif;
+  --sans-stack: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+  --calligraphy-stack: 'STKaiti', 'KaiTi', 'Ma Shan Zheng', var(--serif-stack);
   --dynasty-accent: #3a3733;
 }
 

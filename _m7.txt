@@ -1,0 +1,8 @@
+fix(perf): 移除 Google Fonts 外部依赖，load 从 4.6s 降到 0.64s
+
+- Google Fonts 三个 link 全部删除：大陆网络下它 HTTP 000 必然失败，
+  而 app 在 load 里初始化 → 字体挂起时整个人物面板空白（实测复现）
+- 改用系统字体栈：Songti SC/SimSun、PingFang SC/Microsoft YaHei、STKaiti/KaiTi
+- 第三方统计（Vercount/Cloudflare）从 defer 改为 load 后注入：defer 仍会让 load 等待
+- 实测：loadMs 4621 → 642，health ok，16 站 / 1 导语 / 5 链全部正常
+- 看板 D-2 标完成；dev-guide 更新未加固项

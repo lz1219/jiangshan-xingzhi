@@ -11,7 +11,7 @@
 | R-4 | 需求 | 新增一种非文献文体 | P2 | 待办 | 通过 ATLAS_READER_RENDERERS 注册新渲染器（人物志/碑刻/书画题跋之一），且 js/app.js 零改动 | js/atlas_reader.js |
 | R-6 | 需求 | 作品正文检索 | P3 | 待办 | 输入正文片段（如「莫听穿林打叶声」）能命中该作品，且不淹没地名查询 | docs/specs/0001-jiangshan-xingzhi-layer |
 | D-1 | 欠账 | 《册丞相诏》未成链 | P3 | 待办 | 无书名号的引文也能匹配到条目，且不误伤其他文本 | js/atlas_reader.js |
-| D-2 | 欠账 | 字体依赖 Google Fonts | P3 | 待办 | 字体改为本地子集，断网或大陆网络下不回退成宋体 | index.html |
+| D-2 | 欠账 | 字体依赖 Google Fonts | P3 | 完成 | 已移除全部外部字体：改用系统字体栈（Songti/STKaiti→SimSun/KaiTi→Noto），load 从 4.6s 降到 0.64s | index.html |
 | T-1 | 重构 | 作品数据分片 | P2 | 待办 | 触发条件：`atlas_works.js` > 400 KB（约 260 条）或条目 > 300。验收：首屏不再加载全部正文，改成「标题索引 + 按需分片」，搜索索引只含标题/别名/作者 | js/atlas_works.js |
 | R-5 | 需求 | 新增条目大意补齐 | P1 | 完成 | 29 条史传/文的 `meaning` 全部补齐，50/50 有条目大意；阅读器显示「大意」块 | js/atlas_works.js |
 | R-2 | 需求 | 笺注层：摘句成链 + 阅读器 + 作品检索 | P0 | 完成 | 七条行迹 74 引文 → 73 链接；阅读器含正文/大意/注释/背景/赏析/系年/出处；搜索可检索作品；零报错 | js/atlas_reader.js |
