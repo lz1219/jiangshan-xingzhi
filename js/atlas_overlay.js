@@ -238,12 +238,188 @@
   };
 
   if (!D.PERSON_PROFILES) D.PERSON_PROFILES = [];
-  if (!D.PERSON_PROFILES.some(function (p) { return p.key === PERSON.key; })) {
-    D.PERSON_PROFILES.push(PERSON);
-  }
+  // 上游可能已有同名人物条目（白居易、杜甫等），此时必须合并而非跳过：
+  // 关键是补上 journeyKey，否则 app 找不到我们建的行迹
+  (function () {
+    var idx = D.PERSON_PROFILES.findIndex(function (p) { return p.key === PERSON.key; });
+    if (idx >= 0) {
+      var cur = D.PERSON_PROFILES[idx];
+      for (var k in PERSON) { if (PERSON[k] !== undefined) cur[k] = PERSON[k]; }
+    } else {
+      D.PERSON_PROFILES.push(PERSON);
+    }
+  })();
 
   if (!D.HISTORICAL_JOURNEYS) D.HISTORICAL_JOURNEYS = [];
   var existing = D.HISTORICAL_JOURNEYS.findIndex(function (j) { return j.key === JOURNEY.key; });
   if (existing >= 0) D.HISTORICAL_JOURNEYS[existing] = JOURNEY;
   else D.HISTORICAL_JOURNEYS.push(JOURNEY);
+})();
+
+/**
+ * ── 白居易（772—846）────────────────────────────────
+ * 依据：
+ *   行迹骨架取 CBDB 仕宦（CBDB 32227），27 条记录中 11 处任所；
+ *   生卒与进士年见《旧唐书》卷一六六《白居易传》。
+ *   站点年份均取自 CBDB c_firstyear；有争议者标「约」。
+ */
+(function () {
+  'use strict';
+  var D = window.ATLAS_LORE_DATA;
+  if (!D) return;
+
+  var SRC_LIFE = '《旧唐书》卷一六六《白居易传》；CBDB 32227';
+  var SRC_OFF = 'CBDB POSTED_TO_OFFICE_DATA（32227）';
+
+  var PERSON = {
+    key: 'baijuyi',
+    zh: '白居易',
+    en: 'Bai Juyi',
+    courtesyZh: '字乐天 · 号香山居士 · 醉吟先生',
+    courtesyEn: 'Styled Letian',
+    dynastyKey: 'tang',
+    span: [772, 846],
+    journeyKey: 'baijuyi',
+    aliases: ['乐天', '香山居士', '醉吟先生', '白乐天', 'Bai Juyi'],
+    tokens: ['白居易', '白乐天'],
+  };
+
+  var JOURNEY = {
+    key: 'baijuyi',
+    dynastyKey: 'tang',
+    color: '#6f7f4a',
+    shortZh: '白居易诗宦一生',
+    shortEn: 'Bai Juyi',
+    titleZh: '白居易：从拾遗到香山',
+    titleEn: 'Bai Juyi: From Remonstrance to Fragrant Hills',
+    spanZh: '772年 — 846年',
+    spanEn: '772 – 846',
+    stops: [
+      {
+        year: 772, eraZh: '大历七年', coord: [113.74, 34.39], labelPos: 'top',
+        ancientZh: '新郑', modernZh: '河南新郑', ancientEn: 'Xinzheng', modernEn: 'Xinzheng, Henan',
+        titleZh: '生于新郑', titleEn: 'Born at Xinzheng',
+        descZh: '白居易生于郑州新郑县。祖籍太原，曾祖时迁居下邽。',
+        descEn: 'Bai Juyi was born at Xinzheng in Zhengzhou.',
+        quoteZh: '', quoteEn: '', persons: ['baijuyi'],
+        source: SRC_LIFE,
+      },
+      {
+        year: 787, eraZh: '贞元三年', coord: [108.94, 34.34], labelPos: 'top',
+        ancientZh: '长安', modernZh: '陕西西安', ancientEn: "Chang'an", modernEn: "Xi'an, Shaanxi",
+        titleZh: '少年入长安', titleEn: 'To the Capital as a Boy',
+        descZh: '少年白居易携诗文谒顾况，顾况见「野火烧不尽」句而改容。此为传世轶闻，见唐人记载。',
+        descEn: 'As a youth he brought his poems to Gu Kuang in the capital.',
+        quoteZh: '白居易《赋得古原草送别》：“野火烧不尽，春风吹又生。”',
+        quoteEn: 'Bai Juyi: "Wild fire cannot burn it out; spring wind blows it back to life."',
+        persons: ['baijuyi'],
+        source: '唐·张固《幽闲鼓吹》；《赋得古原草送别》',
+      },
+      {
+        year: 800, eraZh: '贞元十六年', coord: [108.94, 34.34], labelPos: 'bottom',
+        ancientZh: '长安', modernZh: '陕西西安', ancientEn: "Chang'an", modernEn: "Xi'an, Shaanxi",
+        titleZh: '进士及第', titleEn: 'Jinshi Degree',
+        descZh: '贞元十六年登进士第，年二十九。',
+        descEn: 'He passed the jinshi examination in 800.',
+        quoteZh: '', quoteEn: '', persons: ['baijuyi'],
+        source: SRC_LIFE,
+      },
+      {
+        year: 806, eraZh: '元和元年', coord: [108.22, 34.16], labelPos: 'top',
+        ancientZh: '盩厔', modernZh: '陕西周至', ancientEn: 'Zhouzhi', modernEn: 'Zhouzhi, Shaanxi',
+        titleZh: '盩厔县尉', titleEn: 'County Defender at Zhouzhi',
+        descZh: '任盩厔县尉，亲见麦收之苦，作《观刈麦》。同年作《长恨歌》。',
+        descEn: 'As county defender at Zhouzhi he wrote "Watching the Wheat Harvest".',
+        quoteZh: '白居易《观刈麦》：“足蒸暑土气，背灼炎天光。”',
+        quoteEn: 'Bai Juyi: "Feet steamed by the summer soil, backs scorched by the blazing sun."',
+        persons: ['baijuyi'],
+        source: SRC_OFF + '；《观刈麦》',
+      },
+      {
+        year: 808, eraZh: '元和三年', coord: [108.94, 34.34], labelPos: 'top',
+        ancientZh: '长安', modernZh: '陕西西安', ancientEn: "Chang'an", modernEn: "Xi'an, Shaanxi",
+        titleZh: '左拾遗', titleEn: 'Remonstrance Official',
+        descZh: '拜左拾遗，屡上疏言事。这一时期所作讽谕诗最多。',
+        descEn: 'Appointed to the remonstrance office; most of his satirical poems date from these years.',
+        quoteZh: '', quoteEn: '', persons: ['baijuyi'],
+        source: SRC_OFF,
+      },
+      {
+        year: 815, eraZh: '元和十年', coord: [115.99, 29.71], labelPos: 'top',
+        ancientZh: '江州', modernZh: '江西九江', ancientEn: 'Jiangzhou', modernEn: 'Jiujiang, Jiangxi',
+        titleZh: '贬江州司马', titleEn: 'Exiled to Jiangzhou',
+        descZh: '因上疏请捕刺宰相之贼，贬江州司马。次年秋作《琵琶行》。',
+        descEn: 'Demoted to Jiangzhou; the next autumn he wrote "Song of the Pipa".',
+        quoteZh: '白居易《琵琶行》：“同是天涯沦落人，相逢何必曾相识。”',
+        quoteEn: 'Bai Juyi: "We are both wanderers at the world\'s end; meeting, why need we have known each other?"',
+        persons: ['baijuyi'],
+        source: SRC_LIFE + '；《琵琶行》',
+      },
+      {
+        year: 818, eraZh: '元和十三年', coord: [108.04, 30.30], labelPos: 'bottom',
+        ancientZh: '忠州', modernZh: '重庆忠县', ancientEn: 'Zhongzhou', modernEn: 'Zhongxian, Chongqing',
+        titleZh: '忠州刺史', titleEn: 'Prefect of Zhongzhou',
+        descZh: '量移忠州刺史，自江州溯江西上。',
+        descEn: 'Transferred as prefect of Zhongzhou, upstream on the Yangtze.',
+        quoteZh: '', quoteEn: '', persons: ['baijuyi'],
+        source: SRC_OFF,
+      },
+      {
+        year: 822, eraZh: '长庆二年', coord: [120.15, 30.27], labelPos: 'top',
+        ancientZh: '杭州', modernZh: '浙江杭州', ancientEn: 'Hangzhou', modernEn: 'Hangzhou, Zhejiang',
+        titleZh: '杭州刺史', titleEn: 'Prefect of Hangzhou',
+        descZh: '任杭州刺史，筑堤蓄水灌田，西湖至今有白堤。任上作《钱塘湖春行》。',
+        descEn: 'As prefect of Hangzhou he built embankments and wrote "Spring Walk by West Lake".',
+        quoteZh: '白居易《钱塘湖春行》：“乱花渐欲迷人眼，浅草才能没马蹄。”',
+        quoteEn: 'Bai Juyi: "Wild flowers gradually confuse the eye; young grass just hides the hooves."',
+        persons: ['baijuyi'],
+        source: SRC_OFF + '；《钱塘湖春行》',
+      },
+      {
+        year: 825, eraZh: '宝历元年', coord: [120.59, 31.30], labelPos: 'bottom',
+        ancientZh: '苏州', modernZh: '江苏苏州', ancientEn: 'Suzhou', modernEn: 'Suzhou, Jiangsu',
+        titleZh: '苏州刺史', titleEn: 'Prefect of Suzhou',
+        descZh: '转苏州刺史，次年因病去职。晚年所忆「江南」，一半是杭州，一半是苏州。',
+        descEn: 'Prefect of Suzhou; he resigned the next year on grounds of illness.',
+        quoteZh: '白居易《忆江南》：“江南忆，其次忆吴宫。”',
+        quoteEn: 'Bai Juyi: "Recalling Jiangnan, next I recall the Wu palace."',
+        persons: ['baijuyi'],
+        source: SRC_OFF + '；《忆江南》',
+      },
+      {
+        year: 829, eraZh: '大和三年', coord: [112.45, 34.62], labelPos: 'top',
+        ancientZh: '洛阳', modernZh: '河南洛阳', ancientEn: 'Luoyang', modernEn: 'Luoyang, Henan',
+        titleZh: '分司东都', titleEn: 'Retired to the Eastern Capital',
+        descZh: '以太子宾客分司东都，居洛阳履道里，自此不复出。',
+        descEn: 'He settled at Luoyang as a nominal eastern-capital official and never returned to power.',
+        quoteZh: '', quoteEn: '', persons: ['baijuyi'],
+        source: SRC_OFF,
+      },
+      {
+        year: 846, eraZh: '会昌六年', coord: [112.45, 34.62], labelPos: 'bottom',
+        ancientZh: '洛阳', modernZh: '河南洛阳', ancientEn: 'Luoyang', modernEn: 'Luoyang, Henan',
+        titleZh: '卒于洛阳', titleEn: 'Death at Luoyang',
+        descZh: '会昌六年卒于洛阳，年七十五，葬龙门香山。',
+        descEn: 'He died at Luoyang in 846, aged seventy-five.',
+        quoteZh: '', quoteEn: '', persons: ['baijuyi'],
+        source: SRC_LIFE,
+      },
+    ],
+  };
+
+  if (!D.PERSON_PROFILES) D.PERSON_PROFILES = [];
+  // 上游可能已有同名人物条目（白居易、杜甫等），此时必须合并而非跳过：
+  // 关键是补上 journeyKey，否则 app 找不到我们建的行迹
+  (function () {
+    var idx = D.PERSON_PROFILES.findIndex(function (p) { return p.key === PERSON.key; });
+    if (idx >= 0) {
+      var cur = D.PERSON_PROFILES[idx];
+      for (var k in PERSON) { if (PERSON[k] !== undefined) cur[k] = PERSON[k]; }
+    } else {
+      D.PERSON_PROFILES.push(PERSON);
+    }
+  })();
+  if (!D.HISTORICAL_JOURNEYS) D.HISTORICAL_JOURNEYS = [];
+  var ex = D.HISTORICAL_JOURNEYS.findIndex(function (j) { return j.key === JOURNEY.key; });
+  if (ex >= 0) D.HISTORICAL_JOURNEYS[ex] = JOURNEY; else D.HISTORICAL_JOURNEYS.push(JOURNEY);
 })();
