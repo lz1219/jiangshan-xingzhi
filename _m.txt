@@ -1,4 +1,4 @@
-docs: 标注三个数据文件为 poem-data 的生成物
+chore(data): 同步 poem-data 最新生成物（摘录标记）
 
-- design.md 第 8 节补「生成物（勿手改）」：生成命令、差量策略、闸门校验
-- utils 说明：内容源头在 poem-data/data/*.json，站点侧不手改
+- atlas_works.js：作品数据由 poem-data 重新生成，新增 excerpt 字段
+- index.html：缓存戳随 sync_version 更新

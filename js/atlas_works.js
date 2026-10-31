@@ -47,6 +47,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《竹山词》",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
@@ -119,6 +120,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《三国志·蜀书·诸葛亮传》卷三十五",
     "level": "popular",
+    "excerpt": true,
     "apparatus": [],
     "dating": [
       {
@@ -172,6 +174,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《李太白全集》卷二十六",
     "level": "popular",
+    "excerpt": true,
     "apparatus": [],
     "dating": [
       {
@@ -220,6 +223,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《王阳明全集·静心录》",
     "level": "popular",
+    "excerpt": true,
     "apparatus": [],
     "dating": [
       {
@@ -272,6 +276,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《欧阳文忠公集》卷一百四十九",
     "level": "popular",
+    "excerpt": true,
     "apparatus": [],
     "dating": [
       {
@@ -327,6 +332,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《李太白全集》卷八",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
@@ -375,6 +381,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《传习录》上",
     "level": "popular",
+    "excerpt": true,
     "apparatus": [],
     "dating": [
       {
@@ -439,6 +446,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《苏轼诗集》卷四十三",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
@@ -505,6 +513,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《三国志·蜀书·诸葛亮传》卷三十五",
     "level": "popular",
+    "excerpt": true,
     "apparatus": [],
     "dating": [
       {
@@ -553,6 +562,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《苏轼诗集》卷一",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
@@ -622,6 +632,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《全唐诗》（chinese-poetry 语料）",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
@@ -691,6 +702,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《李太白全集》卷十五",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
@@ -757,6 +769,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《东坡乐府》",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
@@ -835,6 +848,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《史记》卷一二三",
     "level": "popular",
+    "excerpt": true,
     "apparatus": [],
     "dating": [
       {
@@ -883,6 +897,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《史记》卷七十三",
     "level": "popular",
+    "excerpt": true,
     "apparatus": [],
     "dating": [
       {
@@ -943,6 +958,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《史记》卷六",
     "level": "popular",
+    "excerpt": true,
     "apparatus": [],
     "dating": [
       {
@@ -986,6 +1002,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《王阳明全集·知行录》",
     "level": "popular",
+    "excerpt": true,
     "apparatus": [],
     "dating": [
       {
@@ -1034,6 +1051,7 @@ window.ATLAS_WORKS = {
     },
     "source": "范传正《唐左拾遗翰林学士李公新墓碑》",
     "level": "popular",
+    "excerpt": true,
     "apparatus": [],
     "dating": [
       {
@@ -1082,6 +1100,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《苏轼文集》卷十一",
     "level": "popular",
+    "excerpt": true,
     "apparatus": [],
     "dating": [
       {
@@ -1142,6 +1161,7 @@ window.ATLAS_WORKS = {
     },
     "source": "玄奘述、辩机编《大唐西域记》",
     "level": "popular",
+    "excerpt": true,
     "apparatus": [],
     "dating": [
       {
@@ -1202,6 +1222,7 @@ window.ATLAS_WORKS = {
     },
     "source": "慧立撰、彦悰笺《大慈恩寺三藏法师传》",
     "level": "popular",
+    "excerpt": true,
     "apparatus": [],
     "dating": [
       {
@@ -1257,6 +1278,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《传习录》下",
     "level": "popular",
+    "excerpt": true,
     "apparatus": [],
     "dating": [
       {
@@ -1326,6 +1348,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《东坡乐府》",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
@@ -1388,6 +1411,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《全唐诗》（chinese-poetry 语料）",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
@@ -1440,6 +1464,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《杜诗详注》卷一",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
@@ -1505,6 +1530,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《李太白全集》卷八",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
@@ -1571,6 +1597,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《全唐诗》（chinese-poetry 语料）",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
@@ -1645,6 +1672,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《东坡乐府》",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
@@ -1693,6 +1721,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《战国策·赵策》",
     "level": "popular",
+    "excerpt": true,
     "apparatus": [],
     "dating": [
       {
@@ -1741,6 +1770,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《战国策·燕策三》",
     "level": "popular",
+    "excerpt": true,
     "apparatus": [],
     "dating": [
       {
@@ -1793,6 +1823,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《王阳明全集·顺生录》",
     "level": "popular",
+    "excerpt": true,
     "apparatus": [],
     "dating": [
       {
@@ -1849,6 +1880,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《全唐诗》（chinese-poetry 语料）",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
@@ -1897,6 +1929,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《旧唐书》卷一九一",
     "level": "popular",
+    "excerpt": true,
     "apparatus": [],
     "dating": [
       {
@@ -1961,6 +1994,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《李太白全集》卷二十二",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
@@ -2009,6 +2043,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《明史》卷一九五",
     "level": "popular",
+    "excerpt": true,
     "apparatus": [],
     "dating": [
       {
@@ -2064,6 +2099,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《全唐诗》（chinese-poetry 语料）",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
@@ -2123,6 +2159,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《全唐诗》（chinese-poetry 语料）",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
@@ -2183,6 +2220,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《全唐诗》（chinese-poetry 语料）",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
@@ -2249,6 +2287,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《东坡乐府》",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
@@ -2297,6 +2336,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《李太白全集》卷七",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
@@ -2345,6 +2385,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《李太白全集》卷十五",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
@@ -2411,6 +2452,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《东坡乐府》",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
@@ -2463,6 +2505,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《汉书》卷六十一",
     "level": "popular",
+    "excerpt": true,
     "apparatus": [],
     "dating": [
       {
@@ -2519,6 +2562,7 @@ window.ATLAS_WORKS = {
     },
     "source": "习凿齿《汉晋春秋》（裴松之注引）",
     "level": "popular",
+    "excerpt": true,
     "apparatus": [],
     "dating": [
       {
@@ -2586,6 +2630,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《东坡乐府》",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
@@ -2634,6 +2679,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《王阳明全集·静心录》",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
@@ -2701,6 +2747,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《李太白全集》卷十五",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
@@ -2755,6 +2802,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《全唐诗》（chinese-poetry 语料）",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
@@ -2810,6 +2858,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《苏轼诗集》卷十九",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
@@ -2859,6 +2908,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《王阳明全集》年谱",
     "level": "popular",
+    "excerpt": true,
     "apparatus": [],
     "dating": [
       {
@@ -2907,6 +2957,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《王阳明全集》年谱",
     "level": "popular",
+    "excerpt": true,
     "apparatus": [],
     "dating": [
       {
@@ -3014,6 +3065,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《全唐诗》（chinese-poetry 语料，题作《琵琶引》）",
     "level": "academic",
+    "excerpt": false,
     "apparatus": [
       {
         "id": "a001",
@@ -3085,6 +3137,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《全唐诗》（chinese-poetry 语料）",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
@@ -3144,6 +3197,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《全唐诗》（chinese-poetry 语料）",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
@@ -3198,6 +3252,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《全唐诗》（chinese-poetry 语料）",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
@@ -3246,6 +3301,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《苏轼文集》卷五十",
     "level": "popular",
+    "excerpt": true,
     "apparatus": [],
     "dating": [
       {
@@ -3311,6 +3367,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《苏轼诗集》卷四十八",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
@@ -3383,6 +3440,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《全唐诗》（chinese-poetry 语料）",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
@@ -3446,6 +3504,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《竹山词》",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
@@ -3516,6 +3575,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《杜诗详注》卷九",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
@@ -3588,6 +3648,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《全唐诗》（chinese-poetry 语料）",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
@@ -3649,6 +3710,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《全唐诗》（chinese-poetry 语料）",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
@@ -3703,6 +3765,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《全唐诗》（chinese-poetry 语料）",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
@@ -3751,6 +3814,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《大唐西域记》卷首",
     "level": "popular",
+    "excerpt": true,
     "apparatus": [],
     "dating": [
       {
@@ -3815,6 +3879,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《全唐诗》（chinese-poetry 语料，题作《錢唐湖春行》）",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
@@ -3863,6 +3928,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《樊川文集》卷一",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
@@ -3929,6 +3995,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《苏轼诗集》卷四十",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
@@ -3991,6 +4058,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《苏轼诗集》卷九",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
@@ -4052,6 +4120,7 @@ window.ATLAS_WORKS = {
     },
     "source": "《李太白全集》卷十五",
     "level": "popular",
+    "excerpt": false,
     "apparatus": [],
     "dating": [
       {
