@@ -51,3 +51,9 @@ COMMENT ON TABLE cbdb."KINSHIP_CODES" IS '亲属关系类型编码';
 COMMENT ON TABLE cbdb."ASSOC_CODES" IS '社会关系类型编码';
 COMMENT ON TABLE cbdb."ALTNAME_CODES" IS '异名类型编码（字/号/别名…）';
 COMMENT ON TABLE cbdb."ENTRY_CODES" IS '入仕方式编码';
+
+-- ── CBDB 任所表（仕宦地点，行迹定地的依据）──────────
+COMMENT ON TABLE cbdb."POSTED_TO_ADDR_DATA" IS '仕宦任所（46.5 万条）：把「知某州」落到具体州名，行迹的定地依据';
+COMMENT ON COLUMN cbdb."POSTED_TO_ADDR_DATA".c_posting_id IS '任所记录 ID，与 POSTED_TO_OFFICE_DATA.c_posting_id 关联';
+COMMENT ON COLUMN cbdb."POSTED_TO_ADDR_DATA".c_personid IS '任职者人物 ID';
+COMMENT ON COLUMN cbdb."POSTED_TO_ADDR_DATA".c_addr_id IS '任所地址编码，对应 ADDR_CODES.c_addr_id';
