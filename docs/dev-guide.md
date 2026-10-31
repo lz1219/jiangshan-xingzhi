@@ -1,0 +1,172 @@
+# 开发深读 · 江山行止
+
+> 给「要改这个项目的人」的第二层文档：讲**扩展点在哪、数据怎么约定、哪里踩过坑**。
+> 命令、铁律、DoD 在 [AGENTS.md](../AGENTS.md)；定位与决策在 [design.md](design.md)。
+
+---
+
+## 1. 三层结构
+
+```
+上游基座（不改）        我们的笺注层                使用者的动作
+lore_data.js 引文  →  atlas_works.js 作品数据  →  点摘句 → 读作品
+app.js 行迹渲染     →  atlas_reader.js 交互
+```
+
+**上游基座**：`js/app.js`（15k 行）、`js/lore_data.js`（7 条行迹 / 74 站）、`js/map_data.js`、`js/atlas_snapshots.js`、`geojson/`。
+**我们的层**：只有两个文件——数据 `js/atlas_works.js`、交互 `js/atlas_reader.js`。
+
+---
+
+## 2. 扩展点：`__ATLAS_MIXINS`
+
+上游在主类就绪后会消费挂起的插件，`js/atlas_quiz.js` 是最早的样板：
+
+```js
+// app.js:15128
+if (Array.isArray(window.__ATLAS_MIXINS)) {
+  for (const install of window.__ATLAS_MIXINS.splice(0)) install(HistoricalAtlasController);
+}
+
+// 插件侧（atlas_reader.js 同构）
+function install(Ctrl) { /* 装饰原型、注册观察者 */ }
+const ready = window.HistoricalAtlasController;
+if (ready && typeof ready._extendPrototype === 'function') install(ready);
+else (window.__ATLAS_MIXINS = window.__ATLAS_MIXINS || []).push(install);
+```
+
+这套机制**加载顺序无关**，所以脚本放在 `app.js` 之后即可，不需要改动主类。
+
+---
+
+## 3. 数据契约：`js/atlas_works.js`
+
+单个对象 `window.ATLAS_WORKS`，键 = 引文里《书名》的原始写法。
+
+| 字段 | 说明 |
+|---|---|
+| `alias[]` | 标题异写，匹配兜底（「定风波」↔「定风波 · 莫听穿林打叶声」） |
+| `titleZh` / `titleEn` | 阅读器标题；`titleEn` 缺省时回落 `titleZh`（搜索评分要用字符串） |
+| `authorZh` / `authorEn` | 作者；也作为搜索的 `modernZh` / `modernEn` |
+| `year` / `placeZh` | 系年与地点，用于元信息行与朝代标签 |
+| `genre` | `shi` 诗 / `ci` 词 / `fu` 赋 / `wen` 文 / `history` 史传 |
+| `certainty` | `confirmed` / `probable` / `disputed`，界面显示「系年 …」 |
+| `text[]` | 正文。诗：一句一项；词：一阕一项；文/史：一段一项 |
+| `meaning` | 大意：写「说什么、怎么转、落在哪」，不做逐句对译 |
+| `notes[]` | `{ term, explain }`，解释用法与语境，不给同义词了事 |
+| `background` | 写作背景，自撰 |
+| `appreciation` | `{ text, inference?, by, license }`；`inference` 为 `{ text, basis }` |
+| `source` | 出处，必填 |
+
+**收录规则**：诗词赋史全覆盖；文与史传只收**被引用的段落**，界面标「摘录」。
+
+---
+
+## 4. 阅读器流水线
+
+```
+MutationObserver 监听 body
+  → 发现 .person-ev-quote
+  → 用 《([^》]+)》 取书名
+  → ATLAS_WORKS 命中则加 .is-poem-link
+  → 点击 → openReader(work)
+```
+
+渲染分三步：
+
+1. **抬头**：`笺 · 江山行止` + 标题 + 英文副题 + 元信息（作者 · 年 · 地 · 文体 · 系年 · 摘录）
+2. **正文**：交给渲染器
+3. **内容块**：大意 → 赏析（正文 + 推测）→ 写作背景 → 注释 → 出处
+
+### 渲染器注册表
+
+```js
+window.ATLAS_READER_RENDERERS = {
+  verse(p) { /* 按句读断行、居中 */ },
+  prose(p) { /* 段落、两端对齐 */ },
+};
+var GENRE_KIND = { shi:'verse', ci:'verse', fu:'verse', wen:'prose', history:'prose' };
+```
+
+**新增一种文体**（例如人物志、碑刻、书画题跋）只需两步：注册一个渲染器函数，再在 `GENRE_KIND` 里登记映射。`app.js` 零改动。
+
+---
+
+## 5. 搜索注入（`kind: 'work'`）
+
+作品不另造搜索，而是作为一个新的 `kind` 注入上游索引：
+
+```js
+proto._ensureSearchIndex = function () {
+  const index = origEnsureIndex.apply(this, arguments);
+  appendWorkEntries(index, this);   // 幂等：数组上打 __poemsAppended 标记
+  return index;
+};
+proto._selectSearchResult = function (item) {
+  if (item && item.kind === 'work') { openReader(item.poem); return; }
+  return origSelectResult.apply(this, arguments);
+};
+```
+
+### 三个坑（都踩过）
+
+| 坑 | 症状 | 解法 |
+|---|---|---|
+| `keywords` 缺失 | 输入任何字都抛 `Cannot read properties of undefined (reading 'includes')` | 条目必须带 `keywords: []` |
+| `dynasty` 传字符串 | 结果标签渲染出字面量 `undefined · 作品` | `dynastyBadge(d)` 读的是 `d.badge \|\| d.title`，要传**朝代对象** |
+| 空朝代前缀 | 无朝代时标签变成 `undefined · 作品` | `app.js` 的结果模板已改为空朝代不回退前缀 |
+
+---
+
+## 6. 版本戳
+
+上游每个脚本都带 `?v=<8位哈希>`，由 `scripts/sync_version.js` 统一重算：
+
+```bash
+node scripts/sync_version.js          # 重算并写回 index.html
+node scripts/sync_version.js --check  # 只校验
+```
+
+改了 `js/` 下任何文件都要跑一次，否则线上会拿到旧缓存。新增脚本也要登记进 `STATIC_TAG_ASSETS`。
+
+---
+
+## 7. 怎么加一条作品
+
+```js
+// js/atlas_works.js
+'新书名': {
+  alias: ['新书名'],
+  titleZh: '新书名 · 副题',
+  titleEn: 'English Title',
+  authorZh: '作者',
+  year: 1082,
+  placeZh: '黄州',
+  genre: 'shi',
+  certainty: 'confirmed',
+  text: ['……'],
+  meaning: '……',
+  notes: [{ term: '词', explain: '……' }],
+  background: '……',
+  appreciation: { text: '……', inference: { text: '……', basis: '……' }, by: '本站自撰', license: 'CC BY-SA 4.0' },
+  source: '《出处》卷次',
+}
+```
+
+然后 `node scripts/_gap_report.cjs` 看覆盖率是否上升、`node scripts/sync_version.js` 重算缓存戳、本地刷新点开看。
+
+**原文从哪来**：`node scripts/_dump_missing.cjs` 会把未收录作品的引文原句从 `lore_data.js` 里逐字导出——照抄它，不要自己打字。
+
+---
+
+## 8. 验证方式
+
+| 动作 | 命令 |
+|---|---|
+| 起服务 | `node scripts/_serve.cjs` → http://127.0.0.1:5199/ |
+| 看某条行迹 | `/?person=sushi`、`/?person=xuanzang` |
+| 覆盖率 | `node scripts/_gap_report.cjs` |
+| 文档体检 | `node scripts/check-docs.mjs` |
+| 缓存戳 | `node scripts/sync_version.js --check` |
+
+自动化截图与交互验证脚本不在本仓库（它们是开发机上的临时工具），如需复现请手动点开确认。
