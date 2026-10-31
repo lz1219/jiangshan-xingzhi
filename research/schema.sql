@@ -153,3 +153,58 @@ SELECT c.id AS claim_id,
        (SELECT p.body FROM paragraph p WHERE p.id = e.paragraph_id) AS paragraph_text
 FROM claim c
 LEFT JOIN evidence e ON e.claim_id = c.id;
+
+-- ── 别名 / 职官 / 关系 / 地点 / 研究线索（v2）──────────
+CREATE TABLE IF NOT EXISTS person_name (
+  id        serial PRIMARY KEY,
+  person_id int NOT NULL REFERENCES person(id) ON DELETE CASCADE,
+  name      text NOT NULL,
+  kind      text NOT NULL DEFAULT 'alias',   -- zi|hao|posthumous|alias|en
+  source    text,
+  UNIQUE (person_id, name)
+);
+
+CREATE TABLE IF NOT EXISTS office (
+  id        serial PRIMARY KEY,
+  person_id int NOT NULL REFERENCES person(id) ON DELETE CASCADE,
+  year      int,
+  year_end  int,
+  title     text,                            -- 官职
+  place     text,                            -- 任所
+  note      text,
+  source    text
+);
+
+CREATE TABLE IF NOT EXISTS relation (
+  id           serial PRIMARY KEY,
+  person_id    int NOT NULL REFERENCES person(id) ON DELETE CASCADE,
+  related_name text NOT NULL,
+  related_key  text,
+  kind         text,                          -- father|son|spouse|friend|teacher|student
+  source       text
+);
+
+CREATE TABLE IF NOT EXISTS place (
+  id         serial PRIMARY KEY,
+  ancient    text NOT NULL,
+  modern     text,
+  admin      text,                            -- 隶属（州/路/府）
+  lng        double precision,
+  lat        double precision,
+  valid_from int,
+  valid_to   int,
+  source     text,
+  UNIQUE (ancient, modern)
+);
+
+CREATE TABLE IF NOT EXISTS research_note (
+  id          serial PRIMARY KEY,
+  subject_key text NOT NULL,
+  topic       text NOT NULL,
+  body        text,
+  decision    text,                           -- adopted|rejected|pending
+  created_at  timestamptz DEFAULT now()
+);
+
+CREATE INDEX IF NOT EXISTS person_name_trgm ON person_name USING gin (name gin_trgm_ops);
+CREATE INDEX IF NOT EXISTS place_trgm ON place USING gin (ancient gin_trgm_ops);
