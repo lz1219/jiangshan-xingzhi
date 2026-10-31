@@ -423,3 +423,160 @@
   var ex = D.HISTORICAL_JOURNEYS.findIndex(function (j) { return j.key === JOURNEY.key; });
   if (ex >= 0) D.HISTORICAL_JOURNEYS[ex] = JOURNEY; else D.HISTORICAL_JOURNEYS.push(JOURNEY);
 })();
+
+/**
+ * ── 杜甫（712—770）──────────────────────────────────
+ * 与白居易不同：杜甫 CBDB 仕宦仅 6 条、3 处任所，撑不起行迹。
+ * 故本行迹走「年谱定年 + 诗题定地」：
+ *   年谱据《旧唐书》卷一九〇《杜甫传》及通行杜甫年谱；
+ *   每个站点的位置由其本人诗题与诗中地名确定，年份标「约」者存疑。
+ */
+(function () {
+  'use strict';
+  var D = window.ATLAS_LORE_DATA;
+  if (!D) return;
+
+  var SRC_LIFE = '《旧唐书》卷一九〇《杜甫传》；杜甫年谱';
+  var SRC_POEM = '杜甫诗题与诗中地名';
+
+  var PERSON = {
+    key: 'dufu',
+    zh: '杜甫',
+    en: 'Du Fu',
+    courtesyZh: '字子美 · 自号少陵野老 · 世称杜工部',
+    courtesyEn: 'Styled Zimei',
+    dynastyKey: 'tang',
+    span: [712, 770],
+    journeyKey: 'dufu',
+    aliases: ['子美', '少陵野老', '杜工部', '杜少陵', '诗圣', 'Du Fu'],
+    tokens: ['杜甫', '杜工部'],
+  };
+
+  var JOURNEY = {
+    key: 'dufu',
+    dynastyKey: 'tang',
+    color: '#7a5c3e',
+    shortZh: '杜甫漂泊西南',
+    shortEn: 'Du Fu',
+    titleZh: '杜甫：从长安到湘江',
+    titleEn: 'Du Fu: From Chang\'an to the Xiang',
+    spanZh: '712年 — 770年',
+    spanEn: '712 – 770',
+    stops: [
+      {
+        year: 712, eraZh: '先天元年', coord: [113.02, 34.75], labelPos: 'top',
+        ancientZh: '巩县', modernZh: '河南巩义', ancientEn: 'Gongxian', modernEn: 'Gongyi, Henan',
+        titleZh: '生于巩县', titleEn: 'Born at Gongxian',
+        descZh: '杜甫生于河南巩县。祖杜审言为初唐诗人，家世「奉儒守官」。',
+        descEn: 'Du Fu was born at Gongxian in Henan, into a family of scholar-officials.',
+        quoteZh: '', quoteEn: '', persons: ['dufu'], source: SRC_LIFE,
+      },
+      {
+        year: 736, eraZh: '开元二十四年', coord: [117.10, 36.25], labelPos: 'top',
+        ancientZh: '泰山', modernZh: '山东泰安', ancientEn: 'Mount Tai', modernEn: 'Tai\'an, Shandong',
+        titleZh: '望岳', titleEn: 'Gazing at Mount Tai',
+        descZh: '游齐赵间，望泰山而作《望岳》。此时尚未登顶，诗里是志愿。',
+        descEn: 'Travelling in Qi and Zhao, he wrote "Gazing at the Holy Mountain".',
+        quoteZh: '杜甫《望岳》：“会当凌绝顶，一览众山小。”',
+        quoteEn: 'Du Fu: "One day I shall climb to the very summit, and see all mountains as small."',
+        persons: ['dufu'], source: SRC_POEM + '《望岳》',
+      },
+      {
+        year: 744, eraZh: '天宝三载', coord: [112.45, 34.62], labelPos: 'bottom',
+        ancientZh: '洛阳', modernZh: '河南洛阳', ancientEn: 'Luoyang', modernEn: 'Luoyang, Henan',
+        titleZh: '洛阳遇李白', titleEn: 'Meeting Li Bai at Luoyang',
+        descZh: '与李白初遇于洛阳，同游梁宋，为中国诗史上最有名的一次相遇。',
+        descEn: 'He first met Li Bai at Luoyang; they travelled together in the Liang-Song region.',
+        quoteZh: '', quoteEn: '', persons: ['dufu'], source: '《旧唐书》卷一九〇《杜甫传》',
+      },
+      {
+        year: 746, eraZh: '天宝五载', coord: [108.94, 34.34], labelPos: 'top',
+        ancientZh: '长安', modernZh: '陕西西安', ancientEn: "Chang'an", modernEn: "Xi'an, Shaanxi",
+        titleZh: '长安求仕', titleEn: 'Seeking Office in the Capital',
+        descZh: '入长安应制举，李林甫以「野无遗贤」尽黜之。此后困居长安近十年，干谒求荐。',
+        descEn: 'He sat the special examination in the capital; all candidates were rejected. He then spent nearly ten years in Chang\'an seeking patronage.',
+        quoteZh: '', quoteEn: '', persons: ['dufu'], source: SRC_LIFE,
+      },
+      {
+        year: 756, eraZh: '至德元年', coord: [109.38, 35.99], labelPos: 'bottom',
+        ancientZh: '鄜州', modernZh: '陕西富县', ancientEn: 'Fuzhou', modernEn: 'Fu County, Shaanxi',
+        titleZh: '携家避乱', titleEn: 'Family in Hiding',
+        descZh: '安史乱起，杜甫携家避居鄜州羌村；闻肃宗即位灵武，只身往投，途中被俘。',
+        descEn: 'As the rebellion spread he hid his family at Fuzhou, then set out alone to join the new emperor and was captured on the way.',
+        quoteZh: '杜甫《月夜》：“今夜鄜州月，闺中只独看。”',
+        quoteEn: 'Du Fu: "Tonight the moon over Fuzhou — only she watches it alone."',
+        persons: ['dufu'], source: SRC_LIFE + '；《月夜》',
+      },
+      {
+        year: 757, eraZh: '至德二载', coord: [108.94, 34.34], labelPos: 'top',
+        ancientZh: '长安', modernZh: '陕西西安', ancientEn: "Chang'an", modernEn: "Xi'an, Shaanxi",
+        titleZh: '陷贼春望', titleEn: 'Captive in the Capital',
+        descZh: '困居沦陷的长安，作《春望》。同年脱身奔凤翔，授左拾遗。',
+        descEn: 'Held in occupied Chang\'an he wrote "Spring View"; that year he escaped to Fengxiang and was appointed to the remonstrance office.',
+        quoteZh: '杜甫《春望》：“国破山河在，城春草木深。”',
+        quoteEn: 'Du Fu: "The state is shattered, yet rivers and mountains remain."',
+        persons: ['dufu'], source: SRC_LIFE + '；《春望》',
+      },
+      {
+        year: 760, eraZh: '上元元年', coord: [104.07, 30.57], labelPos: 'top',
+        ancientZh: '成都', modernZh: '四川成都', ancientEn: 'Chengdu', modernEn: 'Chengdu, Sichuan',
+        titleZh: '成都草堂', titleEn: 'The Thatched Cottage',
+        descZh: '弃官西行，经秦州、同谷入蜀，于浣花溪畔筑草堂。次年秋作《茅屋为秋风所破歌》。',
+        descEn: 'He abandoned office and travelled west to Chengdu, building a thatched cottage by the Huanhua Creek.',
+        quoteZh: '杜甫《茅屋为秋风所破歌》：“安得广厦千万间，大庇天下寒士俱欢颜。”',
+        quoteEn: 'Du Fu: "Could I but get ten thousand broad mansions to shelter all the poor scholars of the world."',
+        persons: ['dufu'], source: SRC_LIFE + '；《茅屋为秋风所破歌》',
+      },
+      {
+        year: 765, eraZh: '永泰元年', coord: [106.55, 29.56], labelPos: 'bottom',
+        ancientZh: '渝州', modernZh: '重庆', ancientEn: 'Yuzhou', modernEn: 'Chongqing',
+        titleZh: '舟下渝州', titleEn: 'Downriver by Boat',
+        descZh: '离成都东下，舟行于渝州、忠州间，作《旅夜书怀》。此后两年漂泊夔州。',
+        descEn: 'Leaving Chengdu by boat he wrote "Night Thoughts on a Journey".',
+        quoteZh: '杜甫《旅夜书怀》：“飘飘何所似，天地一沙鸥。”',
+        quoteEn: 'Du Fu: "What am I like, drifting? A single sand-gull between heaven and earth."',
+        persons: ['dufu'], source: SRC_POEM + '；《旅夜书怀》',
+      },
+      {
+        year: 767, eraZh: '大历二年', coord: [109.47, 31.02], labelPos: 'top',
+        ancientZh: '夔州', modernZh: '重庆奉节', ancientEn: 'Kuizhou', modernEn: 'Fengjie, Chongqing',
+        titleZh: '夔州登高', titleEn: 'Climbing High at Kuizhou',
+        descZh: '寓居夔州两年，作诗四百余首，为其创作最盛期。重阳登高作《登高》。',
+        descEn: 'His two years at Kuizhou were his most productive; on the Double Ninth he wrote "Climbing High".',
+        quoteZh: '杜甫《登高》：“无边落木萧萧下，不尽长江滚滚来。”',
+        quoteEn: 'Du Fu: "Endless falling leaves rustle down; the endless Long River rolls on."',
+        persons: ['dufu'], source: SRC_POEM + '；《登高》',
+      },
+      {
+        year: 768, eraZh: '大历三年', coord: [113.13, 29.37], labelPos: 'top',
+        ancientZh: '岳阳', modernZh: '湖南岳阳', ancientEn: 'Yueyang', modernEn: 'Yueyang, Hunan',
+        titleZh: '登岳阳楼', titleEn: 'Climbing Yueyang Tower',
+        descZh: '出峡后漂泊江湘，登岳阳楼作诗。「亲朋无一字，老病有孤舟」是他最后几年的写照。',
+        descEn: 'After leaving the gorges he drifted on the Xiang and wrote "Climbing Yueyang Tower".',
+        quoteZh: '杜甫《登岳阳楼》：“亲朋无一字，老病有孤舟。”',
+        quoteEn: 'Du Fu: "Not one word from kin or friends; old and sick, I have only a lone boat."',
+        persons: ['dufu'], source: SRC_POEM + '；《登岳阳楼》',
+      },
+      {
+        year: 770, eraZh: '大历五年', coord: [112.94, 28.23], labelPos: 'bottom',
+        ancientZh: '潭州', modernZh: '湖南长沙', ancientEn: 'Tanzhou', modernEn: 'Changsha, Hunan',
+        titleZh: '卒于湘江', titleEn: 'Death on the Xiang',
+        descZh: '大历五年冬，杜甫卒于潭州往岳阳的舟中，年五十九。',
+        descEn: 'He died in winter 770 on a boat between Tanzhou and Yueyang, aged fifty-nine.',
+        quoteZh: '', quoteEn: '', persons: ['dufu'], source: SRC_LIFE,
+      },
+    ],
+  };
+
+  if (!D.PERSON_PROFILES) D.PERSON_PROFILES = [];
+  (function () {
+    var idx = D.PERSON_PROFILES.findIndex(function (p) { return p.key === PERSON.key; });
+    if (idx >= 0) {
+      var cur = D.PERSON_PROFILES[idx];
+      for (var k in PERSON) { if (PERSON[k] !== undefined) cur[k] = PERSON[k]; }
+    } else { D.PERSON_PROFILES.push(PERSON); }
+  })();
+  if (!D.HISTORICAL_JOURNEYS) D.HISTORICAL_JOURNEYS = [];
+  var ex = D.HISTORICAL_JOURNEYS.findIndex(function (j) { return j.key === JOURNEY.key; });
+  if (ex >= 0) D.HISTORICAL_JOURNEYS[ex] = JOURNEY; else D.HISTORICAL_JOURNEYS.push(JOURNEY);
+})();
