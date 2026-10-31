@@ -144,7 +144,12 @@ node text-import.cjs --file KR2a0032_338.txt --book 宋史 --juan 卷三百三�
 | `exact` | 原文繁体含此串 | 最可信，记偏移 |
 | `normalized` | 去标点空白 + 异体归一后命中 | 不算错 |
 | `partial` | 按句切分命中率 ≥0.8 且缺失 ≤1 句 | 节引，记 `missing_fragments` |
+| `adjudicated` | 未命中片段已被人工裁定（`text_variant.decision = ours-right/both`） | 通过，记录裁定人 |
 | `fail` | 以上都不中 | 报错，人工确认 |
+
+**`adjudicated` 的意义**：四库本作「簫簫」、全宋词作「萧萧」，我们取全宋词。
+这类差异**永远不可能机器自动判定**，但人工裁定一次后，校验器就记住「这条已裁过，不再报错」——
+否则同一处异文会在每次重跑时反复报警，最后没人看警告。
 
 ### 异体字 vs 异文（必须分开）
 
