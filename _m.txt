@@ -1,9 +1,4 @@
-feat(links): 与文献站互链——阅读器与人物面板加「在文献站」入口
+docs: 标注三个数据文件为 poem-data 的生成物
 
-- 新增 js/atlas_links.js：跨站链接的唯一配置点，支持 window.ATLAS_CORPUS_BASE 覆盖；
-  本地自动指向 127.0.0.1:5322，线上指向 lz1219.github.io/poem-data
-- reader：出处行下加「在文献站读全篇 ↗」
-- chronicle：导语块下加「在文献站查此人 ↗」
-- 修 ATLAS_WORKS 条目无 key 的问题：findPoem 命中时补 __key（不污染数据）
-- sync_version 清单加入 atlas_links.js
-- design.md 增第 8 节：两站分工、链接可配置、三处入口、key 的坑
+- design.md 第 8 节补「生成物（勿手改）」：生成命令、差量策略、闸门校验
+- utils 说明：内容源头在 poem-data/data/*.json，站点侧不手改

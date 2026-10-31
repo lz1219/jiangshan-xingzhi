@@ -144,3 +144,18 @@ window.ATLAS_CORPUS_BASE   // 外层页面可预设；默认按环境推断
 
 `ATLAS_WORKS` 的条目里**没有 key 字段**（key 是对象的键名）。互链需要 key，
 所以 `findPoem()` 命中时会把键名补到 `poem.__key` 上，不污染原数据。
+
+### 生成物（勿手改）
+
+`js/atlas_works.js`、`js/atlas_overlay.js`、`js/atlas_journeys.js` 现在**由 poem-data 生成**：
+
+```bash
+# 在 poem-data 仓库里
+node scripts/emit-atlas.mjs --target ../jiangshan-xingzhi
+```
+
+- 内容源头：`poem-data/data/*.json`
+- 上游已有的行迹（如李白 12 站）只**补缺站**，不覆盖上游；白居易/杜甫/蒋捷整条新建
+- poem-data 的提交闸门会跑 `--check`，生成物落后于数据时拒绝提交
+
+**要改内容，去 poem-data 改，不要改这三个文件。**
