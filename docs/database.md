@@ -100,14 +100,45 @@ WHERE p.body LIKE '%莫听穿林打叶声%';
 ## 5. 装载流程
 
 ```
-仓库 JS 数据  ──pg-load.cjs──▶  person / journey / stop / work / book
-外部史料原文  ──待做──▶          text_unit / paragraph
-考据结论      ──手工 SQL 或脚本──▶ claim / evidence
+仓库 JS 数据  ──pg-load.cjs──▶   person / journey / stop / work / book
+CBDB SQLite   ──cbdb-import.cjs──▶ cbdb schema（原样，78 表取核心 8 表）
+Kanripo 文本   ──text-import.cjs──▶ text_unit / paragraph（原文 + 简体列）
+引文校验      ──quote-check.cjs──▶ evidence 的四级匹配结果
+考据结论      ──手工 SQL 或脚本──▶ claim / evidence / text_variant
 ```
 
 装载器**幂等**：按自然键 upsert，可反复执行。
 
-## 6. 一条已知的建模坑（库里抓出来的）
+### 原文层：Kanripo → PostgreSQL
+
+```bash
+node text-import.cjs --file KR2a0032_338.txt --book 宋史 --juan 卷三百三十八 \
+  --edition "Kanripo KR2a0032 / 四庫全書文淵閣本" --url https://github.com/kanripo/KR2a0032
+```
+
+- Kanripo 文本**按约 20 字硬换行**，不能按行分段；分段依据是「篇题行」与独占一行的 `¶`
+- 原文（繁体）入 `body`，OpenCC `t2s` 生成 `body_simplified`（不下发、只校验）
+- 每卷入 `text_unit`，逐段入 `paragraph`，供引文定位
+
+### 引文四级校验
+
+| 级别 | 判据 | 处置 |
+|---|---|---|
+| `exact` | 原文繁体含此串 | 最可信，记偏移 |
+| `normalized` | 去标点空白 + 异体归一后命中 | 不算错 |
+| `partial` | 按句切分命中率 ≥0.8 且缺失 ≤1 句 | 节引，记 `missing_fragments` |
+| `fail` | 以上都不中 | 报错，人工确认 |
+
+### 异体字 vs 异文（必须分开）
+
+| 类别 | 例 | 处置 |
+|---|---|---|
+| **异体字** | 揺/摇、呌/叫、堦/阶、㸃/点 | 入 `variant_char`，**自动归一** |
+| **异文** | 秋娘**度**/秋娘**渡**、泰娘**嬌**/泰娘**桥** | 入 `text_variant`，**只记录不修改** |
+
+归并异体字是校正用字；归并异文就是篡改史料。这条界线不能混。
+
+## 6. 已知的建模坑（库里抓出来的）
 
 《史记·秦始皇本纪》的 `year` 是**所述之年**（前 238），不是司马迁的**作年**。
 第一次跑一致性检查就报了"作年早于作者出生"。

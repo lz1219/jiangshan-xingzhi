@@ -208,3 +208,51 @@ CREATE TABLE IF NOT EXISTS research_note (
 
 CREATE INDEX IF NOT EXISTS person_name_trgm ON person_name USING gin (name gin_trgm_ops);
 CREATE INDEX IF NOT EXISTS place_trgm ON place USING gin (ancient gin_trgm_ops);
+
+-- ── v3：原文层定稿 ────────────────────────────────────
+-- text_unit 改为多版本键；原文繁体 + 生成简体（校验用）
+ALTER TABLE text_unit ADD COLUMN IF NOT EXISTS edition text DEFAULT '未标注';
+ALTER TABLE text_unit ADD COLUMN IF NOT EXISTS body_simplified text;
+ALTER TABLE text_unit ADD COLUMN IF NOT EXISTS source_url text;
+ALTER TABLE text_unit ADD COLUMN IF NOT EXISTS fetched_at timestamptz DEFAULT now();
+DROP INDEX IF EXISTS text_unit_book_id_juan_key;
+CREATE UNIQUE INDEX IF NOT EXISTS text_unit_key ON text_unit (book_id, juan, edition);
+CREATE INDEX IF NOT EXISTS text_unit_simp_trgm ON text_unit USING gin (body_simplified gin_trgm_ops);
+
+-- 校验元数据
+ALTER TABLE evidence ADD COLUMN IF NOT EXISTS match_kind text;      -- exact|normalized|partial|fail
+ALTER TABLE evidence ADD COLUMN IF NOT EXISTS match_offset int;
+ALTER TABLE evidence ADD COLUMN IF NOT EXISTS missing_fragments text;
+
+-- 人物 → 卷（自动圈候选 + 人工确认）
+CREATE TABLE IF NOT EXISTS person_source (
+  id         serial PRIMARY KEY,
+  person_key text NOT NULL,
+  unit_id    int NOT NULL REFERENCES text_unit(id) ON DELETE CASCADE,
+  para_start int,
+  para_end   int,
+  status     text NOT NULL DEFAULT 'pending',  -- pending|confirmed|rejected
+  method     text NOT NULL DEFAULT 'auto',     -- auto|manual
+  note       text,
+  UNIQUE (person_key, unit_id)
+);
+
+-- ── v3b：异体字归一 + 异文记录 ────────────────────────
+CREATE TABLE IF NOT EXISTS variant_char (
+  from_char text PRIMARY KEY,
+  to_char   text NOT NULL,
+  source    text
+);
+
+CREATE TABLE IF NOT EXISTS text_variant (
+  id         serial PRIMARY KEY,
+  work_key   text,
+  unit_id    int REFERENCES text_unit(id) ON DELETE CASCADE,
+  our_text   text,
+  src_text   text,
+  kind       text,                              -- 异体|异文|脱字|衍字
+  decision   text DEFAULT 'pending',            -- pending|ours-right|source-right|both
+  note       text,
+  created_at timestamptz DEFAULT now(),
+  UNIQUE (work_key, unit_id, our_text, src_text)
+);
