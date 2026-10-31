@@ -6,10 +6,12 @@
 
 ## 当前焦点
 
-- **R-7** 赏析补齐：50 条中 31 条尚无 `appreciation`；史传只写「史笔如何」，诗词写结构与用字，推测另列并给 `basis`
+- **R-4** 新增一种非文献文体：渲染器注册表已就位，用它接人物志或碑刻，验证「加文体不改主逻辑」
 
 ## 最近完成
 
+- 2026-10-31 `R-7` 完成：31 条补上赏析，50/50 有 `appreciation`；其中 9 条含推测且带 `basis`
+- 2026-10-31 工作区清理：验证工具链（Playwright）迁至 `_verify/` 与仓库分离；旧原型仓库内容已删空并归档
 - 2026-10-31 工作区收拢：文档体系（AGENTS / design / backlog / progress / dev-guide / specs / 闸门）从旧原型仓库迁入本仓库，闸门改扫 `js/`
 - 2026-10-31 定名「江山行止」：仓库改名 `jiangshan-shijuan` → `jiangshan-xingzhi`（旧链 301 跳转）；模块去诗化 `atlas_poems/atlas_poetry` → `atlas_works/atlas_reader`；阅读器抬头改为「笺 · 江山行止」
 - 2026-10-31 抽出文体渲染器注册表 `ATLAS_READER_RENDERERS`：新增文体只需注册渲染器
