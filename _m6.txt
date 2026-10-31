@@ -1,0 +1,9 @@
+feat(reader): 对上游依赖加固——契约层、能力探测、两条退路
+
+- 新增 js/atlas_contract.js：选择器集中 + window.__ATLAS_HEALTH + atlasProbe
+- chronicle 双路：包装渲染方法（快）+ 观察 #genealogy-body（兜底），key 解析优先用
+  window.atlasApp.activePerson，再退到面板抬头文本查 PERSON_PROFILES
+- reader 兜底：摘句类名被改时，按「含《书名》+「」+长度」的文本特征识别并成链
+- 实测：冲掉 .cr-* 后观察器自动恢复 intro+4 链接；改类名并清标记后 5 条链全部恢复
+- docs/dev-guide.md 增「契约与降级」：依赖表、幂等标记的坑、未加固项
+- 顺带发现：外部字体阻塞 load 会导致面板空白（对应 D-2）

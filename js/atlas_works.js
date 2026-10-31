@@ -2655,5 +2655,161 @@ window.ATLAS_WORKS = {
       "license": "CC BY-SA 4.0"
     },
     "source": "《全唐诗》（chinese-poetry 语料）"
+  },
+  "独坐敬亭山": {
+    "alias": [
+      "独坐敬亭山",
+      "獨坐敬亭山"
+    ],
+    "titleZh": "独坐敬亭山",
+    "titleEn": "Sitting Alone on Jingting Mountain",
+    "authorZh": "李白",
+    "authorEn": "Li Bai",
+    "year": 753,
+    "placeZh": "宣城",
+    "placeEn": "Xuancheng",
+    "genre": "shi",
+    "certainty": "probable",
+    "text": [
+      "众鸟高飞尽，孤云独去闲。",
+      "相看两不厌，只有敬亭山。"
+    ],
+    "meaning": "众鸟飞尽、孤云独去，只剩自己与敬亭山相对；相看两不厌，天下只剩下这座山。",
+    "notes": [
+      {
+        "term": "敬亭山",
+        "explain": "在今安徽宣城北，李白多次登临。"
+      },
+      {
+        "term": "厌",
+        "explain": "满足、厌倦；此言彼此看不厌。"
+      }
+    ],
+    "background": "约天宝十二载（753）李白游宣城时作。此时他已离开长安近十年。",
+    "appreciation": {
+      "text": "前两句把周围一切清空：鸟尽、云去，只剩两样东西——人和山。后两句反过来写「不厌」，是把自己也放进了物象里。全诗二十字，无一字说孤独，而孤独满纸。",
+      "by": "本站自撰",
+      "license": "CC BY-SA 4.0"
+    },
+    "source": "《全唐诗》（chinese-poetry 语料）"
+  },
+  "赠汪伦": {
+    "alias": [
+      "赠汪伦",
+      "贈汪倫"
+    ],
+    "titleZh": "赠汪伦",
+    "titleEn": "To Wang Lun",
+    "authorZh": "李白",
+    "authorEn": "Li Bai",
+    "year": 755,
+    "placeZh": "泾县",
+    "placeEn": "Jingxian",
+    "genre": "shi",
+    "certainty": "confirmed",
+    "text": [
+      "李白乘舟将欲行，忽闻岸上踏歌声。",
+      "桃花潭水深千尺，不及汪伦送我情。"
+    ],
+    "meaning": "将行之际忽闻岸上踏歌声，知是汪伦相送；桃花潭水纵有千尺，也不及这份情。",
+    "notes": [
+      {
+        "term": "踏歌",
+        "explain": "以脚踏地为节拍的歌唱，唐人送别之俗。"
+      },
+      {
+        "term": "桃花潭",
+        "explain": "在今安徽泾县西南。"
+      }
+    ],
+    "background": "天宝十四载（755）李白游泾县桃花潭，临行汪伦踏歌相送，因作此诗。",
+    "appreciation": {
+      "text": "前两句是「忽闻」——他不知道有人来送，所以才有惊喜。后两句把潭水与情比深浅，比法极直，却因「不及」二字而翻出一层：水再深也有量，情没有。",
+      "by": "本站自撰",
+      "license": "CC BY-SA 4.0"
+    },
+    "source": "《全唐诗》（chinese-poetry 语料）"
+  },
+  "宣州谢朓楼饯别校书叔云": {
+    "alias": [
+      "宣州谢朓楼饯别校书叔云",
+      "宣州謝朓樓餞別校書叔雲"
+    ],
+    "titleZh": "宣州谢朓楼饯别校书叔云",
+    "titleEn": "Farewell at Xie Tiao's Tower",
+    "authorZh": "李白",
+    "authorEn": "Li Bai",
+    "year": 753,
+    "placeZh": "宣城",
+    "placeEn": "Xuancheng",
+    "genre": "shi",
+    "certainty": "probable",
+    "text": [
+      "弃我去者昨日之日不可留，乱我心者今日之日多烦忧。",
+      "长风万里送秋雁，对此可以酣高楼。",
+      "蓬莱文章建安骨，中间小谢又清发。",
+      "俱怀逸兴壮思飞，欲上青天览日月。",
+      "抽刀断水水更流，举杯销愁愁更愁。",
+      "人生在世不称意，明朝散发弄扁舟。"
+    ],
+    "meaning": "弃我去者昨日之日不可留，乱我心者今日之日多烦忧。长风万里送秋雁，对此可以酣高楼。末以「抽刀断水水更流，举杯消愁愁更愁」作结，归于散发弄舟。",
+    "notes": [
+      {
+        "term": "谢朓楼",
+        "explain": "南齐诗人谢朓任宣城太守时所建，又名北楼。"
+      },
+      {
+        "term": "蓬莱文章建安骨",
+        "explain": "赞李云文章有建安风骨。"
+      },
+      {
+        "term": "小谢",
+        "explain": "谢朓，与谢灵运（大谢）相对。"
+      }
+    ],
+    "background": "约天宝十二载（753）于宣城谢朓楼饯别族叔李云时作。",
+    "appreciation": {
+      "text": "起手两个长句连着「昨日」「今日」，是散文的句法，用来写时间不可留。中间忽然放开——长风、秋雁、高楼，情绪转扬；末四句又沉下去，「抽刀断水」「举杯消愁」两喻都是徒劳。全诗一起一落，最后落在「散发弄扁舟」的出走姿态上。",
+      "by": "本站自撰",
+      "license": "CC BY-SA 4.0"
+    },
+    "source": "《全唐诗》（chinese-poetry 语料）"
+  },
+  "秋浦歌": {
+    "alias": [
+      "秋浦歌",
+      "秋浦歌十七首"
+    ],
+    "titleZh": "秋浦歌（其十五）",
+    "titleEn": "Song of Qiupu (No.15)",
+    "authorZh": "李白",
+    "authorEn": "Li Bai",
+    "year": 754,
+    "placeZh": "秋浦",
+    "placeEn": "Qiupu",
+    "genre": "shi",
+    "certainty": "probable",
+    "text": [
+      "白发三千丈，缘愁似个长。",
+      "不知明镜里，何处得秋霜。"
+    ],
+    "meaning": "白发三千丈，只因愁有那样长；不知明镜里，这满头秋霜是从哪里来的。",
+    "notes": [
+      {
+        "term": "缘",
+        "explain": "因为。"
+      },
+      {
+        "term": "秋霜",
+        "explain": "喻白发。"
+      }
+    ],
+    "background": "天宝十三载（754）前后李白客游秋浦（今安徽池州）时作，原为十七首，此其十五。",
+    "appreciation": {
+      "text": "「白发三千丈」是极夸张，但下一句立刻给出理由——「缘愁似个长」，把夸张坐实成度量。末二句故作不知，问镜中秋霜从何而来，是明知故问：愁的来处他当然知道。",
+      "by": "本站自撰",
+      "license": "CC BY-SA 4.0"
+    },
+    "source": "《全唐诗》（chinese-poetry 语料）"
   }
 };

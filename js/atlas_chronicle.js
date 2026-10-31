@@ -50,14 +50,15 @@
   }
 
   function decorate(ctx) {
-    var list = document.getElementById('genealogy-timeline');
+    var S = window.ATLAS_SELECTORS || {};
+    var list = document.querySelector(S.timeline || '#genealogy-timeline');
     if (!list) return;
 
     // 先清掉上一轮插入的节点，保证幂等
     var stale = list.querySelectorAll('.cr-intro,.cr-link');
     for (var i = 0; i < stale.length; i++) stale[i].parentNode.removeChild(stale[i]);
 
-    var data = (window.ATLAS_JOURNEYS || {})[currentJourneyKey(ctx)];
+    var data = (window.ATLAS_JOURNEYS || {})[resolveJourneyKey(ctx)];
     if (!data) return;
 
     var stops = [];
@@ -102,6 +103,44 @@
     }
   }
 
+  /**
+   * 从 DOM 反推当前人物的行迹 key（不依赖 ctx.activePerson）。
+   * 顺序：列表项上的 data 属性 → 面板抬头的人名 → PERSON_PROFILES 查表。
+   */
+  function resolveJourneyKey(ctx) {
+    var S = window.ATLAS_SELECTORS || {};
+    var list = document.querySelector(S.timeline || '#genealogy-timeline');
+    if (list) {
+      var k = list.getAttribute('data-person-key');
+      if (k) return k;
+    }
+    // 快路径：上游把控制器实例挂在 window.atlasApp
+    try {
+      var app = ctx || window.atlasApp;
+      var ap = app && app.activePerson;
+      var profs = ap && Array.isArray(ap.profiles) ? ap.profiles : [];
+      for (var a = 0; a < profs.length; a++) {
+        if (profs[a] && profs[a].key) return String(profs[a].key);
+      }
+    } catch (e) { /* 忽略 */ }
+    // 次选：ctx 直传
+    var person = ctx && ctx.activePerson;
+    var profiles = person && Array.isArray(person.profiles) ? person.profiles : [];
+    for (var i = 0; i < profiles.length; i++) {
+      if (profiles[i] && profiles[i].key) return String(profiles[i].key);
+    }
+    // 退路：按面板抬头的人名去人物表里找
+    var titleEl = document.querySelector(S.panelTitle || '.person-name');
+    var zh = titleEl && titleEl.textContent ? titleEl.textContent.trim().split(/[（(\s]/)[0] : '';
+    if (zh) {
+      var all = (window.ATLAS_LORE_DATA && window.ATLAS_LORE_DATA.PERSON_PROFILES) || [];
+      for (var j = 0; j < all.length; j++) {
+        if (all[j].zh === zh && all[j].journeyKey) return all[j].journeyKey;
+      }
+    }
+    return '';
+  }
+
   function install(Ctrl) {
     if (window.__ATLAS_CHRONICLE__) return;
     if (!document.getElementById(STYLE_ID)) {
@@ -112,17 +151,54 @@
     }
     var proto = Ctrl.prototype;
     var orig = proto._renderPersonChronicleCard;
-    if (typeof orig !== 'function') return;
     window.__ATLAS_CHRONICLE__ = true;
-    proto._renderPersonChronicleCard = function () {
-      var result = orig.apply(this, arguments);
-      try {
-        decorate(this);
-      } catch (err) {
-        /* 读本是增强项，失败不影响主面板 */
+
+    // ── 快路径：包装渲染方法（上游若改名，此路失效但下面还有观察器兜底）──
+    if (typeof orig === 'function') {
+      proto._renderPersonChronicleCard = function () {
+        var result = orig.apply(this, arguments);
+        try {
+          decorate(this);
+        } catch (err) {
+          /* 读本是增强项，失败不影响主面板 */
+        }
+        return result;
+      };
+      if (window.atlasProbe) window.atlasProbe('chronicle.wrapRender', true);
+    } else {
+      if (window.atlasProbe) {
+        window.atlasProbe('chronicle.wrapRender', false, '上游无 _renderPersonChronicleCard，改用 DOM 观察');
       }
-      return result;
-    };
+    }
+
+    // ── 兜底路径：观察行迹列表的 DOM 变化 ──
+    // 即使上游改了方法名，只要列表还在渲染，读本就仍能挂上
+    var S = window.ATLAS_SELECTORS || {};
+    var host = document.querySelector(S.timelineBody || '#genealogy-body') ||
+      document.querySelector(S.timeline || '#genealogy-timeline');
+    if (host && typeof MutationObserver !== 'undefined') {
+      var lastKey = '';
+      var pending = null;
+      var observer = new MutationObserver(function () {
+        if (pending) return;
+        pending = setTimeout(function () {
+          pending = null;
+          var list = document.querySelector(S.timeline || '#genealogy-timeline');
+          if (!list || !list.children.length) return;
+          var key = resolveJourneyKey(null);
+          if (!key) return;
+          // 只在人物切换或列表重建时重挂，避免每次微变更都重排
+          var stamp = key + ':' + list.children.length;
+          if (stamp === lastKey) return;
+          lastKey = stamp;
+          try { decorate(null); } catch (e) { /* 同上 */ }
+        }, 60);
+      });
+      observer.observe(host, { childList: true, subtree: true });
+      if (window.atlasProbe) window.atlasProbe('chronicle.observer', true);
+    } else if (window.atlasProbe) {
+      window.atlasProbe('chronicle.observer', false, '未找到行迹列表容器');
+    }
   }
 
   if (typeof window === 'undefined') return;

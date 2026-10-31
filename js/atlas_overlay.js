@@ -580,3 +580,72 @@
   var ex = D.HISTORICAL_JOURNEYS.findIndex(function (j) { return j.key === JOURNEY.key; });
   if (ex >= 0) D.HISTORICAL_JOURNEYS[ex] = JOURNEY; else D.HISTORICAL_JOURNEYS.push(JOURNEY);
 })();
+
+/**
+ * ── 追加站点机制 ────────────────────────────────────
+ * 上游已有的行迹（如李白 12 站）不能改数据文件，也不该整条复制过来。
+ * 这里提供 addStops()：按「年 + 地名」去重后并入，再按年份排序。
+ * 这样只补缺口，不复制上游。
+ */
+(function () {
+  'use strict';
+  var D = window.ATLAS_LORE_DATA;
+  if (!D || !D.HISTORICAL_JOURNEYS) return;
+
+  function addStops(key, extras) {
+    var j = D.HISTORICAL_JOURNEYS.find(function (x) { return x.key === key; });
+    if (!j) return false;
+    var seen = {};
+    (j.stops || []).forEach(function (s) { seen[s.year + '|' + s.ancientZh] = 1; });
+    var merged = (j.stops || []).slice();
+    extras.forEach(function (s) {
+      if (!seen[s.year + '|' + s.ancientZh]) { merged.push(s); seen[s.year + '|' + s.ancientZh] = 1; }
+    });
+    merged.sort(function (a, b) { return (a.year || 0) - (b.year || 0); });
+    j.stops = merged;
+    return true;
+  }
+
+  // ── 李白：补 753–756 的宣城、秋浦、泾县、庐山 ──
+  var SRC = '李白年谱；' + '诗题';
+  addStops('libai', [
+    {
+      year: 753, eraZh: '天宝十二载', coord: [118.76, 30.95], labelPos: 'top',
+      ancientZh: '宣城', modernZh: '安徽宣城', ancientEn: 'Xuancheng', modernEn: 'Xuancheng, Anhui',
+      titleZh: '宣城登楼', titleEn: 'At Xuancheng',
+      descZh: '游宣城，登谢朓楼、上敬亭山。李白一生服膺谢朓，此地最称其心。',
+      descEn: 'He travelled to Xuancheng, climbing Xie Tiao\'s tower and Jingting Mountain.',
+      quoteZh: '李白《独坐敬亭山》：“相看两不厌，只有敬亭山。”',
+      quoteEn: 'Li Bai: "We look at each other and never tire — only Jingting Mountain and I."',
+      persons: ['libai'], source: SRC + '《独坐敬亭山》',
+    },
+    {
+      year: 754, eraZh: '天宝十三载', coord: [117.49, 30.66], labelPos: 'bottom',
+      ancientZh: '秋浦', modernZh: '安徽池州', ancientEn: 'Qiupu', modernEn: 'Chizhou, Anhui',
+      titleZh: '秋浦歌', titleEn: 'Songs of Qiupu',
+      descZh: '往来秋浦，作《秋浦歌》十七首。「白发三千丈」即出于此。',
+      descEn: 'He travelled in Qiupu and wrote seventeen songs, including "white hair three thousand feet long".',
+      quoteZh: '李白《秋浦歌》：“白发三千丈，缘愁似个长。”',
+      quoteEn: 'Li Bai: "White hair three thousand feet long — my sorrow is just as long."',
+      persons: ['libai'], source: SRC + '《秋浦歌十七首》',
+    },
+    {
+      year: 755, eraZh: '天宝十四载', coord: [118.42, 30.69], labelPos: 'top',
+      ancientZh: '泾县', modernZh: '安徽泾县', ancientEn: 'Jingxian', modernEn: 'Jing County, Anhui',
+      titleZh: '桃花潭别汪伦', titleEn: 'Farewell to Wang Lun',
+      descZh: '游泾县桃花潭，村人汪伦以酒相送，作《赠汪伦》。此后一年安史乱起。',
+      descEn: 'At Peach Blossom Pool he wrote "To Wang Lun"; the next year the rebellion broke out.',
+      quoteZh: '李白《赠汪伦》：“桃花潭水深千尺，不及汪伦送我情。”',
+      quoteEn: 'Li Bai: "The Peach Blossom Pool is a thousand feet deep, yet not so deep as Wang Lun\'s farewell."',
+      persons: ['libai'], source: SRC + '《赠汪伦》',
+    },
+    {
+      year: 756, eraZh: '至德元年', coord: [115.98, 29.55], labelPos: 'bottom',
+      ancientZh: '庐山', modernZh: '江西九江', ancientEn: 'Mount Lu', modernEn: 'Jiujiang, Jiangxi',
+      titleZh: '屏风叠隐居', titleEn: 'Hermitage at Mount Lu',
+      descZh: '安史乱起，李白携妻隐于庐山屏风叠；同年冬永王李璘遣使征召，遂入幕府。',
+      descEn: 'When the rebellion broke out he withdrew to Mount Lu; that winter Prince Yong summoned him to his staff.',
+      quoteZh: '', quoteEn: '', persons: ['libai'], source: '李白年谱；《旧唐书》卷一九〇《李白传》',
+    },
+  ]);
+})();

@@ -188,11 +188,30 @@
     });
   }
 
+  var QUOTE_SEL = '.person-ev-quote';
+
   function scan(root) {
     if (!root || root.nodeType !== 1) return;
     if (root.classList && root.classList.contains('person-ev-quote')) decorateQuote(root);
-    var list = root.querySelectorAll ? root.querySelectorAll('.person-ev-quote') : [];
+    var list = root.querySelectorAll ? root.querySelectorAll(QUOTE_SEL) : [];
     for (var i = 0; i < list.length; i++) decorateQuote(list[i]);
+
+    // ── 兜底：上游若改了类名，按文本特征认摘句 ──
+    // 判据：叶子节点、文本含《书名》且含「…」，且长度合理
+    if (!list.length) {
+      var candidates = root.querySelectorAll ? root.querySelectorAll('span,div,p') : [];
+      for (var j = 0; j < candidates.length; j++) {
+        var el = candidates[j];
+        if (el.children && el.children.length) continue;
+        if (el.getAttribute && el.getAttribute('data-atlas-quote')) continue;
+        var t = (el.textContent || '').trim();
+        if (t.length < 8 || t.length > 120) continue;
+        if (!/《[^》]+》/.test(t)) continue;
+        if (!/「|“/.test(t)) continue;
+        el.setAttribute('data-atlas-quote', '1');
+        decorateQuote(el);
+      }
+    }
   }
 
   function install(Ctrl) {
@@ -227,6 +246,14 @@
         }
         return origSelectResult.apply(this, arguments);
       };
+    }
+
+    // 能力探测：上游若改名，健康检查会标出来（检索降级，但摘句成链不受影响）
+    if (window.atlasProbe) {
+      window.atlasProbe('reader.searchIndex', typeof origEnsureIndex === 'function',
+        '上游无 _ensureSearchIndex，作品检索将不可用');
+      window.atlasProbe('reader.selectResult', typeof origSelectResult === 'function',
+        '上游无 _selectSearchResult，点选作品将回落到默认行为');
     }
 
     if (!document.getElementById(STYLE_ID)) {
@@ -383,6 +410,12 @@
       for (var i = 0; i < records.length; i++) {
         var added = records[i].addedNodes;
         for (var j = 0; j < added.length; j++) scan(added[j]);
+      }
+      // 兜底：若本片区域内一个标准类名的摘句都没找到，扫一遍整个面板
+      // （上游若改了类名，只能靠文本特征认）
+      if (!document.querySelector(QUOTE_SEL)) {
+        var panel = document.getElementById('genealogy-body');
+        if (panel) scan(panel);
       }
     });
     observer.observe(document.body, { childList: true, subtree: true });

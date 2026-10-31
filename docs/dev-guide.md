@@ -198,3 +198,37 @@ node scripts/sync_version.js --check  # 只校验
 | 缓存戳 | `node scripts/sync_version.js --check` |
 
 自动化截图与交互验证脚本不在本仓库（它们是开发机上的临时工具），如需复现请手动点开确认。
+
+## 9. 契约与降级（对上游的依赖清单）
+
+上游 `app.js` 会变。我们把「依赖上游哪些东西」集中在 `js/atlas_contract.js`：
+
+```js
+window.ATLAS_SELECTORS = { quote, timeline, timelineBody, panelTitle, subtitle };
+window.__ATLAS_HEALTH  = { hooks: {...}, warnings: [...] };
+window.atlasProbe(name, ok, note)   // 每个依赖点登记一行
+```
+
+页面加载后 `<html data-atlas-health="ok">`；任何探测失败会写进属性与 `console`。
+
+### 每个依赖点都有退路
+
+| 依赖 | 主路径 | 退路 | 退路是否验证 |
+|---|---|---|---|
+| 人物面板渲染 | 包装 `_renderPersonChronicleCard` | **MutationObserver 观察 `#genealogy-body`** | ✅ 实测：冲掉 `.cr-*` 后自动恢复 |
+| 当前人物 key | `window.atlasApp.activePerson` | 面板抬头 `#genealogy-heading` 的文本 → 查 `PERSON_PROFILES` | ✅ |
+| 摘句类名 | `.person-ev-quote` | **按文本特征认**（含《书名》+「」+ 长度 8–120 的叶子节点） | ✅ 实测：改类名后 5 条链全部恢复 |
+| 作品检索 | 包装 `_ensureSearchIndex` | 无（降级：作品不入搜索，摘句成链不受影响） | ⚠️ 仅探测 |
+| 行迹补录 | overlay 在 `app.js` 之前注入 | 无 | ⚠️ 仅探测 |
+
+### 幂等标记的坑
+
+`decorateQuote` 用 `data-poetry-link="1"` 防重复挂载。测试退路时必须**同时清掉类名、`data-poetry-link`、`data-atlas-quote`**，否则看起来"没恢复"，其实是幂等挡住了。
+
+### 已知未加固项
+
+| 项 | 影响 | 建议 |
+|---|---|---|
+| 外部字体阻塞 `load` | app 在 `load` 里初始化，字体超时会**整个面板空白** | 自托管字体（对应 `D-2`） |
+| 全局名 `ATLAS_LORE_DATA` / `ATLAS_WORKS` / `ATLAS_JOURNEYS` | 上游若改全局名，全挂 | 概率极低，暂不做 |
+| `?v=` 缓存戳 | 忘记跑 `sync_version.js` 会拿到旧脚本 | 提交前跑 `--check` |
