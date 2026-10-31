@@ -318,8 +318,8 @@
     <header id="nav-bar">
       <div class="brand-group">
         <h1 id="site-heading">
-          <a class="home-link" id="act-home" href="./" title="回到首页"><span class="seal-mark" id="txt-seal">江山时序</span></a>
-          <span class="subtitle-mark" id="txt-subtitle">中国历史地图 · 战国 → 今</span>
+          <a class="home-link" id="act-home" href="./" title="江山时序 · 中国历史地图｜笺注层：江山行止（本站自撰）"><span class="seal-mark" id="txt-seal">江山时序</span></a>
+          <span class="subtitle-mark" id="txt-subtitle">中国历史地图 · 行迹读本</span>
         </h1>
       </div>
       <div class="control-strip" role="toolbar" aria-label="地图图层与交互模式">
@@ -723,12 +723,15 @@
   <script src="js/map_data.js?v=1a9541c0"></script>
   <script src="js/lore_data.js?v=e2a51838"></script>
   <script src="js/zh_hant.js?v=a5ab1b49"></script>
+  <!-- 江山行止 · 行迹补录：必须在 app.js 之前载入，人物切换器与搜索索引才会包含新人 -->
+  <script src="js/atlas_overlay.js?v=9eec4ca6"></script>
   <script id="atlas-app-script" src="js/app.js?v=fcc36640" data-v-snapshots="e64b5f8b" data-v-i18n="4bd76254"></script>
   <script src="js/atlas_quiz.js?v=3af7dbd2"></script>
 <!-- 江山行止 · 笺注层：作品数据 + 摘句成链；行迹读本：导语与站间承接 -->
-<script src="js/atlas_works.js?v=8e4fd954"></script>
+<script src="js/atlas_works.js?v=7e0be16f"></script>
 <script src="js/atlas_reader.js?v=bdd3446c"></script>
-<script src="js/atlas_journeys.js?v=256f3cff"></script>
+<script src="js/atlas_journeys.js?v=19801c56"></script>
 <script src="js/atlas_chronicle.js?v=3a4c4217"></script>
+<script src="js/atlas_brand.js?v=2ea15297"></script>
 </body>
 </html>

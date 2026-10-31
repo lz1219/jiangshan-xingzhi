@@ -6,6 +6,7 @@
 | ID | 类型 | 标题 | 阶段 | 状态 | 验收 | 关联 |
 |---|---|---|---|---|---|---|
 | R-7 | 需求 | 赏析补齐 | P2 | 完成 | 31 条补上赏析，50/50 有 `appreciation`；其中 9 条含推测且带 `basis` | js/atlas_works.js |
+| R-9 | 需求 | 行迹补录（overlay）| P1 | 完成 | 上游没有的人物经 `atlas_overlay.js` 推入 `PERSON_PROFILES` 与 `HISTORICAL_JOURNEYS`，不改上游数据；蒋捷 5 站 / 2 首词可点；生产构建里人物切换器与搜索可见 | js/atlas_overlay.js |
 | R-8 | 需求 | 行迹读本：导语 + 站间承接 | P1 | 完成 | 7 条行迹各有导语，承接语 22 条，**每条叙述都带 source**；`_validate_data.cjs` 缺 source 即报错 | js/atlas_journeys.js |
 | R-4 | 需求 | 新增一种非文献文体 | P2 | 待办 | 通过 ATLAS_READER_RENDERERS 注册新渲染器（人物志/碑刻/书画题跋之一），且 js/app.js 零改动 | js/atlas_reader.js |
 | R-6 | 需求 | 作品正文检索 | P3 | 待办 | 输入正文片段（如「莫听穿林打叶声」）能命中该作品，且不淹没地名查询 | docs/specs/0001-jiangshan-xingzhi-layer |

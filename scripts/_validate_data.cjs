@@ -23,6 +23,8 @@ global.window = {};
 require(path.join(ROOT, 'js', 'atlas_works.js'));
 require(path.join(ROOT, 'js', 'atlas_journeys.js'));
 require(path.join(ROOT, 'js', 'lore_data.js'));
+// 行迹补录（我们把上游没有的人物推入 HISTORICAL_JOURNEYS / PERSON_PROFILES）
+require(path.join(ROOT, 'js', 'atlas_overlay.js'));
 
 const WORKS = window.ATLAS_WORKS || {};
 const JOURNEYS = window.ATLAS_JOURNEYS || {};
