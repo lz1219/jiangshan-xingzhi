@@ -38,6 +38,7 @@ node scripts/_gap_report.cjs     # 作品覆盖率
 | `node scripts/_serve.cjs` | 本地静态服务（5199） | 改任何 UI / 交互 |
 | `node scripts/check-docs.mjs` | 文档体检：看板 / 状态 / 文档地图 / 僵尸引用 | **每次提交前** |
 | `node scripts/_gap_report.cjs` | 引文作品覆盖率 | 改 `atlas_works.js` 后 |
+| `node scripts/_validate_data.cjs` | 数据校验：出处 / 枚举 / 推测依据 / 读本站序号 | 改 `atlas_works.js` 或 `atlas_journeys.js` 后 |
 | `node scripts/sync_version.js` | 重算 `?v=` 缓存戳 | 改 `js/` 下任何文件后 |
 | `node scripts/_merge_works.cjs` | 数据文件结构归一（合并/重排字段） | 数据被脚本批量改写后 |
 
@@ -90,13 +91,17 @@ ALLOW_PUSH=1 git push
 
 > 换机器或重新克隆后，先跑一次 `node scripts/_install_hooks.cjs` 把闸门装回去。
 
-## 3. 五条不可妥协
+## 3. 六条不可妥协
 
 1. **只加不改。** 笺注层通过 `window.__ATLAS_MIXINS` 挂载；对 `js/app.js` 的改动只允许极小（目前仅两处：搜索标签登记、空朝代回退）。改主逻辑前先问：能不能用 mixin 包？
 2. **原文逐字取自基线。** 诗词与史传正文一律从 `js/lore_data.js` 的 `quoteZh` 提取，**不手抄**；我们只写 `meaning` / `notes` / `background` / `appreciation`。
 3. **赏析只收自撰，推测必须标注。** `appreciation.by` 恒为「本站自撰」；结合史事的推演放进 `inference` 并给 `basis`，界面用「推测」朱砂虚线呈现。不引用点校本。
 4. **文与史传标「摘录」。** 我们给的是被引用的段落，不是全本，界面上必须让读者知道。
 5. **不改上游数据与地图形制。** `lore_data.js` / `map_data.js` / `atlas_snapshots.js` / `geojson/` 一律不动。
+6. **一切叙述必须有据。** 导语、站间承接语、大意、赏析、推测的正文，**每一条都要能指到 source**（史料或原文），并尽量写出卷次。
+   - 不写史料未载的**年龄、时长、因果、评价**——推算出来的东西不写。
+   - 拿不准就改成不改写：宁可只陈述年份与地名。
+   - `_validate_data.cjs` 会把「缺 source」判为错误，不是提示。
 
 ## 4. 改动类型 → 必做动作
 
@@ -139,6 +144,8 @@ ALLOW_PUSH=1 git push
 | 路径 | 职责 |
 |---|---|
 | `js/atlas_works.js` | **作品数据层**（50 条）：正文、大意、注释、背景、赏析、出处 |
+| `js/atlas_journeys.js` | **行迹读本数据**：7 段导语 + 22 条站间承接语，每条带 source |
+| `js/atlas_chronicle.js` | 行迹读本渲染：包装 `_renderPersonChronicleCard`，插入导语与承接语 |
 | `js/atlas_reader.js` | 笺注交互：摘句成链、浮层阅读器、搜索注入、渲染器注册表 |
 | `js/app.js` | 上游主控（15k 行）：投影、时间轴、行迹、`__ATLAS_MIXINS` 扩展点 |
 | `js/lore_data.js` | 上游数据：7 条行迹 / 74 站的引文与叙述 |

@@ -30,6 +30,8 @@ const STATIC_TAG_ASSETS = [
   'js/lore_data.js',
   'js/zh_hant.js',
   // 江山行止 · 诗歌层（改造新增）
+  'js/atlas_journeys.js',
+  'js/atlas_chronicle.js',
   'js/atlas_works.js',
   'js/atlas_reader.js',
   ...CONTROLLER_SCRIPTS,
