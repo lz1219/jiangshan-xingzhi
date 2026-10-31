@@ -1,5 +1,13 @@
 # Chronicles of the Realm · 江山时序
 
+> **⚠️ 本仓库是 [江山时序](https://github.com/DeanChensj/jiangshan-map) 的改造分支（fork，GPL-3.0），非原创项目。**
+> 上游作者：**DeanChensj**；本分支基线提交 `be43092`。
+>
+> **改造重点 · 诗歌层**：人物行迹里的每一句摘句变成可点的链接，点开即为完整的作品阅读——
+> 正文、**大意**、**注释**、写作背景、**赏析（含「推测」与依据）**、系年可信度、出处；
+> 支持诗词赋史四种文体，搜索框可直接检索作品。
+> 完整修改清单与版权声明见 **[NOTICE.md](NOTICE.md)**。
+
 <p align="left">
   <strong>English</strong> · <a href="README_ZH.md">简体中文 (Chinese)</a>
 </p>

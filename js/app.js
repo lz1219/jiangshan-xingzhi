@@ -12034,6 +12034,8 @@
           prefecture: this.locale === 'en' ? 'Prefecture' : '州府',
           region: this.locale === 'en' ? 'Circuit/Prov' : '大区',
           event: this.locale === 'en' ? 'Event' : '史事',
+          // 江山诗卷 · 作品检索：由 atlas_poetry.js 注入 kind === 'work' 的条目
+          work: this.locale === 'en' ? 'Text' : '作品',
         };
         if (!q) {
           const index = this._ensureSearchIndex();
@@ -12187,7 +12189,9 @@
               ? this.locale === 'en'
                 ? 'Warring–5 Dyn · Relic'
                 : this._zh('战国—五代 · 国器')
-              : `${this.dynastyBadge(item.dynasty)} · ${this._zh(kindLabel[item.kind] || '')}`;
+              : item.dynasty
+                ? `${this.dynastyBadge(item.dynasty)} · ${this._zh(kindLabel[item.kind] || '')}`
+                : this._zh(kindLabel[item.kind] || '');
           const bucketAttr = item.bucket ? ` data-bucket="${escHtml(item.bucket)}"` : '';
           li.innerHTML =
             `<div><span class="sr-main">${escHtml(mainText)}</span>${subText ? `<span class="sr-sub">${escHtml(subText)}</span>` : ''}</div>` +

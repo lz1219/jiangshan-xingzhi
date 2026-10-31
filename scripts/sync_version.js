@@ -29,6 +29,9 @@ const STATIC_TAG_ASSETS = [
   'js/map_data.js',
   'js/lore_data.js',
   'js/zh_hant.js',
+  // 江山诗卷 · 诗歌层（改造新增）
+  'js/atlas_poems.js',
+  'js/atlas_poetry.js',
   ...CONTROLLER_SCRIPTS,
 ];
 
