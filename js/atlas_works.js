@@ -230,7 +230,7 @@ window.ATLAS_WORKS = {
       "by": "本站自撰",
       "license": "CC BY-SA 4.0"
     },
-    "source": "《王阳明全集·静心录》",
+    "source": "旧引《王阳明全集·静心录》（来源名及原典卷篇待核）",
     "level": "popular",
     "excerpt": true,
     "apparatus": [],
@@ -397,7 +397,7 @@ window.ATLAS_WORKS = {
       "by": "本站自撰",
       "license": "CC BY-SA 4.0"
     },
-    "source": "《传习录》上",
+    "source": "旧引《传习录》上（卷次待核；所取SBCK转录候选见原卷三）",
     "level": "popular",
     "excerpt": true,
     "apparatus": [],
@@ -1048,7 +1048,7 @@ window.ATLAS_WORKS = {
       "by": "本站自撰",
       "license": "CC BY-SA 4.0"
     },
-    "source": "《王阳明全集·知行录》",
+    "source": "旧引《王阳明全集·知行录》（来源名及原典卷篇待核）",
     "level": "popular",
     "excerpt": true,
     "apparatus": [],
@@ -1310,7 +1310,7 @@ window.ATLAS_WORKS = {
     "titleEn": "",
     "authorZh": "王阳明",
     "authorEn": "Wang Yangming",
-    "year": 1521,
+    "year": null,
     "placeZh": "绍兴",
     "placeEn": "",
     "genre": "wen",
@@ -1347,7 +1347,7 @@ window.ATLAS_WORKS = {
       {
         "claim": "1521",
         "stance": "pending",
-        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。 当前默认作年撤出无据数字；旧占位1521与背景所载嘉靖六年不一致；原录另见丁亥九月论学线索，口授与录文时间须另核，不自动改采另一公历年。",
         "evidence": [
           {
             "quote": "1521",
@@ -1911,7 +1911,7 @@ window.ATLAS_WORKS = {
       "by": "本站自撰",
       "license": "CC BY-SA 4.0"
     },
-    "source": "《王阳明全集·顺生录》",
+    "source": "旧引《王阳明全集·顺生录》（来源名及原典卷篇待核）",
     "level": "popular",
     "excerpt": true,
     "apparatus": [],
@@ -2812,7 +2812,7 @@ window.ATLAS_WORKS = {
       "by": "本站自撰",
       "license": "CC BY-SA 4.0"
     },
-    "source": "《王阳明全集·静心录》",
+    "source": "旧引《王阳明全集·静心录》（来源名及原典卷篇待核）",
     "level": "popular",
     "excerpt": false,
     "apparatus": [],
