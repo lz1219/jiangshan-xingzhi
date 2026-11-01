@@ -2,7 +2,7 @@
  * 人物与行迹（生成物）
  * ⚠ 本文件由 poem-data/scripts/emit-atlas.mjs 生成，请勿手动编辑。
  *   内容源头：poem-data/data/*.json
- * 人物 17 位；新建行迹 10 条；补站 1 组 */
+ * 人物 18 位；新建行迹 11 条；补站 1 组 */
 
 (function () {
   'use strict';
@@ -424,6 +424,27 @@
       "唐三藏",
       "陈祎",
       "三藏法师"
+    ]
+  });
+
+  pushPerson({
+    "key": "xueneng",
+    "zh": "薛能",
+    "en": "Xue Neng",
+    "courtesyZh": "字太拙",
+    "courtesyEn": "",
+    "dynastyKey": "tang",
+    "span": [
+      0,
+      880
+    ],
+    "journeyKey": "xueneng",
+    "aliases": [
+      "太拙"
+    ],
+    "tokens": [
+      "薛能",
+      "太拙"
     ]
   });
 
@@ -2650,6 +2671,204 @@
           "weiyingwu"
         ],
         "source": "CBDB 32822（州刺史，江州／潯陽，785—787）"
+      }
+    ]
+  });
+
+  pushJourney({
+    "key": "xueneng",
+    "dynastyKey": "tang",
+    "color": "#7a5c3e",
+    "shortZh": "薛能：从盩厔到许州",
+    "shortEn": "",
+    "titleZh": "薛能：从盩厔到许州",
+    "titleEn": "Xue Neng: From Zhouzhi to Xuzhou",
+    "spanZh": "? — 880年",
+    "spanEn": "",
+    "stops": [
+      {
+        "year": 854,
+        "eraZh": "大中八年",
+        "coord": [
+          108.22,
+          34.16
+        ],
+        "labelPos": "top",
+        "ancientZh": "盩厔",
+        "modernZh": "陕西周至",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "盩厔县尉",
+        "titleEn": "",
+        "descZh": "初仕为盩厔县尉，在京畿。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "xueneng"
+        ],
+        "source": "CBDB 95071（縣尉，盩厔，854）"
+      },
+      {
+        "year": 868,
+        "eraZh": "咸通九年",
+        "coord": [
+          103.77,
+          29.55
+        ],
+        "labelPos": "top",
+        "ancientZh": "嘉州",
+        "modernZh": "四川乐山",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "嘉州刺史",
+        "titleEn": "",
+        "descZh": "出为嘉州刺史，治所在犍为。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "xueneng"
+        ],
+        "source": "CBDB 95071（州刺史，犍為／嘉州，868）"
+      },
+      {
+        "year": 868,
+        "eraZh": "咸通九年",
+        "coord": [
+          115.99,
+          29.71
+        ],
+        "labelPos": "top",
+        "ancientZh": "江州",
+        "modernZh": "江西九江",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "江州刺史",
+        "titleEn": "",
+        "descZh": "同年转江州刺史，治所在浔阳。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "xueneng"
+        ],
+        "source": "CBDB 95071（州刺史，潯陽／江州，868）"
+      },
+      {
+        "year": 869,
+        "eraZh": "咸通十年",
+        "coord": [
+          109.9393,
+          34.7972
+        ],
+        "labelPos": "top",
+        "ancientZh": "同州",
+        "modernZh": "陕西大荔",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "同州刺史",
+        "titleEn": "",
+        "descZh": "转同州刺史，治所在冯翊。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "xueneng"
+        ],
+        "source": "CBDB 95071（州刺史，馮翊／同州，869）"
+      },
+      {
+        "year": 870,
+        "eraZh": "咸通十一年",
+        "coord": [
+          108.941,
+          34.341
+        ],
+        "labelPos": "top",
+        "ancientZh": "京兆府",
+        "modernZh": "陕西西安",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "京兆府尹",
+        "titleEn": "",
+        "descZh": "入为京兆府尹，治京畿。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "xueneng"
+        ],
+        "source": "CBDB 95071（府尹，京兆府，870）"
+      },
+      {
+        "year": 873,
+        "eraZh": "咸通十四年",
+        "coord": [
+          117.181,
+          34.261
+        ],
+        "labelPos": "top",
+        "ancientZh": "彭城",
+        "modernZh": "江苏徐州",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "徐州刺史、感化军节度使",
+        "titleEn": "",
+        "descZh": "出为徐州刺史，领感化军，在徐州数年。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "xueneng"
+        ],
+        "source": "CBDB 95071（州刺史，彭城，873—875、876—878）"
+      },
+      {
+        "year": 878,
+        "eraZh": "乾符五年",
+        "coord": [
+          113.85,
+          34.03
+        ],
+        "labelPos": "top",
+        "ancientZh": "许州",
+        "modernZh": "河南许昌",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "许州刺史、忠武军节度使",
+        "titleEn": "",
+        "descZh": "移镇许州，领忠武军。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "xueneng"
+        ],
+        "source": "CBDB 95071（州刺史，許州，878—880）"
+      },
+      {
+        "year": 880,
+        "eraZh": "广明元年",
+        "coord": [
+          113.85,
+          34.03
+        ],
+        "labelPos": "top",
+        "ancientZh": "许州",
+        "modernZh": "河南许昌",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "死于许州",
+        "titleEn": "",
+        "descZh": "广明元年，许州军乱，薛能遇害。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "xueneng"
+        ],
+        "source": "CBDB 95071（c_deathyear=880）；死事据两《唐书》本传"
       }
     ]
   });
