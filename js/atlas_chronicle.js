@@ -147,6 +147,60 @@
       }
     }
   }
+  // 非任所站点（居住/行旅）在时间轴上加一个小标记，避免读者误当作官职
+  var KIND_LABEL = { residence: "居住", travel: "行旅", life: "生卒" };
+  function markStopKinds(jkey) {
+    try {
+      var ro = window.ATLAS_JOURNEYS && window.ATLAS_JOURNEYS[jkey];
+      var kinds = ro && ro.stopKinds;
+      if (!kinds) return;
+      var rows = document.querySelectorAll("#genealogy-timeline .person-ev-row");
+      for (var name in kinds) {
+        var meta = kinds[name];
+        var kind = typeof meta === "string" ? meta : (meta && meta.kind);
+        var era = meta && meta.era;
+        if (!kind || kind === "office") continue;
+        var label = KIND_LABEL[kind];
+        if (!label) continue;
+        var clean = String(name).replace(/[（）()]/g, "");
+        for (var r = 0; r < rows.length; r++) {
+          var row = rows[r];
+          if (row.getAttribute("data-kind-marked")) continue;
+          if (row.textContent.indexOf(clean) < 0) continue;
+          // 不系年的站点被上游渲染成「前0年」，改成年号
+          if (era && /前0年/.test(row.textContent)) {
+            // 上游把不系年的站当成 0 年，连带推出「西汉」
+            row.innerHTML = row.innerHTML.replace(/前0年[^<]*/g, era);
+            // 年份位上方的朝代小字清空（DOM 是 .t-era > .t-sub）
+            var sub = row.querySelector(".t-era .t-sub");
+            if (sub) sub.textContent = "";
+          }
+          if (row.textContent.indexOf(label) < 0) {
+            var tag = document.createElement("span");
+            tag.className = "cr-kind";
+            tag.textContent = label;
+            (row.querySelector(".person-ev-title, .person-ev-name") || row).appendChild(tag);
+          }
+          row.setAttribute("data-kind-marked", "1");
+          break;
+        }
+      }
+    } catch (e) { /* 忽略 */ }
+  }
+
+  if (typeof window !== "undefined") {
+    window.__atlasMarkKinds = function () {
+      try {
+        var app = window.atlasApp || {};
+        var ap = app.activePerson || {};
+        var profs = Array.isArray(ap.profiles) ? ap.profiles : [];
+        for (var i = 0; i < profs.length; i++) {
+          var k = (profs[i] && (profs[i].journeyKey || profs[i].key)) || null;
+          if (k) return markStopKinds(String(k));
+        }
+      } catch (e) { /* 忽略 */ }
+    };
+  }
   function resolveJourneyKey(ctx) {
     var S = window.ATLAS_SELECTORS || {};
     var list = document.querySelector(S.timeline || '#genealogy-timeline');
@@ -256,9 +310,17 @@
   var timer = setInterval(function () {
     runs++;
     try { window.__atlasFixSpan && window.__atlasFixSpan(document); } catch (e) { /* 忽略 */ }
+    try { window.__atlasMarkKinds && window.__atlasMarkKinds(); } catch (e) {}
     if (runs > 40) clearInterval(timer);
   }, 250);
   document.addEventListener("click", function () {
     setTimeout(function () { try { window.__atlasFixSpan && window.__atlasFixSpan(document); } catch (e) {} }, 300);
   }, true);
+})();
+/* 「居住/行旅」小标记 */
+(function () {
+  var css = ".cr-kind{display:inline-block;margin-left:8px;padding:0 6px;border:1px solid #b08d57;color:#8a6d3b;border-radius:999px;font-size:10px;font-family:var(--mono);vertical-align:1px;}";
+  var st = document.createElement("style");
+  st.textContent = css;
+  document.head.appendChild(st);
 })();

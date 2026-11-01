@@ -2698,6 +2698,30 @@
         "source": "CBDB 32174（郎中 746—750；庫部員外郎 746；吏部郎中 752）"
       },
       {
+        "year": null,
+        "eraZh": "天宝年间",
+        "coord": [
+          109.32,
+          34.15
+        ],
+        "labelPos": "top",
+        "kind": "residence",
+        "ancientZh": "辋川",
+        "modernZh": "陕西蓝田",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "辋川别业，半官半隐",
+        "titleEn": "",
+        "descZh": "天宝年间得宋之问蓝田别墅，营为辋川别业；与裴迪浮舟往来，唱和各二十首，是为《辋川集》。年份不能确指，故不系年，只记其事。",
+        "descEn": "",
+        "quoteZh": "王维《鹿柴》：“空山不见人，但闻人语响。”",
+        "quoteEn": "",
+        "persons": [
+          "wangwei"
+        ],
+        "source": "《旧唐书》卷一九〇下《王维传》；《辋川集》"
+      },
+      {
         "year": 756,
         "eraZh": "至德元载",
         "coord": [
