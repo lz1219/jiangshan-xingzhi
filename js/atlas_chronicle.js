@@ -134,6 +134,19 @@
     } catch (e) { /* 忽略 */ }
     return resolveJourneyKey(ctx);
   }
+  if (typeof window !== "undefined") window.__atlasFixSpan = fixSpanText;
+  // 上游把「生年不明」的 null 当 0 渲染成「前0」；此处兜底改成「?」
+  function fixSpanText(root) {
+    if (!root) return;
+    var scope = root.querySelector ? root : document;
+    var nodes = scope.querySelectorAll("#genealogy-heading, .person-span, .act-person-head h2");
+    for (var i = 0; i < nodes.length; i++) {
+      var el = nodes[i];
+      if (el && el.textContent && el.textContent.indexOf("前0") >= 0) {
+        el.textContent = el.textContent.replace(/前0/g, "?");
+      }
+    }
+  }
   function resolveJourneyKey(ctx) {
     var S = window.ATLAS_SELECTORS || {};
     var list = document.querySelector(S.timeline || '#genealogy-timeline');
@@ -234,4 +247,18 @@
   var ready = window.HistoricalAtlasController;
   if (ready && typeof ready._extendPrototype === 'function') install(ready);
   else (window.__ATLAS_MIXINS = window.__ATLAS_MIXINS || []).push(install);
+})();
+
+/* 兜底：人物标题里的「前0」在渲染后修正（上游未区分 null 与 0） */
+(function () {
+  if (typeof window === "undefined") return;
+  var runs = 0;
+  var timer = setInterval(function () {
+    runs++;
+    try { window.__atlasFixSpan && window.__atlasFixSpan(document); } catch (e) { /* 忽略 */ }
+    if (runs > 40) clearInterval(timer);
+  }, 250);
+  document.addEventListener("click", function () {
+    setTimeout(function () { try { window.__atlasFixSpan && window.__atlasFixSpan(document); } catch (e) {} }, 300);
+  }, true);
 })();

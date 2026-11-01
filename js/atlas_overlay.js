@@ -435,7 +435,7 @@
     "courtesyEn": "",
     "dynastyKey": "tang",
     "span": [
-      0,
+      null,
       880
     ],
     "journeyKey": "xueneng",
