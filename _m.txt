@@ -1,5 +1,1 @@
-feat(atlas): 同步两条新行迹；修行迹 key 与人物 key 不同时的读本查找
-
-- atlas_overlay/atlas_journeys 由 poem-data 重新生成（行迹 12 条、读本 12 条）
-- chronicle：resolveJourneyKey 优先取 journeyKey（如杜牧 p21194→dumu 的旧场景）
-- chronicle：新增 resolvePersonKey，「在文献站查此人」改用人物 key 而非行迹 key
+chore(atlas): 同步韩愈、岑参行迹（行迹 14 条 / 读本 14 条）

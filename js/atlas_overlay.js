@@ -2,7 +2,7 @@
  * 人物与行迹（生成物）
  * ⚠ 本文件由 poem-data/scripts/emit-atlas.mjs 生成，请勿手动编辑。
  *   内容源头：poem-data/data/*.json
- * 人物 12 位；新建行迹 5 条；补站 1 组 */
+ * 人物 14 位；新建行迹 7 条；补站 1 组 */
 
 (function () {
   'use strict';
@@ -75,6 +75,27 @@
     ]
   });
 
+  pushPerson({
+    "key": "censhen",
+    "zh": "岑参",
+    "en": "Cen Shen",
+    "courtesyZh": "世称岑嘉州",
+    "courtesyEn": "",
+    "dynastyKey": "tang",
+    "span": [
+      715,
+      770
+    ],
+    "journeyKey": "censhen",
+    "aliases": [
+      "岑嘉州"
+    ],
+    "tokens": [
+      "岑参",
+      "岑嘉州"
+    ]
+  });
+
   mergePerson({
     "key": "dufu",
     "zh": "杜甫",
@@ -121,6 +142,33 @@
     "aliases": [],
     "tokens": [
       "杜牧"
+    ]
+  });
+
+  mergePerson({
+    "key": "hanyu",
+    "zh": "韩愈",
+    "en": "Han Yu",
+    "courtesyZh": "字退之 · 郡望昌黎 · 世称韩昌黎",
+    "courtesyEn": "",
+    "dynastyKey": "tang",
+    "span": [
+      768,
+      824
+    ],
+    "journeyKey": "hanyu",
+    "aliases": [
+      "退之",
+      "韩昌黎",
+      "韩文公",
+      "昌黎先生"
+    ],
+    "tokens": [
+      "韩愈",
+      "退之",
+      "韩昌黎",
+      "韩文公",
+      "昌黎先生"
     ]
   });
 
@@ -655,6 +703,181 @@
   });
 
   pushJourney({
+    "key": "censhen",
+    "dynastyKey": "tang",
+    "color": "#7a5c3e",
+    "shortZh": "岑参：从安西到嘉州",
+    "shortEn": "",
+    "titleZh": "岑参：从安西到嘉州",
+    "titleEn": "Cen Shen: From Anxi to Jiazhou",
+    "spanZh": "约715年 — 770年",
+    "spanEn": "",
+    "stops": [
+      {
+        "year": 749,
+        "eraZh": "天宝八载",
+        "coord": [
+          82.96,
+          41.72
+        ],
+        "labelPos": "top",
+        "ancientZh": "安西",
+        "modernZh": "新疆库车",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "安西节度掌书记",
+        "titleEn": "",
+        "descZh": "入安西节度使高仙芝幕府为掌书记，西出龟兹。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "censhen"
+        ],
+        "source": "CBDB 32583（節度使掌書記，安西軍節度，749）"
+      },
+      {
+        "year": 754,
+        "eraZh": "天宝十三载",
+        "coord": [
+          89.18,
+          44.01
+        ],
+        "labelPos": "top",
+        "ancientZh": "北庭",
+        "modernZh": "新疆吉木萨尔",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "安西北庭节度判官",
+        "titleEn": "",
+        "descZh": "再度出塞，入安西北庭节度使封常清幕为判官，驻庭州。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "censhen"
+        ],
+        "source": "CBDB 32583（節度使判官，安西北庭軍節度，754）"
+      },
+      {
+        "year": 756,
+        "eraZh": "至德元载",
+        "coord": [
+          108.941,
+          34.341
+        ],
+        "labelPos": "top",
+        "ancientZh": "长安",
+        "modernZh": "陕西西安",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "支度副使",
+        "titleEn": "",
+        "descZh": "东归后任支度副使，安史乱起，辗转于朝。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "censhen"
+        ],
+        "source": "CBDB 32583（支度副使，756）"
+      },
+      {
+        "year": 762,
+        "eraZh": "宝应元年",
+        "coord": [
+          108.941,
+          34.341
+        ],
+        "labelPos": "top",
+        "ancientZh": "长安",
+        "modernZh": "陕西西安",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "关西节度判官",
+        "titleEn": "",
+        "descZh": "任关西节度判官，后又为祠部员外郎。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "censhen"
+        ],
+        "source": "CBDB 32583（節度使判官，關西軍節度，762；祠部員外郎，763）"
+      },
+      {
+        "year": 765,
+        "eraZh": "永泰元年",
+        "coord": [
+          103.77,
+          29.55
+        ],
+        "labelPos": "top",
+        "ancientZh": "嘉州",
+        "modernZh": "四川乐山",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "嘉州刺史",
+        "titleEn": "",
+        "descZh": "出为嘉州刺史，世称「岑嘉州」。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "censhen"
+        ],
+        "source": "CBDB 32583（州刺史，嘉州／犍為，765—768）"
+      },
+      {
+        "year": 766,
+        "eraZh": "大历元年",
+        "coord": [
+          104.071,
+          30.571
+        ],
+        "labelPos": "top",
+        "ancientZh": "成都",
+        "modernZh": "四川成都",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "剑南西川节度判官",
+        "titleEn": "",
+        "descZh": "入剑南西川节度使杜鸿渐幕为判官，居成都。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "censhen"
+        ],
+        "source": "CBDB 32583（節度使判官，劍南西川軍節度，766）"
+      },
+      {
+        "year": 770,
+        "eraZh": "大历五年",
+        "coord": [
+          104.071,
+          30.571
+        ],
+        "labelPos": "top",
+        "ancientZh": "成都",
+        "modernZh": "四川成都",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "卒于成都",
+        "titleEn": "",
+        "descZh": "罢嘉州后客居成都，大历五年卒。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "censhen"
+        ],
+        "source": "CBDB 32583（c_deathyear=770）"
+      }
+    ]
+  });
+
+  pushJourney({
     "key": "dufu",
     "dynastyKey": "tang",
     "color": "#7a5c3e",
@@ -1184,6 +1407,296 @@
           "dumu"
         ],
         "source": "CBDB 21194（c_deathyear=853）"
+      }
+    ]
+  });
+
+  pushJourney({
+    "key": "hanyu",
+    "dynastyKey": "tang",
+    "color": "#7a5c3e",
+    "shortZh": "韩愈：从汴徐到潮袁",
+    "shortEn": "",
+    "titleZh": "韩愈：从汴徐到潮袁",
+    "titleEn": "Han Yu: From Bianzhou to Chaozhou",
+    "spanZh": "768年 — 824年",
+    "spanEn": "",
+    "stops": [
+      {
+        "year": 768,
+        "eraZh": "大历三年",
+        "coord": [
+          112.785,
+          34.9
+        ],
+        "labelPos": "top",
+        "ancientZh": "河阳",
+        "modernZh": "河南孟州",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "生于河阳",
+        "titleEn": "",
+        "descZh": "韩愈生于河阳（今河南孟州），郡望昌黎。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "hanyu"
+        ],
+        "source": "CBDB 3332（c_birthyear=768）"
+      },
+      {
+        "year": 796,
+        "eraZh": "贞元十二年",
+        "coord": [
+          114.311,
+          34.801
+        ],
+        "labelPos": "top",
+        "ancientZh": "汴州",
+        "modernZh": "河南开封",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "宣武军观察推官",
+        "titleEn": "",
+        "descZh": "入宣武军节度使董晋幕为观察推官，居汴州。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "hanyu"
+        ],
+        "source": "CBDB 3332（觀察推官，宣武軍節度，796）"
+      },
+      {
+        "year": 799,
+        "eraZh": "贞元十五年",
+        "coord": [
+          117.181,
+          34.261
+        ],
+        "labelPos": "top",
+        "ancientZh": "徐州",
+        "modernZh": "江苏徐州",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "武宁军节度判官",
+        "titleEn": "",
+        "descZh": "转武宁军节度判官，居徐州。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "hanyu"
+        ],
+        "source": "CBDB 3332（節度使判官，武寧軍節度，799）"
+      },
+      {
+        "year": 802,
+        "eraZh": "贞元十八年",
+        "coord": [
+          108.941,
+          34.341
+        ],
+        "labelPos": "top",
+        "ancientZh": "长安",
+        "modernZh": "陕西西安",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "四门博士",
+        "titleEn": "",
+        "descZh": "入朝为四门博士，次年转监察御史。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "hanyu"
+        ],
+        "source": "CBDB 3332（四門博士，802；監察御史，803）"
+      },
+      {
+        "year": 805,
+        "eraZh": "永贞元年",
+        "coord": [
+          112.2,
+          30.35
+        ],
+        "labelPos": "top",
+        "ancientZh": "江陵",
+        "modernZh": "湖北荆州",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "江陵府法曹参军",
+        "titleEn": "",
+        "descZh": "贬为江陵府法曹参军。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "hanyu"
+        ],
+        "source": "CBDB 3332（法曹參軍，江陵府，805）"
+      },
+      {
+        "year": 806,
+        "eraZh": "元和元年",
+        "coord": [
+          112.451,
+          34.621
+        ],
+        "labelPos": "top",
+        "ancientZh": "洛阳",
+        "modernZh": "河南洛阳",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "国子博士分司东都",
+        "titleEn": "",
+        "descZh": "为国子博士，分司东都洛阳。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "hanyu"
+        ],
+        "source": "CBDB 3332（國子博士分司東都，806）"
+      },
+      {
+        "year": 816,
+        "eraZh": "元和十一年",
+        "coord": [
+          108.941,
+          34.341
+        ],
+        "labelPos": "top",
+        "ancientZh": "长安",
+        "modernZh": "陕西西安",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "中书舍人",
+        "titleEn": "",
+        "descZh": "迁中书舍人，在朝掌制诰。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "hanyu"
+        ],
+        "source": "CBDB 3332（中書舍人，816）"
+      },
+      {
+        "year": 819,
+        "eraZh": "元和十四年",
+        "coord": [
+          116.623,
+          23.657
+        ],
+        "labelPos": "top",
+        "ancientZh": "潮州",
+        "modernZh": "广东潮州",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "贬潮州刺史",
+        "titleEn": "",
+        "descZh": "因上表谏迎佛骨，贬潮州刺史。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "hanyu"
+        ],
+        "source": "CBDB 3332（州刺史，潮州，819）"
+      },
+      {
+        "year": 820,
+        "eraZh": "元和十五年",
+        "coord": [
+          114.39,
+          27.8
+        ],
+        "labelPos": "top",
+        "ancientZh": "袁州",
+        "modernZh": "江西宜春",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "袁州刺史",
+        "titleEn": "",
+        "descZh": "量移袁州刺史，治所在宜春。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "hanyu"
+        ],
+        "source": "CBDB 3332（州刺史，宜春／袁州，819—820）"
+      },
+      {
+        "year": 821,
+        "eraZh": "长庆元年",
+        "coord": [
+          108.941,
+          34.341
+        ],
+        "labelPos": "top",
+        "ancientZh": "长安",
+        "modernZh": "陕西西安",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "兵部侍郎",
+        "titleEn": "",
+        "descZh": "还朝为兵部侍郎，后转吏部。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "hanyu"
+        ],
+        "source": "CBDB 3332（兵部侍郎，821、823）"
+      },
+      {
+        "year": 823,
+        "eraZh": "长庆三年",
+        "coord": [
+          108.9374,
+          34.3179
+        ],
+        "labelPos": "top",
+        "ancientZh": "京兆府",
+        "modernZh": "陕西西安",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "京兆尹",
+        "titleEn": "",
+        "descZh": "为京兆尹兼御史大夫，治京畿。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "hanyu"
+        ],
+        "source": "CBDB 3332（京兆府尹、御史大夫，823）"
+      },
+      {
+        "year": 824,
+        "eraZh": "长庆四年",
+        "coord": [
+          108.941,
+          34.341
+        ],
+        "labelPos": "top",
+        "ancientZh": "长安",
+        "modernZh": "陕西西安",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "卒于长安",
+        "titleEn": "",
+        "descZh": "长庆四年卒于长安，年五十七。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "hanyu"
+        ],
+        "source": "CBDB 3332（c_deathyear=824）"
       }
     ]
   });
