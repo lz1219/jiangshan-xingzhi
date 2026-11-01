@@ -1,0 +1,48 @@
+/* 笺注层跨站入口：纸色底、朱砂字，保持链接的轻量感。 */
+.atlas-action-link,
+.atlas-action-link:visited {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  max-width: 100%;
+  min-height: 34px;
+  padding: 6px 11px;
+  border: 1px solid rgba(140, 108, 69, .23);
+  border-radius: 3px;
+  background: rgba(255, 252, 244, .55);
+  color: #8f4434;
+  font-family: var(--serif-stack, "Songti SC", "SimSun", serif);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.65;
+  letter-spacing: .04em;
+  text-align: left;
+  text-decoration: none;
+  vertical-align: middle;
+  transition: border-color .16s ease, background-color .16s ease, color .16s ease;
+}
+.atlas-action-link:hover {
+  border-color: rgba(152, 61, 45, .48);
+  background: rgba(152, 61, 45, .055);
+  color: #a83824;
+  text-decoration: none;
+}
+.atlas-action-link:focus-visible {
+  outline: 2px solid #983d2d;
+  outline-offset: 3px;
+}
+.atlas-action-link__arrow {
+  flex: 0 0 auto;
+  color: #a87961;
+  font-family: system-ui, sans-serif;
+  font-size: 13px;
+  line-height: 1;
+  transition: transform .16s ease;
+}
+.atlas-action-link:hover .atlas-action-link__arrow { transform: translate(1px, -1px); }
+#genealogy-timeline > .cr-more { padding-top: 5px; padding-bottom: 10px; }
+.poetry-more { padding-top: 4px; }
+@media (prefers-reduced-motion: reduce) {
+  .atlas-action-link, .atlas-action-link__arrow { transition: none; }
+}

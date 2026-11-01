@@ -77,8 +77,8 @@
       var more = document.createElement('li');
       more.className = 'cr-link cr-more';
       more.innerHTML =
-        '<a href="' + window.ATLAS_LINKS.corpusPerson(resolvePersonKey(ctx)) +
-        '" target="_blank" rel="noopener">在文献站查此人 ↗</a>';
+        '<a class="atlas-action-link" href="' + window.ATLAS_LINKS.corpusPerson(resolvePersonKey(ctx)) +
+        '" target="_blank" rel="noopener" title="在新窗口打开"><span>在文献站查此人</span><span class="atlas-action-link__arrow" aria-hidden="true">↗</span></a>';
       list.appendChild(more); // 先渲染，随后插到导语/首站正确位置
     }
 

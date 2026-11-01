@@ -25,7 +25,7 @@
       var li = document.createElement('li');
       li.className = 'research-supplement';
       li.style.cssText = 'display:block;padding:14px;border-top:1px solid #cbbda5;font-size:12px;line-height:1.9';
-      li.innerHTML = '<a href="' + esc(url) + '" target="_blank" rel="noopener">考据笺 · 查看出处、版本与待核事项 ↗</a>' +
+      li.innerHTML = '<a class="atlas-action-link" href="' + esc(url) + '" target="_blank" rel="noopener" title="在新窗口打开"><span>考据笺 · 出处、版本与待核事项</span><span class="atlas-action-link__arrow" aria-hidden="true">↗</span></a>' +
         (profile.spanNote ? '<p>生卒异说：' + esc(profile.spanNote) + '</p>' : '') +
         (data.undatedStops || []).map(function (s) {
           return '<section class="research-undated"><h4>不系年 · ' + esc(s.place.ancient) + ' · ' + esc(s.titleZh) + '</h4><p>' + esc(s.descZh) + '</p><p>据 ' + esc(s.source) + '</p><small>年份未详，不纳入编年排序与地图跳年。</small></section>';

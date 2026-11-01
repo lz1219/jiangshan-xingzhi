@@ -42,8 +42,6 @@
     '.poetry-block h3{margin:0 0 7px;font-size:10.5px;font-weight:500;letter-spacing:.28em;color:#a83824;}',
     '.poetry-block p{margin:0;font-size:12.5px;line-height:2;color:#6a5c47;text-align:justify;}',
     '.poetry-more{margin:10px 0 0;text-align:right;}',
-    '.poetry-more a{font-size:11px;color:#a83824;text-decoration:none;border-bottom:1px dotted rgba(168,56,36,.5);}',
-    '.poetry-more a:hover{border-bottom-style:solid;}',
     '.poetry-by{margin-top:8px;font-size:11px;color:#9c8d74;text-align:right;}',
     '.poetry-lic{margin-left:8px;padding:1px 5px;border:1px solid rgba(43,36,26,.18);border-radius:2px;font-size:9.5px;}',
     '.poetry-block .poetry-inference{margin-top:10px;padding:9px 11px;border-left:2px dashed rgba(168,56,36,.55);',
@@ -390,9 +388,9 @@
         (poem.source ? '<p class="poetry-source">' + esc(poem.source) + '</p>' : '') +
         '<p class="poetry-source">' + esc(poem.traditionalDerived ? '繁体为反推，底本待核。' : '电子正文已有；版本与系年仍需核查。') + '</p>' +
         (window.ATLAS_LINKS && poem.__key
-          ? '<p class="poetry-more"><a href="' +
+          ? '<p class="poetry-more"><a class="atlas-action-link" href="' +
             window.ATLAS_LINKS.corpusWork(poem.__key) +
-            '" target="_blank" rel="noopener">在文献站读全篇 ↗</a></p>'
+            '" target="_blank" rel="noopener" title="在新窗口打开"><span>在文献站读全篇</span><span class="atlas-action-link__arrow" aria-hidden="true">↗</span></a></p>'
           : '') +
         '</div>';
       document.body.appendChild(wrap);
