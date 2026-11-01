@@ -9,4 +9,6 @@
 
 ## 续接
 
-欧阳修采集已结束：目录列正文153卷，另取根页，成功暂存109页（含根页）、45页受阻。原始响应和状态在仓库外 `.local/source-staging/ouyang-captures.json`，目录在同处 `ouyang-directory.json`；未并入本批封存输入。下批先核受阻原因并换入口，核原卷题和附录覆盖，再扩展通用维基采集/编目，不能把三国志专用卷目核验直接套用于欧阳修。
+欧阳修API原暂存109页、45受阻；XML入口已补齐153正文卷及根页，入库全量验证。原失败历史与XML实际修订并存。附录5卷仍未销项，全览6重引001–005未当附录；年谱标题边界和cq标记作待核候选。
+
+下一步王阳明：仓库外 `.local/source-staging/wangyangming-original-volumes.json` 已见原卷1–38标头候选，23文件多卷合并/重排，同卷可能跨文件；先核原卷与分部，不能凭文件索引重组原文。`wangyangming-institution-catalog.json` 保留38卷机构书目响应。`wangyangming-keyword-contexts.json` 是六作品的检索线索；整段未命中不代表原文不存在，短句、异体字与回推字形须分别核对。暂存未并入本批封存输入，后续仍须入库与验证。
