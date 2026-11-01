@@ -2,7 +2,7 @@
  * 人物与行迹（生成物）
  * ⚠ 本文件由 poem-data/scripts/emit-atlas.mjs 生成，请勿手动编辑。
  *   内容源头：poem-data/data/*.json
- * 人物 14 位；新建行迹 7 条；补站 1 组 */
+ * 人物 17 位；新建行迹 10 条；补站 1 组 */
 
 (function () {
   'use strict';
@@ -237,6 +237,29 @@
   });
 
   mergePerson({
+    "key": "liuyuxi",
+    "zh": "刘禹锡",
+    "en": "Liu Yuxi",
+    "courtesyZh": "字梦得",
+    "courtesyEn": "",
+    "dynastyKey": "tang",
+    "span": [
+      772,
+      842
+    ],
+    "journeyKey": "liuyuxi",
+    "aliases": [
+      "梦得",
+      "刘梦得"
+    ],
+    "tokens": [
+      "刘禹锡",
+      "梦得",
+      "刘梦得"
+    ]
+  });
+
+  mergePerson({
     "key": "ouyangxiu",
     "zh": "欧阳修",
     "en": "Ouyang Xiu",
@@ -354,6 +377,29 @@
     ]
   });
 
+  pushPerson({
+    "key": "weiyingwu",
+    "zh": "韦应物",
+    "en": "Wei Yingwu",
+    "courtesyZh": "京兆韦氏",
+    "courtesyEn": "",
+    "dynastyKey": "tang",
+    "span": [
+      737,
+      792
+    ],
+    "journeyKey": "weiyingwu",
+    "aliases": [
+      "韦苏州",
+      "韦江州"
+    ],
+    "tokens": [
+      "韦应物",
+      "韦苏州",
+      "韦江州"
+    ]
+  });
+
   mergePerson({
     "key": "xuanzang",
     "zh": "玄奘",
@@ -378,6 +424,29 @@
       "唐三藏",
       "陈祎",
       "三藏法师"
+    ]
+  });
+
+  pushPerson({
+    "key": "yuanzhen",
+    "zh": "元稹",
+    "en": "Yuan Zhen",
+    "courtesyZh": "字微之 · 与白居易并称元白",
+    "courtesyEn": "",
+    "dynastyKey": "tang",
+    "span": [
+      779,
+      831
+    ],
+    "journeyKey": "yuanzhen",
+    "aliases": [
+      "微之",
+      "元微之"
+    ],
+    "tokens": [
+      "元稹",
+      "微之",
+      "元微之"
     ]
   });
 
@@ -1923,6 +1992,296 @@
   });
 
   pushJourney({
+    "key": "liuyuxi",
+    "dynastyKey": "tang",
+    "color": "#7a5c3e",
+    "shortZh": "刘禹锡：二十三年弃置身",
+    "shortEn": "",
+    "titleZh": "刘禹锡：二十三年弃置身",
+    "titleEn": "Liu Yuxi: Twenty-three Years in Exile",
+    "spanZh": "772年 — 842年",
+    "spanEn": "",
+    "stops": [
+      {
+        "year": 795,
+        "eraZh": "贞元十一年",
+        "coord": [
+          108.941,
+          34.341
+        ],
+        "labelPos": "top",
+        "ancientZh": "长安",
+        "modernZh": "陕西西安",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "太子校书郎",
+        "titleEn": "",
+        "descZh": "登进士第后为太子校书郎，在长安。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "liuyuxi"
+        ],
+        "source": "CBDB 33606（太子校書郎，長安，795—796）"
+      },
+      {
+        "year": 800,
+        "eraZh": "贞元十六年",
+        "coord": [
+          119.411,
+          32.391
+        ],
+        "labelPos": "top",
+        "ancientZh": "扬州",
+        "modernZh": "江苏扬州",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "淮南节度掌书记",
+        "titleEn": "",
+        "descZh": "入淮南节度使杜佑幕为掌书记，居扬州。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "liuyuxi"
+        ],
+        "source": "CBDB 33606（節度使掌書記，淮南道，800—802）"
+      },
+      {
+        "year": 802,
+        "eraZh": "贞元十八年",
+        "coord": [
+          109.511,
+          34.501
+        ],
+        "labelPos": "top",
+        "ancientZh": "渭南",
+        "modernZh": "陕西渭南",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "渭南县主簿",
+        "titleEn": "",
+        "descZh": "调渭南县主簿，次年入朝为监察御史。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "liuyuxi"
+        ],
+        "source": "CBDB 33606（縣主簿，渭南，802—803）"
+      },
+      {
+        "year": 805,
+        "eraZh": "永贞元年",
+        "coord": [
+          111.698,
+          29.032
+        ],
+        "labelPos": "top",
+        "ancientZh": "朗州",
+        "modernZh": "湖南常德",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "贬朗州司马",
+        "titleEn": "",
+        "descZh": "永贞革新失败，贬朗州司马，在朗州近十年。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "liuyuxi"
+        ],
+        "source": "CBDB 33606（司馬，朗州，805—814）"
+      },
+      {
+        "year": 815,
+        "eraZh": "元和十年",
+        "coord": [
+          112.38,
+          24.78
+        ],
+        "labelPos": "top",
+        "ancientZh": "连州",
+        "modernZh": "广东连州",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "连州刺史",
+        "titleEn": "",
+        "descZh": "出为连州刺史（初授播州，因母老改连州），在连州五年。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "liuyuxi"
+        ],
+        "source": "CBDB 33606（州刺史，連州，815—819；播州 815 未赴）"
+      },
+      {
+        "year": 822,
+        "eraZh": "长庆二年",
+        "coord": [
+          109.5712,
+          31.0415
+        ],
+        "labelPos": "top",
+        "ancientZh": "夔州",
+        "modernZh": "重庆奉节",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "夔州刺史",
+        "titleEn": "",
+        "descZh": "转夔州刺史，在巴东。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "liuyuxi"
+        ],
+        "source": "CBDB 33606（州刺史，夔州，822—824）"
+      },
+      {
+        "year": 824,
+        "eraZh": "长庆四年",
+        "coord": [
+          118.36,
+          31.72
+        ],
+        "labelPos": "top",
+        "ancientZh": "和州",
+        "modernZh": "安徽和县",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "和州刺史",
+        "titleEn": "",
+        "descZh": "转和州刺史，在淮南。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "liuyuxi"
+        ],
+        "source": "CBDB 33606（州刺史，和州，824—828）"
+      },
+      {
+        "year": 828,
+        "eraZh": "大和二年",
+        "coord": [
+          112.451,
+          34.621
+        ],
+        "labelPos": "top",
+        "ancientZh": "洛阳",
+        "modernZh": "河南洛阳",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "主客郎中分司东都",
+        "titleEn": "",
+        "descZh": "回朝为主客郎中，分司东都洛阳；同年入长安为集贤殿直学士。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "liuyuxi"
+        ],
+        "source": "CBDB 33606（主客郎中分司東都，洛陽，828；集賢殿直學士，長安，828—829）"
+      },
+      {
+        "year": 831,
+        "eraZh": "大和五年",
+        "coord": [
+          120.581,
+          31.301
+        ],
+        "labelPos": "top",
+        "ancientZh": "苏州",
+        "modernZh": "江苏苏州",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "苏州刺史",
+        "titleEn": "",
+        "descZh": "出为苏州刺史，有政声。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "liuyuxi"
+        ],
+        "source": "CBDB 33606（州刺史，蘇州，831—834）"
+      },
+      {
+        "year": 834,
+        "eraZh": "大和八年",
+        "coord": [
+          112.8769,
+          34.1653
+        ],
+        "labelPos": "top",
+        "ancientZh": "汝州",
+        "modernZh": "河南汝州",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "汝州刺史",
+        "titleEn": "",
+        "descZh": "转汝州刺史，后又为同州刺史。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "liuyuxi"
+        ],
+        "source": "CBDB 33606（州刺史，汝州 834—835；同州 835—836）"
+      },
+      {
+        "year": 836,
+        "eraZh": "开成元年",
+        "coord": [
+          112.451,
+          34.621
+        ],
+        "labelPos": "top",
+        "ancientZh": "洛阳",
+        "modernZh": "河南洛阳",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "太子宾客分司东都",
+        "titleEn": "",
+        "descZh": "以太子宾客分司东都，此后长居洛阳，官至礼部尚书。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "liuyuxi"
+        ],
+        "source": "CBDB 33606（太子賓客分司東都，洛陽，836—842）"
+      },
+      {
+        "year": 842,
+        "eraZh": "会昌二年",
+        "coord": [
+          112.451,
+          34.621
+        ],
+        "labelPos": "top",
+        "ancientZh": "洛阳",
+        "modernZh": "河南洛阳",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "卒于洛阳",
+        "titleEn": "",
+        "descZh": "会昌二年卒于洛阳，年七十一。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "liuyuxi"
+        ],
+        "source": "CBDB 33606（c_deathyear=842）"
+      }
+    ]
+  });
+
+  pushJourney({
     "key": "ouyangxiu",
     "dynastyKey": "beisong",
     "color": "#7a5c3e",
@@ -2139,6 +2498,402 @@
           "ouyangxiu"
         ],
         "source": "CBDB 1384（c_deathyear=1072）；《宋史》卷三一九《欧阳修传》"
+      }
+    ]
+  });
+
+  pushJourney({
+    "key": "weiyingwu",
+    "dynastyKey": "tang",
+    "color": "#7a5c3e",
+    "shortZh": "韦应物：从京兆到江州",
+    "shortEn": "",
+    "titleZh": "韦应物：从京兆到江州",
+    "titleEn": "Wei Yingwu: From Chang'an to Jiangzhou",
+    "spanZh": "737年 — 约792年",
+    "spanEn": "",
+    "stops": [
+      {
+        "year": 737,
+        "eraZh": "开元二十五年",
+        "coord": [
+          108.941,
+          34.341
+        ],
+        "labelPos": "top",
+        "ancientZh": "长安",
+        "modernZh": "陕西西安",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "生于京兆",
+        "titleEn": "",
+        "descZh": "韦应物生于京兆长安，出身关中望族京兆韦氏。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "weiyingwu"
+        ],
+        "source": "CBDB 32822（c_birthyear=737）"
+      },
+      {
+        "year": 774,
+        "eraZh": "大历九年",
+        "coord": [
+          108.941,
+          34.341
+        ],
+        "labelPos": "top",
+        "ancientZh": "京兆府",
+        "modernZh": "陕西西安",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "京兆府功曹参军",
+        "titleEn": "",
+        "descZh": "任京兆府功曹参军。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "weiyingwu"
+        ],
+        "source": "CBDB 32822（功曹參軍，京兆府，774）"
+      },
+      {
+        "year": 778,
+        "eraZh": "大历十三年",
+        "coord": [
+          108.6039,
+          34.1118
+        ],
+        "labelPos": "top",
+        "ancientZh": "鄠县",
+        "modernZh": "陕西户县",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "鄠县令",
+        "titleEn": "",
+        "descZh": "出为鄠县令。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "weiyingwu"
+        ],
+        "source": "CBDB 32822（縣令，鄠縣，778）"
+      },
+      {
+        "year": 779,
+        "eraZh": "大历十四年",
+        "coord": [
+          109.25,
+          34.66
+        ],
+        "labelPos": "top",
+        "ancientZh": "栎阳",
+        "modernZh": "陕西西安临潼栎阳",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "栎阳县令",
+        "titleEn": "",
+        "descZh": "转栎阳县令，次年入朝为比部员外郎。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "weiyingwu"
+        ],
+        "source": "CBDB 32822（縣令，櫟陽，779；比部員外郎 781）"
+      },
+      {
+        "year": 783,
+        "eraZh": "建中四年",
+        "coord": [
+          118.317,
+          32.301
+        ],
+        "labelPos": "top",
+        "ancientZh": "滁州",
+        "modernZh": "安徽滁州",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "滁州刺史",
+        "titleEn": "",
+        "descZh": "出为滁州刺史，在滁州两年。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "weiyingwu"
+        ],
+        "source": "CBDB 32822（州刺史，滁州／永陽，783—784）"
+      },
+      {
+        "year": 785,
+        "eraZh": "贞元元年",
+        "coord": [
+          115.99,
+          29.71
+        ],
+        "labelPos": "top",
+        "ancientZh": "江州",
+        "modernZh": "江西九江",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "江州刺史",
+        "titleEn": "",
+        "descZh": "转江州刺史，在任三年。此后事迹史载渐略。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "weiyingwu"
+        ],
+        "source": "CBDB 32822（州刺史，江州／潯陽，785—787）"
+      }
+    ]
+  });
+
+  pushJourney({
+    "key": "yuanzhen",
+    "dynastyKey": "tang",
+    "color": "#7a5c3e",
+    "shortZh": "元稹：从通州到越州",
+    "shortEn": "",
+    "titleZh": "元稹：从通州到越州",
+    "titleEn": "Yuan Zhen: From Tongzhou to Yuezhou",
+    "spanZh": "779年 — 831年",
+    "spanEn": "",
+    "stops": [
+      {
+        "year": 779,
+        "eraZh": "大历十四年",
+        "coord": [
+          108.941,
+          34.341
+        ],
+        "labelPos": "top",
+        "ancientZh": "长安",
+        "modernZh": "陕西西安",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "生于长安",
+        "titleEn": "",
+        "descZh": "元稹生于京兆长安，北魏宗室后裔。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "yuanzhen"
+        ],
+        "source": "CBDB 32248（c_birthyear=779）"
+      },
+      {
+        "year": 809,
+        "eraZh": "元和四年",
+        "coord": [
+          108.941,
+          34.341
+        ],
+        "labelPos": "top",
+        "ancientZh": "长安",
+        "modernZh": "陕西西安",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "监察御史",
+        "titleEn": "",
+        "descZh": "拜监察御史，分司东都，弹劾不避权贵。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "yuanzhen"
+        ],
+        "source": "CBDB 32248（監察御史，809）"
+      },
+      {
+        "year": 815,
+        "eraZh": "元和十年",
+        "coord": [
+          107.5,
+          31.21
+        ],
+        "labelPos": "top",
+        "ancientZh": "通州",
+        "modernZh": "四川达州",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "通州司马",
+        "titleEn": "",
+        "descZh": "贬通州司马。白居易同时贬江州，两人有通江唱和。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "yuanzhen"
+        ],
+        "source": "CBDB 32248（司馬，通州，815）"
+      },
+      {
+        "year": 819,
+        "eraZh": "元和十四年",
+        "coord": [
+          108.941,
+          34.341
+        ],
+        "labelPos": "top",
+        "ancientZh": "长安",
+        "modernZh": "陕西西安",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "膳部员外郎",
+        "titleEn": "",
+        "descZh": "量移回朝，为膳部员外郎，次年转祠部郎中。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "yuanzhen"
+        ],
+        "source": "CBDB 32248（膳部員外郎 819；祠部郎中 820）"
+      },
+      {
+        "year": 821,
+        "eraZh": "长庆元年",
+        "coord": [
+          108.941,
+          34.341
+        ],
+        "labelPos": "top",
+        "ancientZh": "长安",
+        "modernZh": "陕西西安",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "翰林承旨学士、中书舍人",
+        "titleEn": "",
+        "descZh": "入翰林为承旨学士，兼中书舍人，掌内外制。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "yuanzhen"
+        ],
+        "source": "CBDB 32248（翰林承旨學士、中書舍人，821）"
+      },
+      {
+        "year": 822,
+        "eraZh": "长庆二年",
+        "coord": [
+          108.941,
+          34.341
+        ],
+        "labelPos": "top",
+        "ancientZh": "长安",
+        "modernZh": "陕西西安",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "拜相",
+        "titleEn": "",
+        "descZh": "以工部侍郎同中书门下平章事，居相位。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "yuanzhen"
+        ],
+        "source": "CBDB 32248（宰相，822）"
+      },
+      {
+        "year": 822,
+        "eraZh": "长庆二年",
+        "coord": [
+          109.9393,
+          34.7972
+        ],
+        "labelPos": "top",
+        "ancientZh": "同州",
+        "modernZh": "陕西大荔",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "同州刺史",
+        "titleEn": "",
+        "descZh": "罢相，出为同州刺史。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "yuanzhen"
+        ],
+        "source": "CBDB 32248（州刺史，馮翊／同州，822—823）"
+      },
+      {
+        "year": 823,
+        "eraZh": "长庆三年",
+        "coord": [
+          120.581,
+          30.001
+        ],
+        "labelPos": "top",
+        "ancientZh": "越州",
+        "modernZh": "浙江绍兴",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "越州刺史、浙东观察使",
+        "titleEn": "",
+        "descZh": "转越州刺史，兼浙东观察使，在越州六年。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "yuanzhen"
+        ],
+        "source": "CBDB 32248（州刺史，越州／會稽，823—829）"
+      },
+      {
+        "year": 829,
+        "eraZh": "大和三年",
+        "coord": [
+          108.941,
+          34.341
+        ],
+        "labelPos": "top",
+        "ancientZh": "长安",
+        "modernZh": "陕西西安",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "尚书左丞",
+        "titleEn": "",
+        "descZh": "入朝为尚书左丞。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "yuanzhen"
+        ],
+        "source": "CBDB 32248（尚書左丞相，829）"
+      },
+      {
+        "year": 830,
+        "eraZh": "大和四年",
+        "coord": [
+          114.311,
+          30.591
+        ],
+        "labelPos": "top",
+        "ancientZh": "鄂州",
+        "modernZh": "湖北武汉",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "武昌军节度使",
+        "titleEn": "",
+        "descZh": "出为武昌军节度使，驻鄂州，次年卒于任。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "yuanzhen"
+        ],
+        "source": "CBDB 32248（節度使，武昌軍節度，830—831）"
       }
     ]
   });
