@@ -2,7 +2,7 @@
  * 人物与行迹（生成物）
  * ⚠ 本文件由 poem-data/scripts/emit-atlas.mjs 生成，请勿手动编辑。
  *   内容源头：poem-data/data/*.json
- * 人物 18 位；新建行迹 11 条；补站 1 组 */
+ * 人物 19 位；新建行迹 12 条；补站 1 组 */
 
 (function () {
   'use strict';
@@ -397,6 +397,29 @@
       "韦应物",
       "韦苏州",
       "韦江州"
+    ]
+  });
+
+  pushPerson({
+    "key": "weizhuang",
+    "zh": "韦庄",
+    "en": "Wei Zhuang",
+    "courtesyZh": "字端己 · 韦应物四世孙",
+    "courtesyEn": "",
+    "dynastyKey": "tang",
+    "span": [
+      836,
+      910
+    ],
+    "journeyKey": "weizhuang",
+    "aliases": [
+      "端己",
+      "韦端己"
+    ],
+    "tokens": [
+      "韦庄",
+      "端己",
+      "韦端己"
     ]
   });
 
@@ -2671,6 +2694,204 @@
           "weiyingwu"
         ],
         "source": "CBDB 32822（州刺史，江州／潯陽，785—787）"
+      }
+    ]
+  });
+
+  pushJourney({
+    "key": "weizhuang",
+    "dynastyKey": "tang",
+    "color": "#7a5c3e",
+    "shortZh": "韦庄：从长安到成都",
+    "shortEn": "",
+    "titleZh": "韦庄：从长安到成都",
+    "titleEn": "Wei Zhuang: From Chang'an to Chengdu",
+    "spanZh": "836年 — 910年",
+    "spanEn": "",
+    "stops": [
+      {
+        "year": 836,
+        "eraZh": "开成元年",
+        "coord": [
+          108.941,
+          34.341
+        ],
+        "labelPos": "top",
+        "ancientZh": "长安",
+        "modernZh": "陕西西安",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "生于京兆杜陵",
+        "titleEn": "",
+        "descZh": "韦庄生于京兆杜陵，为韦应物四世孙。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "weizhuang"
+        ],
+        "source": "CBDB 92161（c_birthyear=836）；籍贯据《十国春秋》卷四十《韦庄传》"
+      },
+      {
+        "year": 883,
+        "eraZh": "中和三年",
+        "coord": [
+          108.941,
+          34.341
+        ],
+        "labelPos": "top",
+        "ancientZh": "长安",
+        "modernZh": "陕西西安",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "困居长安，作《秦妇吟》",
+        "titleEn": "",
+        "descZh": "黄巢据长安，韦庄困于城中，后以此经历作长篇《秦妇吟》；这一联写的正是长安城破后的景象。",
+        "descEn": "",
+        "quoteZh": "韦庄《秦妇吟》：“内库烧为锦绣灰，天街踏尽公卿骨。”",
+        "quoteEn": "",
+        "persons": [
+          "weizhuang"
+        ],
+        "source": "《秦妇吟》开篇自述（中和癸卯＝883）；地点据诗中所述与《十国春秋》本传"
+      },
+      {
+        "year": 894,
+        "eraZh": "乾宁元年",
+        "coord": [
+          108.941,
+          34.341
+        ],
+        "labelPos": "top",
+        "ancientZh": "长安",
+        "modernZh": "陕西西安",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "进士及第",
+        "titleEn": "",
+        "descZh": "年近六十始登进士第，释褐为校书郎。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "weizhuang"
+        ],
+        "source": "《十国春秋》卷四十《韦庄传》（乾宁元年登进士第）"
+      },
+      {
+        "year": 900,
+        "eraZh": "光化三年",
+        "coord": [
+          108.941,
+          34.341
+        ],
+        "labelPos": "top",
+        "ancientZh": "长安",
+        "modernZh": "陕西西安",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "左补阙",
+        "titleEn": "",
+        "descZh": "在朝为左补阙。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "weizhuang"
+        ],
+        "source": "CBDB 92161（左補闕，900）；在朝据本传"
+      },
+      {
+        "year": 901,
+        "eraZh": "天复元年",
+        "coord": [
+          104.071,
+          30.571
+        ],
+        "labelPos": "top",
+        "ancientZh": "成都",
+        "modernZh": "四川成都",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "入蜀，王建辟为掌书记",
+        "titleEn": "",
+        "descZh": "入蜀依王建，为节度掌书记，此后长居成都。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "weizhuang"
+        ],
+        "source": "CBDB 92161（節度使掌書記，901，无任职地）；入蜀据《十国春秋》本传"
+      },
+      {
+        "year": 907,
+        "eraZh": "开平元年",
+        "coord": [
+          104.071,
+          30.571
+        ],
+        "labelPos": "top",
+        "ancientZh": "成都",
+        "modernZh": "四川成都",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "前蜀左散骑常侍",
+        "titleEn": "",
+        "descZh": "王建称帝，国号蜀，韦庄为左散骑常侍，参与开国制度。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "weizhuang"
+        ],
+        "source": "CBDB 92161（左散騎常侍，907）；前蜀开国据《十国春秋》本传"
+      },
+      {
+        "year": 908,
+        "eraZh": "开平二年",
+        "coord": [
+          104.071,
+          30.571
+        ],
+        "labelPos": "top",
+        "ancientZh": "成都",
+        "modernZh": "四川成都",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "同中书门下平章事",
+        "titleEn": "",
+        "descZh": "拜同中书门下平章事，为前蜀宰相。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "weizhuang"
+        ],
+        "source": "CBDB 92161（同中書門下平章事、門下侍郎，908）"
+      },
+      {
+        "year": 910,
+        "eraZh": "开平四年",
+        "coord": [
+          104.071,
+          30.571
+        ],
+        "labelPos": "top",
+        "ancientZh": "成都",
+        "modernZh": "四川成都",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "卒于成都",
+        "titleEn": "",
+        "descZh": "开平四年卒于成都，年七十五。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "weizhuang"
+        ],
+        "source": "CBDB 92161（c_deathyear=910）；卒地据《十国春秋》本传"
       }
     ]
   });
