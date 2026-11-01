@@ -1,4 +1,5 @@
-chore(data): 同步 poem-data 最新生成物（摘录标记）
+feat(atlas): 同步两条新行迹；修行迹 key 与人物 key 不同时的读本查找
 
-- atlas_works.js：作品数据由 poem-data 重新生成，新增 excerpt 字段
-- index.html：缓存戳随 sync_version 更新
+- atlas_overlay/atlas_journeys 由 poem-data 重新生成（行迹 12 条、读本 12 条）
+- chronicle：resolveJourneyKey 优先取 journeyKey（如杜牧 p21194→dumu 的旧场景）
+- chronicle：新增 resolvePersonKey，「在文献站查此人」改用人物 key 而非行迹 key

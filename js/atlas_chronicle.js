@@ -77,7 +77,7 @@
       var more = document.createElement('li');
       more.className = 'cr-link cr-more';
       more.innerHTML =
-        '<a href="' + window.ATLAS_LINKS.corpusPerson(jkey) +
+        '<a href="' + window.ATLAS_LINKS.corpusPerson(resolvePersonKey(ctx)) +
         '" target="_blank" rel="noopener">在文献站查此人 ↗</a>';
       list.appendChild(more); // 先渲染，随后插到导语/首站正确位置
     }
@@ -122,6 +122,18 @@
    * 从 DOM 反推当前人物的行迹 key（不依赖 ctx.activePerson）。
    * 顺序：列表项上的 data 属性 → 面板抬头的人名 → PERSON_PROFILES 查表。
    */
+  // 文献站的人物页用「人物 key」（如 p21194），与行迹 key（dumu）可能不同
+  function resolvePersonKey(ctx) {
+    try {
+      var app = ctx || window.atlasApp;
+      var ap = app && app.activePerson;
+      var profs = ap && Array.isArray(ap.profiles) ? ap.profiles : [];
+      for (var i = 0; i < profs.length; i++) {
+        if (profs[i] && profs[i].key) return String(profs[i].key);
+      }
+    } catch (e) { /* 忽略 */ }
+    return resolveJourneyKey(ctx);
+  }
   function resolveJourneyKey(ctx) {
     var S = window.ATLAS_SELECTORS || {};
     var list = document.querySelector(S.timeline || '#genealogy-timeline');
@@ -135,6 +147,8 @@
       var ap = app && app.activePerson;
       var profs = ap && Array.isArray(ap.profiles) ? ap.profiles : [];
       for (var a = 0; a < profs.length; a++) {
+        // 人物 key 与行迹 key 可能不同（如杜牧：p21194 / dumu），优先取 journeyKey
+        if (profs[a] && profs[a].journeyKey) return String(profs[a].journeyKey);
         if (profs[a] && profs[a].key) return String(profs[a].key);
       }
     } catch (e) { /* 忽略 */ }

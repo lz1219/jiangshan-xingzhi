@@ -2,7 +2,7 @@
  * 人物与行迹（生成物）
  * ⚠ 本文件由 poem-data/scripts/emit-atlas.mjs 生成，请勿手动编辑。
  *   内容源头：poem-data/data/*.json
- * 人物 10 位；新建行迹 3 条；补站 1 组 */
+ * 人物 12 位；新建行迹 5 条；补站 1 组 */
 
 (function () {
   'use strict';
@@ -107,6 +107,24 @@
   });
 
   pushPerson({
+    "key": "dumu",
+    "zh": "杜牧",
+    "en": "",
+    "courtesyZh": "",
+    "courtesyEn": "",
+    "dynastyKey": "",
+    "span": [
+      803,
+      853
+    ],
+    "journeyKey": "dumu",
+    "aliases": [],
+    "tokens": [
+      "杜牧"
+    ]
+  });
+
+  pushPerson({
     "key": "jiangjie",
     "zh": "蒋捷",
     "en": "Jiang Jie",
@@ -167,6 +185,33 @@
       "谪仙人",
       "Li Po",
       "Taibai"
+    ]
+  });
+
+  mergePerson({
+    "key": "ouyangxiu",
+    "zh": "欧阳修",
+    "en": "Ouyang Xiu",
+    "courtesyZh": "醉翁 · 六一居士 · 字永叔",
+    "courtesyEn": "",
+    "dynastyKey": "beisong",
+    "span": [
+      1007,
+      1072
+    ],
+    "journeyKey": "ouyangxiu",
+    "aliases": [
+      "永叔",
+      "醉翁",
+      "六一居士",
+      "欧阳文忠公"
+    ],
+    "tokens": [
+      "欧阳修",
+      "永叔",
+      "醉翁",
+      "六一居士",
+      "欧阳文忠公"
     ]
   });
 
@@ -877,6 +922,273 @@
   });
 
   pushJourney({
+    "key": "dumu",
+    "dynastyKey": "",
+    "color": "#7a5c3e",
+    "shortZh": "杜牧：从扬州到长安",
+    "shortEn": "",
+    "titleZh": "杜牧：从扬州到长安",
+    "titleEn": "Du Mu: From Yangzhou to Chang'an",
+    "spanZh": "803年 — 853年",
+    "spanEn": "",
+    "stops": [
+      {
+        "year": 803,
+        "eraZh": "贞元十九年",
+        "coord": [
+          108.941,
+          34.341
+        ],
+        "labelPos": "top",
+        "ancientZh": "长安",
+        "modernZh": "陕西西安",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "生于京兆万年",
+        "titleEn": "",
+        "descZh": "杜牧生于京兆府万年县，出身宰相之家，祖父杜佑撰《通典》。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "dumu"
+        ],
+        "source": "CBDB 21194（c_birthyear=803）"
+      },
+      {
+        "year": 833,
+        "eraZh": "大和七年",
+        "coord": [
+          119.411,
+          32.391
+        ],
+        "labelPos": "top",
+        "ancientZh": "扬州",
+        "modernZh": "江苏扬州",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "淮南节度推官",
+        "titleEn": "",
+        "descZh": "入淮南节度使牛僧孺幕府为推官，居扬州。此后追忆扬州之作最多。",
+        "descEn": "",
+        "quoteZh": "杜牧《遣怀》：“十年一觉扬州梦，赢得青楼薄幸名。”",
+        "quoteEn": "",
+        "persons": [
+          "dumu"
+        ],
+        "source": "CBDB 21194（節度使推官，淮南道，833）"
+      },
+      {
+        "year": 835,
+        "eraZh": "大和九年",
+        "coord": [
+          112.451,
+          34.621
+        ],
+        "labelPos": "top",
+        "ancientZh": "洛阳",
+        "modernZh": "河南洛阳",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "监察御史分司东都",
+        "titleEn": "",
+        "descZh": "入朝为监察御史，分司东都洛阳。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "dumu"
+        ],
+        "source": "CBDB 21194（監察御史分司東都，835）"
+      },
+      {
+        "year": 837,
+        "eraZh": "开成二年",
+        "coord": [
+          118.759,
+          30.94
+        ],
+        "labelPos": "top",
+        "ancientZh": "宣州",
+        "modernZh": "安徽宣城",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "宣歙观察使团练判官",
+        "titleEn": "",
+        "descZh": "入宣歙观察使幕为团练判官。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "dumu"
+        ],
+        "source": "CBDB 21194（觀察使團練判官，宣歙，837）"
+      },
+      {
+        "year": 842,
+        "eraZh": "会昌二年",
+        "coord": [
+          114.88,
+          30.45
+        ],
+        "labelPos": "top",
+        "ancientZh": "黄州",
+        "modernZh": "湖北黄冈",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "黄州刺史",
+        "titleEn": "",
+        "descZh": "出为黄州刺史。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "dumu"
+        ],
+        "source": "CBDB 21194（州刺史，黄州，842）"
+      },
+      {
+        "year": 844,
+        "eraZh": "会昌四年",
+        "coord": [
+          117.491,
+          30.665
+        ],
+        "labelPos": "top",
+        "ancientZh": "池州",
+        "modernZh": "安徽池州",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "池州刺史",
+        "titleEn": "",
+        "descZh": "转池州刺史，在任约两年。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "dumu"
+        ],
+        "source": "CBDB 21194（州刺史，池州，844）"
+      },
+      {
+        "year": 845,
+        "eraZh": "会昌五年",
+        "coord": [
+          119.4989,
+          29.5445
+        ],
+        "labelPos": "top",
+        "ancientZh": "睦州",
+        "modernZh": "浙江建德",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "睦州刺史",
+        "titleEn": "",
+        "descZh": "再转睦州刺史。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "dumu"
+        ],
+        "source": "CBDB 21194（州刺史，睦州，845）"
+      },
+      {
+        "year": 848,
+        "eraZh": "大中二年",
+        "coord": [
+          108.941,
+          34.341
+        ],
+        "labelPos": "top",
+        "ancientZh": "长安",
+        "modernZh": "陕西西安",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "史馆修撰",
+        "titleEn": "",
+        "descZh": "入朝为史馆修撰，回到长安。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "dumu"
+        ],
+        "source": "CBDB 21194（史館修撰，848）"
+      },
+      {
+        "year": 850,
+        "eraZh": "大中四年",
+        "coord": [
+          120.087,
+          30.894
+        ],
+        "labelPos": "top",
+        "ancientZh": "湖州",
+        "modernZh": "浙江湖州",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "湖州刺史",
+        "titleEn": "",
+        "descZh": "出为湖州刺史。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "dumu"
+        ],
+        "source": "CBDB 21194（州刺史，湖州，850—851）"
+      },
+      {
+        "year": 852,
+        "eraZh": "大中六年",
+        "coord": [
+          108.941,
+          34.341
+        ],
+        "labelPos": "top",
+        "ancientZh": "长安",
+        "modernZh": "陕西西安",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "中书舍人",
+        "titleEn": "",
+        "descZh": "还朝为中书舍人。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "dumu"
+        ],
+        "source": "CBDB 21194（中書舍人，852）"
+      },
+      {
+        "year": 853,
+        "eraZh": "大中七年",
+        "coord": [
+          108.941,
+          34.341
+        ],
+        "labelPos": "top",
+        "ancientZh": "长安",
+        "modernZh": "陕西西安",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "卒于长安",
+        "titleEn": "",
+        "descZh": "大中七年卒，年五十。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "dumu"
+        ],
+        "source": "CBDB 21194（c_deathyear=853）"
+      }
+    ]
+  });
+
+  pushJourney({
     "key": "jiangjie",
     "dynastyKey": "nansong",
     "color": "#7a5c3e",
@@ -1093,6 +1405,227 @@
           "jiangjie"
         ],
         "source": "《新华日报》2024-07-19（引杨景龙说）；杨景龙校注《蒋捷词校注》（中华书局，2010）；《词林纪事》"
+      }
+    ]
+  });
+
+  pushJourney({
+    "key": "ouyangxiu",
+    "dynastyKey": "beisong",
+    "color": "#7a5c3e",
+    "shortZh": "欧阳修：从绵州到颍州",
+    "shortEn": "",
+    "titleZh": "欧阳修：从绵州到颍州",
+    "titleEn": "Ouyang Xiu: From Mianzhou to Yingzhou",
+    "spanZh": "1007年 — 1072年",
+    "spanEn": "",
+    "stops": [
+      {
+        "year": 1007,
+        "eraZh": "景德四年",
+        "coord": [
+          104.7447,
+          31.4674
+        ],
+        "labelPos": "top",
+        "ancientZh": "绵州",
+        "modernZh": "四川绵阳",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "生于绵州",
+        "titleEn": "",
+        "descZh": "其父欧阳观时任绵州推官，欧阳修生于绵州。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "ouyangxiu"
+        ],
+        "source": "CBDB 1384（c_birthyear=1007）；《宋史》卷三一九《欧阳修传》"
+      },
+      {
+        "year": 1036,
+        "eraZh": "景祐三年",
+        "coord": [
+          111.29,
+          30.69
+        ],
+        "labelPos": "top",
+        "ancientZh": "夷陵",
+        "modernZh": "湖北宜昌",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "贬夷陵县令",
+        "titleEn": "",
+        "descZh": "因言范仲淹事忤权贵，贬峡州夷陵县令。CBDB 记其任「县令，夷陵」，未记年；年份据本传。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "ouyangxiu"
+        ],
+        "source": "CBDB 1384（縣令，夷陵，年份缺）；《宋史》卷三一九《欧阳修传》"
+      },
+      {
+        "year": 1044,
+        "eraZh": "庆历四年",
+        "coord": [
+          115.15,
+          36.28
+        ],
+        "labelPos": "top",
+        "ancientZh": "大名府",
+        "modernZh": "河北邯郸大名",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "河北路转运使",
+        "titleEn": "",
+        "descZh": "任河北路转运使；河北路治所在大名府。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "ouyangxiu"
+        ],
+        "source": "CBDB 1384（轉運使，河北路，1044）"
+      },
+      {
+        "year": 1045,
+        "eraZh": "庆历五年",
+        "coord": [
+          118.317,
+          32.301
+        ],
+        "labelPos": "top",
+        "ancientZh": "滁州",
+        "modernZh": "安徽滁州",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "知滁州",
+        "titleEn": "",
+        "descZh": "贬知滁州，在任三年；《醉翁亭记》即作于此。",
+        "descEn": "",
+        "quoteZh": "欧阳修《醉翁亭记》：“醉翁之意不在酒，在乎山水之间也。”",
+        "quoteEn": "",
+        "persons": [
+          "ouyangxiu"
+        ],
+        "source": "CBDB 1384（知某州軍州事，滁州，1045—1048）"
+      },
+      {
+        "year": 1048,
+        "eraZh": "庆历八年",
+        "coord": [
+          119.411,
+          32.391
+        ],
+        "labelPos": "top",
+        "ancientZh": "扬州",
+        "modernZh": "江苏扬州",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "知扬州",
+        "titleEn": "",
+        "descZh": "移知扬州，并兼堤堰桥道劝农使。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "ouyangxiu"
+        ],
+        "source": "CBDB 1384（知某州軍州事，揚州，1048—1049）"
+      },
+      {
+        "year": 1060,
+        "eraZh": "嘉祐五年",
+        "coord": [
+          114.311,
+          34.801
+        ],
+        "labelPos": "top",
+        "ancientZh": "开封",
+        "modernZh": "河南开封",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "同知枢密院事",
+        "titleEn": "",
+        "descZh": "由地方入朝，任同知枢密院事。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "ouyangxiu"
+        ],
+        "source": "CBDB 1384（同知樞密院事，1060）"
+      },
+      {
+        "year": 1061,
+        "eraZh": "嘉祐六年",
+        "coord": [
+          114.311,
+          34.801
+        ],
+        "labelPos": "top",
+        "ancientZh": "开封",
+        "modernZh": "河南开封",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "参知政事",
+        "titleEn": "",
+        "descZh": "拜参知政事，居执政之位。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "ouyangxiu"
+        ],
+        "source": "CBDB 1384（參知政事，1061）"
+      },
+      {
+        "year": 1067,
+        "eraZh": "治平四年",
+        "coord": [
+          115.78,
+          33.87
+        ],
+        "labelPos": "top",
+        "ancientZh": "亳州",
+        "modernZh": "安徽亳州",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "知亳州",
+        "titleEn": "",
+        "descZh": "罢政出知亳州，带观文殿学士、刑部尚书衔。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "ouyangxiu"
+        ],
+        "source": "CBDB 1384（知某州軍州事，亳州，1067—1068；觀文殿學士、刑部尚書亦系此年）"
+      },
+      {
+        "year": 1072,
+        "eraZh": "熙宁五年",
+        "coord": [
+          115.81,
+          32.89
+        ],
+        "labelPos": "top",
+        "ancientZh": "颍州",
+        "modernZh": "安徽阜阳",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "卒于颍州",
+        "titleEn": "",
+        "descZh": "晚年致仕居颍州，熙宁五年卒，年六十六。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "ouyangxiu"
+        ],
+        "source": "CBDB 1384（c_deathyear=1072）；《宋史》卷三一九《欧阳修传》"
       }
     ]
   });
