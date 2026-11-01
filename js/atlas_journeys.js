@@ -27,7 +27,8 @@ window.ATLAS_JOURNEYS = {
         "text": "大和三年以太子宾客分司东都，居洛阳履道里；此后十七年不再出仕，卒于香山。",
         "source": "《旧唐书》卷一六六《白居易传》"
       }
-    }
+    },
+    "undatedStops": []
   },
   "censhen": {
     "intro": {
@@ -43,7 +44,8 @@ window.ATLAS_JOURNEYS = {
         "text": "从长安到嘉州，是晚岁入蜀；此后他再未回到中原。",
         "source": "CBDB 32583（長安 763 → 嘉州 765）"
       }
-    }
+    },
+    "undatedStops": []
   },
   "dufu": {
     "intro": {
@@ -67,7 +69,8 @@ window.ATLAS_JOURNEYS = {
         "text": "出峡之后顺江漂泊，岳阳、潭州之间往来；大历五年冬，卒于湘江舟中。",
         "source": "《旧唐书》卷一九〇《杜甫传》"
       }
-    }
+    },
+    "undatedStops": []
   },
   "dumu": {
     "intro": {
@@ -83,7 +86,8 @@ window.ATLAS_JOURNEYS = {
         "text": "睦州任满后入朝为史馆修撰，是这条南行线上的第一次北返。",
         "source": "CBDB 21194（睦州 845、史館修撰 848）"
       }
-    }
+    },
+    "undatedStops": []
   },
   "hanyu": {
     "intro": {
@@ -99,7 +103,8 @@ window.ATLAS_JOURNEYS = {
         "text": "潮州任未满一年即量移袁州，仍在江南西道。",
         "source": "CBDB 3332（潮州 819 → 袁州 819—820）"
       }
-    }
+    },
+    "undatedStops": []
   },
   "jiangjie": {
     "intro": {
@@ -131,7 +136,8 @@ window.ATLAS_JOURNEYS = {
         "text": "约 1314 年之后卒，归葬宜兴竹山福善寺。旧说卒于约 1305 年，与杨景龙说不同。",
         "source": "《新华日报》2024-07-19（引杨景龙说）；《蒋捷词校注》"
       }
-    }
+    },
+    "undatedStops": []
   },
   "libai": {
     "intro": {
@@ -151,7 +157,8 @@ window.ATLAS_JOURNEYS = {
         "text": "安史乱起，李白入永王李璘幕；永王败，坐罪流放夜郎，行至白帝城遇赦，遂放舟东下，作《早发白帝城》。",
         "source": "《新唐书》卷二〇二《李白传》；《早发白帝城》"
       }
-    }
+    },
+    "undatedStops": []
   },
   "liuyuxi": {
     "intro": {
@@ -167,7 +174,8 @@ window.ATLAS_JOURNEYS = {
         "text": "连州、夔州、和州三任，前后十四年，都在长江以南；大和二年才回到东都。",
         "source": "CBDB 33606（連州 815 → 夔州 822 → 和州 824 → 洛陽 828）"
       }
-    }
+    },
+    "undatedStops": []
   },
   "ouyangxiu": {
     "intro": {
@@ -183,7 +191,8 @@ window.ATLAS_JOURNEYS = {
         "text": "亳州之后转知青州，又改知蔡州，熙宁四年致仕，归颍州而卒。这一段据本传，CBDB 只记任所不记年。",
         "source": "《宋史》卷三一九《欧阳修传》；CBDB 1384（知青州、致仕居颍）"
       }
-    }
+    },
+    "undatedStops": []
   },
   "qinshihuang": {
     "intro": {
@@ -203,7 +212,8 @@ window.ATLAS_JOURNEYS = {
         "text": "二十六年，齐王建降，六王毕，四海一。",
         "source": "《史记》卷六《秦始皇本纪》；杜牧《阿房宫赋》"
       }
-    }
+    },
+    "undatedStops": []
   },
   "sushi": {
     "intro": {
@@ -227,7 +237,8 @@ window.ATLAS_JOURNEYS = {
         "text": "元符三年徽宗即位大赦，苏轼自儋州北归；次年卒于常州。三处贬所，是他自己写下的「平生功业」。",
         "source": "《宋史》卷三三八《苏轼传》；苏轼《自题金山画像》"
       }
-    }
+    },
+    "undatedStops": []
   },
   "wangwei": {
     "intro": {
@@ -239,11 +250,31 @@ window.ATLAS_JOURNEYS = {
         "text": "济州五年后回朝，此后二十余年他基本在两京任职；辋川别业在蓝田，是他半官半隐之所，具体年份不能确指，故只列站不系年。",
         "source": "CBDB 32174（濟州 721—726 → 右拾遺 735）；辋川据《旧唐书》本传与《辋川集》"
       },
-      "7": {
+      "6": {
         "text": "洛阳陷贼是他一生的转折；此后虽复官，终以「陷贼」一节为世所议。",
         "source": "《旧唐书》卷一九〇下《王维传》"
       }
     },
+    "undatedStops": [
+      {
+        "seq": 6,
+        "year": null,
+        "kind": "residence",
+        "eraZh": "天宝年间",
+        "place": {
+          "ancient": "辋川",
+          "modern": "陕西蓝田",
+          "coord": [
+            109.32,
+            34.15
+          ]
+        },
+        "titleZh": "辋川别业，半官半隐",
+        "descZh": "天宝年间得宋之问蓝田别墅，营为辋川别业；与裴迪浮舟往来，唱和各二十首，是为《辋川集》。年份不能确指，故不系年，只记其事。",
+        "quote": "王维《鹿柴》：“空山不见人，但闻人语响。”",
+        "source": "《旧唐书》卷一九〇下《王维传》；《辋川集》"
+      }
+    ],
     "stopKinds": {
       "辋川": {
         "kind": "residence",
@@ -269,7 +300,8 @@ window.ATLAS_JOURNEYS = {
         "text": "嘉靖七年卒于南安舟中。年谱记其临终语：此心光明，亦复何言。",
         "source": "《王阳明年谱》；《明史》卷一九五"
       }
-    }
+    },
+    "undatedStops": []
   },
   "weiyingwu": {
     "intro": {
@@ -281,7 +313,8 @@ window.ATLAS_JOURNEYS = {
         "text": "从京畿到滁州，是他第一次出为州郡；两年后转江州，仍在长江一线。",
         "source": "CBDB 32822（櫟陽 779 → 滁州 783 → 江州 785）"
       }
-    }
+    },
+    "undatedStops": []
   },
   "weizhuang": {
     "intro": {
@@ -297,7 +330,8 @@ window.ATLAS_JOURNEYS = {
         "text": "左补阙之后入蜀，此后二十年再未离开蜀地。",
         "source": "CBDB 92161（左補闕 900 → 掌書記 901）；《十国春秋》本传"
       }
-    }
+    },
+    "undatedStops": []
   },
   "xuanzang": {
     "intro": {
@@ -317,7 +351,8 @@ window.ATLAS_JOURNEYS = {
         "text": "贞观十九年归至京师，太宗召见，问西域事；玄奘辞还俗之请，请开译场。",
         "source": "《旧唐书》卷一九一；《大慈恩寺三藏法师传》"
       }
-    }
+    },
+    "undatedStops": []
   },
   "xueneng": {
     "intro": {
@@ -333,7 +368,8 @@ window.ATLAS_JOURNEYS = {
         "text": "京兆府尹之后出镇徐州，是他第一次领节；此后移镇许州，直到遇害。",
         "source": "CBDB 95071（京兆府 870 → 彭城 873 → 許州 878）"
       }
-    }
+    },
+    "undatedStops": []
   },
   "yuanzhen": {
     "intro": {
@@ -345,7 +381,8 @@ window.ATLAS_JOURNEYS = {
         "text": "从长安到通州，是元稹第一次远贬；通州在巴东，与白居易的江州隔江相望，两人此期唱和最多。",
         "source": "CBDB 32248（長安 809 → 通州 815）"
       }
-    }
+    },
+    "undatedStops": []
   },
   "zhangqian": {
     "intro": {
@@ -365,7 +402,8 @@ window.ATLAS_JOURNEYS = {
         "text": "还，并南山，欲从羌中归，复为匈奴所得；后趁乱亡归汉。出发百余人，归来唯二人。",
         "source": "《史记》卷一二三《大宛列传》"
       }
-    }
+    },
+    "undatedStops": []
   },
   "zhugeliang": {
     "intro": {
@@ -385,6 +423,7 @@ window.ATLAS_JOURNEYS = {
         "text": "建兴十二年出斜谷，屯五丈原，与司马懿相持百余日，其年八月卒于军中。",
         "source": "《三国志·蜀书·诸葛亮传》"
       }
-    }
+    },
+    "undatedStops": []
   }
 };

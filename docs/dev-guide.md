@@ -14,7 +14,7 @@ app.js 行迹渲染     →  atlas_reader.js 交互
 ```
 
 **上游基座**：`js/app.js`（15k 行）、`js/lore_data.js`（7 条行迹 / 74 站）、`js/map_data.js`、`js/atlas_snapshots.js`、`geojson/`。
-**我们的层**：只有两个文件——数据 `js/atlas_works.js`、交互 `js/atlas_reader.js`。
+**我们的层**：作品/人物/行迹生成物、阅读器、行迹读本、契约探测和独立研究入口；内容均从 poem-data 生成。
 
 ---
 
@@ -160,6 +160,8 @@ node scripts/sync_version.js --check  # 只校验
 ---
 
 ## 7. 怎么加一条作品
+
+> 下方仅说明生成后字段形状。实际添加必须改 poem-data/data/works JSON，再运行 emit-atlas；禁止手改生成物。
 
 ```js
 // js/atlas_works.js

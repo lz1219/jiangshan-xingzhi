@@ -370,7 +370,7 @@
             esc(poem.appreciation.text) +
             '</p>' +
             (poem.appreciation.inference
-              ? '<p class="poetry-inference"><span class="poetry-tag">推测</span>' +
+              ? '<p class="poetry-inference"><span class="poetry-tag">历史推测 · 生成方式未记录 · 未经人工审校</span>' +
                 esc(poem.appreciation.inference.text) +
                 (poem.appreciation.inference.basis
                   ? '<span class="poetry-basis">依据：' + esc(poem.appreciation.inference.basis) + '</span>'
@@ -388,6 +388,7 @@
           : '') +
         notesHtml +
         (poem.source ? '<p class="poetry-source">' + esc(poem.source) + '</p>' : '') +
+        '<p class="poetry-source">' + esc(poem.traditionalDerived ? '繁体为反推，底本待核。' : '电子正文已有；版本与系年仍需核查。') + '</p>' +
         (window.ATLAS_LINKS && poem.__key
           ? '<p class="poetry-more"><a href="' +
             window.ATLAS_LINKS.corpusWork(poem.__key) +

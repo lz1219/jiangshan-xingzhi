@@ -95,7 +95,7 @@ ALLOW_PUSH=1 git push
 ## 3. 六条不可妥协
 
 1. **只加不改。** 笺注层通过 `window.__ATLAS_MIXINS` 挂载；对 `js/app.js` 的改动只允许极小（目前仅两处：搜索标签登记、空朝代回退）。改主逻辑前先问：能不能用 mixin 包？
-2. **原文逐字取自基线。** 诗词与史传正文一律从 `js/lore_data.js` 的 `quoteZh` 提取，**不手抄**；我们只写 `meaning` / `notes` / `background` / `appreciation`。
+2. **原文逐字取自基线。** 新取得的版本先作为独立见证，不自动覆盖基线。 诗词与史传正文一律从 `js/lore_data.js` 的 `quoteZh` 提取，**不手抄**；我们只写 `meaning` / `notes` / `background` / `appreciation`。
 3. **赏析只收自撰，推测必须标注。** `appreciation.by` 恒为「本站自撰」；结合史事的推演放进 `inference` 并给 `basis`，界面用「推测」朱砂虚线呈现。不引用点校本。
 4. **文与史传标「摘录」。** 我们给的是被引用的段落，不是全本，界面上必须让读者知道。
 5. **不改上游数据与地图形制。** `lore_data.js` / `map_data.js` / `atlas_snapshots.js` / `geojson/` 一律不动。
@@ -138,7 +138,7 @@ ALLOW_PUSH=1 git push
 全表在 `docs/backlog.md`。最容易误认的两条：
 
 - **R-6** 搜索不索引正文，搜「莫听」命中不了
-- **D-2** 字体仍来自 Google Fonts，大陆网络会挂到超时后回退
+- **D-2** 已完成：外部字体已移除，现使用系统字体栈。
 
 ## 8. 文件地图
 
@@ -154,3 +154,7 @@ ALLOW_PUSH=1 git push
 | `scripts/check-docs.mjs` | 文档闸门 |
 | `scripts/_serve.cjs` | 本地静态服务 |
 | `docs/design.md` | 宪法：定位 / 词汇 / 不可逆决策 / 里程碑 |
+
+## 学术研究增补（R-11）
+
+来源优先。研究发布真相在 poem-data JSON；反推繁体和系年占位保留待核。AI有据推测可在独立考据笺公开，明确「AI推测·未经人工审校」，附原句定位、生成记录、反证与审校历史；不得进入古人评点、确定事实或默认地图路线。已核须具名审校与证据，机器命中不等于学术确证。公开过的修订保留引用；撤回用新rejected修订，不能追溯保密。

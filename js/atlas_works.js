@@ -18,7 +18,7 @@ window.ATLAS_WORKS = {
     "placeZh": "吴江",
     "placeEn": "",
     "genre": "ci",
-    "certainty": "probable",
+    "certainty": "unknown",
     "text": [
       "一片春愁待酒浇。江上舟摇，楼上帘招。秋娘渡与泰娘桥，风又飘飘，雨又萧萧。",
       "何日归家洗客袍？银字笙调，心字香烧。流光容易把人抛，红了樱桃，绿了芭蕉。"
@@ -52,8 +52,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "1277",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 probable",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "1277",
@@ -62,7 +62,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "三国志·诸葛亮传": {
     "alias": [
@@ -76,7 +79,7 @@ window.ATLAS_WORKS = {
     "placeZh": "柴桑",
     "placeEn": "",
     "genre": "history",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "权大悦，即遣周瑜、程普、鲁肃等水军三万，随亮诣先主，并力拒曹公。",
       "曹公败于赤壁，引军归邺。先主遂收江南，以亮为军师中郎将。",
@@ -125,8 +128,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "208",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "208",
@@ -135,7 +138,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "上安州裴长史书": {
     "alias": [
@@ -149,7 +155,7 @@ window.ATLAS_WORKS = {
     "placeZh": "绵州青莲",
     "placeEn": "",
     "genre": "wen",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "五岁诵六甲，十岁观百家……十五观奇书，作赋凌相如。",
       "曩昔东游维扬，不逾一年，散金三十余万，有落魄公子，悉皆济之。"
@@ -179,8 +185,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "705",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "705",
@@ -189,7 +195,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "与杨仕德薛尚谦书": {
     "alias": [
@@ -203,7 +212,7 @@ window.ATLAS_WORKS = {
     "placeZh": "赣州",
     "placeEn": "",
     "genre": "wen",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "破山中贼易，破心中贼难。"
     ],
@@ -228,8 +237,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "1517",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "1517",
@@ -238,7 +247,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "与梅圣俞书": {
     "alias": [
@@ -252,7 +264,7 @@ window.ATLAS_WORKS = {
     "placeZh": "东京开封府",
     "placeEn": "",
     "genre": "wen",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "读轼书，不觉汗出，快哉快哉！老夫当避路，放他出一头地也。"
     ],
@@ -281,8 +293,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "1057",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "1057",
@@ -291,7 +303,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "临路歌": {
     "alias": [
@@ -305,7 +320,7 @@ window.ATLAS_WORKS = {
     "placeZh": "当涂",
     "placeEn": "",
     "genre": "shi",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "大鹏飞兮振八裔，中天摧兮力不济。馀风激兮万世，游扶桑兮挂石袂。"
     ],
@@ -337,8 +352,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "762",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "762",
@@ -347,7 +362,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "传习录": {
     "alias": [
@@ -361,7 +379,7 @@ window.ATLAS_WORKS = {
     "placeZh": "京师",
     "placeEn": "",
     "genre": "wen",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "众人只说格物要依晦翁，何曾把他的说去用？我着实曾用来。"
     ],
@@ -386,8 +404,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "1492",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "1492",
@@ -396,7 +414,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "六月二十日夜渡海": {
     "alias": [
@@ -411,7 +432,7 @@ window.ATLAS_WORKS = {
     "placeZh": "儋州",
     "placeEn": "",
     "genre": "shi",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "参横斗转欲三更，苦雨终风也解晴。",
       "云散月明谁点缀？天容海色本澄清。",
@@ -451,8 +472,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "1100",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "1100",
@@ -461,7 +482,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "出师表": {
     "alias": [
@@ -475,7 +499,7 @@ window.ATLAS_WORKS = {
     "placeZh": "汉中",
     "placeEn": "",
     "genre": "wen",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "臣本布衣，躬耕于南阳，苟全性命于乱世，不求闻达于诸侯。先帝不以臣卑鄙，猥自枉屈，三顾臣于草庐之中，咨臣以当世之事，由是感激，遂许先帝以驱驰。",
       "受任于败军之际，奉命于危难之间，尔来二十有一年矣。",
@@ -518,8 +542,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "227",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "227",
@@ -528,7 +552,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "初发嘉州": {
     "alias": [
@@ -542,7 +569,7 @@ window.ATLAS_WORKS = {
     "placeZh": "眉州",
     "placeEn": "",
     "genre": "shi",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "朝发鼓阗阗，西风猎画旃。故乡飘已远，往意浩无边。"
     ],
@@ -567,8 +594,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "1056",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "1056",
@@ -577,7 +604,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "卖炭翁": {
     "alias": [
@@ -591,7 +621,7 @@ window.ATLAS_WORKS = {
     "placeZh": "长安",
     "placeEn": "",
     "genre": "shi",
-    "certainty": "probable",
+    "certainty": "unknown",
     "text": [
       "卖炭翁，伐薪烧炭南山中。",
       "满面尘灰烟火色，两鬓苍苍十指黑。",
@@ -637,8 +667,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "809",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 probable",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "809",
@@ -647,7 +677,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "南陵别儿童入京": {
     "alias": [
@@ -661,7 +694,7 @@ window.ATLAS_WORKS = {
     "placeZh": "南陵",
     "placeEn": "",
     "genre": "shi",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "白酒新熟山中归，黄鸡啄黍秋正肥。",
       "呼童烹鸡酌白酒，儿女嬉笑牵人衣。",
@@ -707,8 +740,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "742",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "742",
@@ -717,7 +750,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "quanshi-cp-2026",
+    "traditionalDerived": false,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "卜算子": {
     "alias": [
@@ -732,7 +768,7 @@ window.ATLAS_WORKS = {
     "placeZh": "黄州",
     "placeEn": "",
     "genre": "ci",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "缺月挂疏桐，漏断人初静。谁见幽人独往来，缥缈孤鸿影。",
       "惊起却回头，有恨无人省。拣尽寒枝不肯栖，寂寞沙洲冷。"
@@ -774,8 +810,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "1082",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "1082",
@@ -784,7 +820,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "史记·大宛列传": {
     "alias": [
@@ -798,7 +837,7 @@ window.ATLAS_WORKS = {
     "placeZh": "长安",
     "placeEn": "",
     "genre": "history",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "骞以郎应募，使月氏，与堂邑氏胡奴甘父俱出陇西。",
       "留骞十余岁，予妻，有子，然骞持汉节不失。",
@@ -853,8 +892,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "-138",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "-138",
@@ -863,7 +902,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "史记·白起王翦列传": {
     "alias": [
@@ -877,7 +919,7 @@ window.ATLAS_WORKS = {
     "placeZh": "寿春",
     "placeEn": "",
     "genre": "history",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "王翦果代李信击荆……荆数挑战而秦不出。乃引而东。翦因举兵追之，令壮士击，大破荆军。"
     ],
@@ -902,8 +944,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "-223",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "-223",
@@ -912,7 +954,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "史记·秦始皇本纪": {
     "alias": [
@@ -926,7 +971,7 @@ window.ATLAS_WORKS = {
     "placeZh": "咸阳",
     "placeEn": "",
     "genre": "history",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "秦王为人，蜂准，长目，挚鸟膺，豺声，少恩而虎狼之心……诚得志于天下，天下皆为虏矣。",
       "十一年，王翦、桓齮、杨端和攻邺，取九城。",
@@ -963,8 +1008,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "-238",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "-238",
@@ -973,7 +1018,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "告谕庐陵父老": {
     "alias": [
@@ -987,7 +1035,7 @@ window.ATLAS_WORKS = {
     "placeZh": "庐陵",
     "placeEn": "",
     "genre": "wen",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "一念之善，即吉神佑之；一念之恶，即厉鬼随之。"
     ],
@@ -1007,8 +1055,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "1510",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "1510",
@@ -1017,7 +1065,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "唐左拾遗翰林学士李公新墓碑": {
     "alias": [
@@ -1031,7 +1082,7 @@ window.ATLAS_WORKS = {
     "placeZh": "碎叶城",
     "placeEn": "",
     "genre": "wen",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "隋末多难，一房被窜于碎叶，流离散落，隐易姓名。"
     ],
@@ -1056,8 +1107,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "701",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "701",
@@ -1066,7 +1117,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "喜雨亭记": {
     "alias": [
@@ -1080,7 +1134,7 @@ window.ATLAS_WORKS = {
     "placeZh": "凤翔府",
     "placeEn": "",
     "genre": "wen",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "使天而雨珠，寒者不得以为襦；使天而雨玉，饥者不得以为粟。"
     ],
@@ -1105,8 +1159,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "1061",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "1061",
@@ -1115,7 +1169,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "大唐西域记": {
     "alias": [
@@ -1129,7 +1186,7 @@ window.ATLAS_WORKS = {
     "placeZh": "龟兹",
     "placeEn": "",
     "genre": "history",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "山谷积雪，春夏合冻，虽时消泮，寻复结冰。",
       "清池西北行五百余里至素叶水城，逢突厥叶护可汗方事畋游。",
@@ -1166,8 +1223,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "628",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "628",
@@ -1176,7 +1233,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "大慈恩寺三藏法师传": {
     "alias": [
@@ -1190,7 +1250,7 @@ window.ATLAS_WORKS = {
     "placeZh": "长安",
     "placeEn": "",
     "genre": "history",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "遂发足西行，自尔孑然孤游。",
       "凉州为河西都会，僧徒既多，请留开讲。",
@@ -1227,8 +1287,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "627",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "627",
@@ -1237,7 +1297,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "天泉证道·四句教": {
     "alias": [
@@ -1251,7 +1314,7 @@ window.ATLAS_WORKS = {
     "placeZh": "绍兴",
     "placeEn": "",
     "genre": "wen",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "无善无恶心之体，有善有恶意之动。知善知恶是良知，为善去恶是格物。"
     ],
@@ -1283,8 +1346,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "1521",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "1521",
@@ -1293,7 +1356,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "定风波": {
     "alias": [
@@ -1308,7 +1374,7 @@ window.ATLAS_WORKS = {
     "placeZh": "黄州",
     "placeEn": "",
     "genre": "ci",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "莫听穿林打叶声，何妨吟啸且徐行。竹杖芒鞋轻胜马，谁怕？一蓑烟雨任平生。",
       "料峭春风吹酒醒，微冷，山头斜照却相迎。回首向来萧瑟处，归去，也无风雨也无晴。"
@@ -1353,8 +1419,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "1082",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "1082",
@@ -1363,7 +1429,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "宣州谢朓楼饯别校书叔云": {
     "alias": [
@@ -1378,7 +1447,7 @@ window.ATLAS_WORKS = {
     "placeZh": "宣城",
     "placeEn": "",
     "genre": "shi",
-    "certainty": "probable",
+    "certainty": "unknown",
     "text": [
       "弃我去者昨日之日不可留，乱我心者今日之日多烦忧。",
       "长风万里送秋雁，对此可以酣高楼。",
@@ -1416,8 +1485,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "753",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 probable",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "753",
@@ -1426,7 +1495,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "quanshi-cp-2026",
+    "traditionalDerived": false,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "寄李十二白二十韵": {
     "alias": [
@@ -1440,7 +1512,7 @@ window.ATLAS_WORKS = {
     "placeZh": "洛阳",
     "placeEn": "",
     "genre": "shi",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "乞归优诏许，遇我宿心亲。醉舞梁园夜，行歌泗水春。"
     ],
@@ -1469,8 +1541,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "744",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "744",
@@ -1479,7 +1551,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "峨眉山月歌": {
     "alias": [
@@ -1493,7 +1568,7 @@ window.ATLAS_WORKS = {
     "placeZh": "渝州",
     "placeEn": "",
     "genre": "shi",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "峨眉山月半轮秋，影入平羌江水流。",
       "夜发清溪向三峡，思君不见下渝州。"
@@ -1535,8 +1610,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "724",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "724",
@@ -1545,7 +1620,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "quanshi-cp-2026",
+    "traditionalDerived": false,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "忆江南": {
     "alias": [
@@ -1560,7 +1638,7 @@ window.ATLAS_WORKS = {
     "placeZh": "洛阳",
     "placeEn": "",
     "genre": "ci",
-    "certainty": "probable",
+    "certainty": "unknown",
     "text": [
       "江南好，风景旧曾谙。",
       "日出江花红胜火，春来江水绿如蓝，能不忆江南。",
@@ -1602,8 +1680,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "838",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 probable",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "838",
@@ -1612,7 +1690,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "念奴娇": {
     "alias": [
@@ -1628,7 +1709,7 @@ window.ATLAS_WORKS = {
     "placeZh": "黄州",
     "placeEn": "",
     "genre": "ci",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "大江东去，浪淘尽，千古风流人物。故垒西边，人道是，三国周郎赤壁。乱石穿空，惊涛拍岸，卷起千堆雪。江山如画，一时多少豪杰。",
       "遥想公瑾当年，小乔初嫁了，雄姿英发。羽扇纶巾，谈笑间，樯橹灰飞烟灭。故国神游，多情应笑我，早生华发。人生如梦，一尊还酹江月。"
@@ -1677,8 +1758,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "1082",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "1082",
@@ -1687,7 +1768,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "战国策": {
     "alias": [
@@ -1701,7 +1785,7 @@ window.ATLAS_WORKS = {
     "placeZh": "邯郸",
     "placeEn": "",
     "genre": "history",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "赵葱死，颜聚亡，后三月，王翦因急击，大破赵，杀赵葱，虏赵王迁及其将颜聚，遂灭赵。"
     ],
@@ -1726,8 +1810,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "-228",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "-228",
@@ -1736,7 +1820,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "战国策·燕策三": {
     "alias": [
@@ -1750,7 +1837,7 @@ window.ATLAS_WORKS = {
     "placeZh": "蓟城",
     "placeEn": "",
     "genre": "history",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "风萧萧兮易水寒，壮士一去兮不复还！"
     ],
@@ -1775,8 +1862,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "-226",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "-226",
@@ -1785,7 +1872,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "擒获宸濠捷音疏": {
     "alias": [
@@ -1799,7 +1889,7 @@ window.ATLAS_WORKS = {
     "placeZh": "南昌",
     "placeEn": "",
     "genre": "wen",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "臣等仰仗天威，一鼓而克其巢穴，再战而擒其渠魁。"
     ],
@@ -1828,8 +1918,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "1519",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "1519",
@@ -1838,7 +1928,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "旅夜书怀": {
     "alias": [
@@ -1853,7 +1946,7 @@ window.ATLAS_WORKS = {
     "placeZh": "渝州",
     "placeEn": "",
     "genre": "shi",
-    "certainty": "probable",
+    "certainty": "unknown",
     "text": [
       "细草微风岸，危樯独夜舟。",
       "星垂平野阔，月涌大江流。",
@@ -1885,8 +1978,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "765",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 probable",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "765",
@@ -1895,7 +1988,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "quanshi-cp-2026",
+    "traditionalDerived": false,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "旧唐书·玄奘传": {
     "alias": [
@@ -1909,7 +2005,7 @@ window.ATLAS_WORKS = {
     "placeZh": "长安",
     "placeEn": "",
     "genre": "history",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "贞观十九年，归至京师，太宗见之大悦，与之谈论。"
     ],
@@ -1934,8 +2030,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "645",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "645",
@@ -1944,7 +2040,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "早发白帝城": {
     "alias": [
@@ -1958,7 +2057,7 @@ window.ATLAS_WORKS = {
     "placeZh": "白帝城",
     "placeEn": "",
     "genre": "shi",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "朝辞白帝彩云间，千里江陵一日还。",
       "两岸猿声啼不住，轻舟已过万重山。"
@@ -1999,8 +2098,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "759",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "759",
@@ -2009,7 +2108,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "quanshi-cp-2026",
+    "traditionalDerived": false,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "明史·王守仁传": {
     "alias": [
@@ -2023,7 +2125,7 @@ window.ATLAS_WORKS = {
     "placeZh": "广信",
     "placeEn": "",
     "genre": "history",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "过广信，谒娄谅，语以圣人可学而至，遂深契之。"
     ],
@@ -2048,8 +2150,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "1489",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "1489",
@@ -2058,7 +2160,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "春望": {
     "alias": [
@@ -2072,7 +2177,7 @@ window.ATLAS_WORKS = {
     "placeZh": "长安",
     "placeEn": "",
     "genre": "shi",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "国破山河在，城春草木深。",
       "感时花溅泪，恨别鸟惊心。",
@@ -2104,8 +2209,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "757",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "757",
@@ -2114,7 +2219,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "quanshi-cp-2026",
+    "traditionalDerived": false,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "月夜": {
     "alias": [
@@ -2128,7 +2236,7 @@ window.ATLAS_WORKS = {
     "placeZh": "长安",
     "placeEn": "",
     "genre": "shi",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "今夜鄜州月，闺中只独看。",
       "遥怜小儿女，未解忆长安。",
@@ -2164,8 +2272,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "756",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "756",
@@ -2174,7 +2282,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "quanshi-cp-2026",
+    "traditionalDerived": false,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "望岳": {
     "alias": [
@@ -2189,7 +2300,7 @@ window.ATLAS_WORKS = {
     "placeZh": "兖州",
     "placeEn": "",
     "genre": "shi",
-    "certainty": "probable",
+    "certainty": "unknown",
     "text": [
       "岱宗夫如何，齐鲁青未了。",
       "造化钟神秀，阴阳割昏晓。",
@@ -2225,8 +2336,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "736",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 probable",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "736",
@@ -2235,7 +2346,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "quanshi-cp-2026",
+    "traditionalDerived": false,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "望江南": {
     "alias": [
@@ -2250,7 +2364,7 @@ window.ATLAS_WORKS = {
     "placeZh": "密州",
     "placeEn": "",
     "genre": "ci",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "春未老，风细柳斜斜。试上超然台上看，半壕春水一城花。烟雨暗千家。",
       "寒食后，酒醒却咨嗟。休对故人思故国，且将新火试新茶。诗酒趁年华。"
@@ -2292,8 +2406,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "1076",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "1076",
@@ -2302,7 +2416,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "梁园吟": {
     "alias": [
@@ -2316,7 +2433,7 @@ window.ATLAS_WORKS = {
     "placeZh": "睢阳",
     "placeEn": "",
     "genre": "shi",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "我浮黄河去京阙，挂席欲进波连山。天长水阔厌远涉，访古始及平台间。"
     ],
@@ -2341,8 +2458,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "744",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "744",
@@ -2351,7 +2468,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "梦游天姥吟留别": {
     "alias": [
@@ -2365,7 +2485,7 @@ window.ATLAS_WORKS = {
     "placeZh": "任城",
     "placeEn": "",
     "genre": "shi",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "安能摧眉折腰事权贵，使我不得开心颜！"
     ],
@@ -2390,8 +2510,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "745",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "745",
@@ -2400,7 +2520,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "水调歌头": {
     "alias": [
@@ -2415,7 +2538,7 @@ window.ATLAS_WORKS = {
     "placeZh": "密州",
     "placeEn": "",
     "genre": "ci",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "明月几时有？把酒问青天。不知天上宫阙，今夕是何年。我欲乘风归去，又恐琼楼玉宇，高处不胜寒。起舞弄清影，何似在人间。",
       "转朱阁，低绮户，照无眠。不应有恨，何事长向别时圆？人有悲欢离合，月有阴晴圆缺，此事古难全。但愿人长久，千里共婵娟。"
@@ -2457,8 +2580,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "1076",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "1076",
@@ -2467,7 +2590,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "汉书·张骞传": {
     "alias": [
@@ -2481,7 +2607,7 @@ window.ATLAS_WORKS = {
     "placeZh": "陇西",
     "placeEn": "",
     "genre": "history",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "出陇西，径匈奴，匈奴得之。"
     ],
@@ -2510,8 +2636,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "-138",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "-138",
@@ -2520,7 +2646,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "汉晋春秋": {
     "alias": [
@@ -2534,7 +2663,7 @@ window.ATLAS_WORKS = {
     "placeZh": "滇池",
     "placeEn": "",
     "genre": "history",
-    "certainty": "probable",
+    "certainty": "unknown",
     "text": [
       "亮笑，纵使更战，七纵七禽，而亮犹遣获。获止不去，曰：「公，天威也，南人不复反矣。」"
     ],
@@ -2567,8 +2696,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "225",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 probable",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "225",
@@ -2577,7 +2706,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "江城子": {
     "alias": [
@@ -2593,7 +2725,7 @@ window.ATLAS_WORKS = {
     "placeZh": "密州",
     "placeEn": "",
     "genre": "ci",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "十年生死两茫茫，不思量，自难忘。千里孤坟，无处话凄凉。纵使相逢应不识，尘满面，鬓如霜。",
       "夜来幽梦忽还乡，小轩窗，正梳妆。相顾无言，惟有泪千行。料得年年肠断处，明月夜，短松冈。"
@@ -2635,8 +2767,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "1075",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "1075",
@@ -2645,7 +2777,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "泛海": {
     "alias": [
@@ -2659,7 +2794,7 @@ window.ATLAS_WORKS = {
     "placeZh": "钱塘江",
     "placeEn": "",
     "genre": "shi",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "险夷原不滞胸中，何异浮云过太空！夜静海涛三万里，月明飞锡下天风。"
     ],
@@ -2684,8 +2819,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "1506",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "1506",
@@ -2694,7 +2829,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "渡荆门送别": {
     "alias": [
@@ -2708,7 +2846,7 @@ window.ATLAS_WORKS = {
     "placeZh": "荆门",
     "placeEn": "",
     "genre": "shi",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "渡远荆门外，来从楚国游。",
       "山随平野尽，江入大荒流。",
@@ -2752,8 +2890,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "725",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "725",
@@ -2762,7 +2900,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "quanshi-cp-2026",
+    "traditionalDerived": false,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "独坐敬亭山": {
     "alias": [
@@ -2777,7 +2918,7 @@ window.ATLAS_WORKS = {
     "placeZh": "宣城",
     "placeEn": "",
     "genre": "shi",
-    "certainty": "probable",
+    "certainty": "unknown",
     "text": [
       "众鸟高飞尽，孤云独去闲。",
       "相看两不厌，只有敬亭山。"
@@ -2807,8 +2948,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "753",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 probable",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "753",
@@ -2817,7 +2958,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "quanshi-cp-2026",
+    "traditionalDerived": false,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "狱中寄子由": {
     "alias": [
@@ -2831,7 +2975,7 @@ window.ATLAS_WORKS = {
     "placeZh": "湖州",
     "placeEn": "",
     "genre": "shi",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "是处青山可埋骨，他年夜雨独伤神。与君世世为兄弟，更结来生未了因。"
     ],
@@ -2863,8 +3007,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "1079",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "1079",
@@ -2873,7 +3017,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "王阳明先生年谱": {
     "alias": [
@@ -2887,7 +3034,7 @@ window.ATLAS_WORKS = {
     "placeZh": "余姚",
     "placeEn": "",
     "genre": "history",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "登第恐未为第一等事，或读书学圣贤耳。",
       "此心光明，亦复何言！"
@@ -2913,8 +3060,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "1472",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "1472",
@@ -2923,7 +3070,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "王阳明年谱": {
     "alias": [
@@ -2937,7 +3087,7 @@ window.ATLAS_WORKS = {
     "placeZh": "龙场",
     "placeEn": "",
     "genre": "history",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "圣人之道，吾性自足，向之求理于事物者误也。"
     ],
@@ -2962,8 +3112,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "1508",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "1508",
@@ -2972,7 +3122,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "琵琶行": {
     "alias": [
@@ -2987,7 +3140,7 @@ window.ATLAS_WORKS = {
     "placeZh": "江州",
     "placeEn": "",
     "genre": "shi",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "浔阳江头夜送客，枫叶荻花秋索索。",
       "主人下马客在船，举酒欲饮无管弦。",
@@ -3085,8 +3238,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "816",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "816",
@@ -3095,7 +3248,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "quanshi-cp-2026",
+    "traditionalDerived": false,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "登岳阳楼": {
     "alias": [
@@ -3110,7 +3266,7 @@ window.ATLAS_WORKS = {
     "placeZh": "岳阳",
     "placeEn": "",
     "genre": "shi",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "昔闻洞庭水，今上岳阳楼。",
       "吴楚东南坼，乾坤日夜浮。",
@@ -3142,8 +3298,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "768",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "768",
@@ -3152,7 +3308,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "quanshi-cp-2026",
+    "traditionalDerived": false,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "登高": {
     "alias": [
@@ -3166,7 +3325,7 @@ window.ATLAS_WORKS = {
     "placeZh": "夔州",
     "placeEn": "",
     "genre": "shi",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "风急天高猨啸哀，渚清沙白鸟飞回。",
       "无边落木萧萧下，不尽长江衮衮来。",
@@ -3202,8 +3361,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "767",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "767",
@@ -3212,7 +3371,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "quanshi-cp-2026",
+    "traditionalDerived": false,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "秋浦歌": {
     "alias": [
@@ -3227,7 +3389,7 @@ window.ATLAS_WORKS = {
     "placeZh": "秋浦",
     "placeEn": "",
     "genre": "shi",
-    "certainty": "probable",
+    "certainty": "unknown",
     "text": [
       "白发三千丈，缘愁似个长。",
       "不知明镜里，何处得秋霜。"
@@ -3257,8 +3419,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "754",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 probable",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "754",
@@ -3267,7 +3429,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "答范淳甫": {
     "alias": [
@@ -3281,7 +3446,7 @@ window.ATLAS_WORKS = {
     "placeZh": "徐州",
     "placeEn": "",
     "genre": "wen",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "吾在徐州，与民同患难，水退而筑黄楼以镇之。"
     ],
@@ -3306,8 +3471,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "1077",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "1077",
@@ -3316,7 +3481,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "自题金山画像": {
     "alias": [
@@ -3331,7 +3499,7 @@ window.ATLAS_WORKS = {
     "placeZh": "镇江",
     "placeEn": "",
     "genre": "shi",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "心似已灰之木，身如不系之舟。",
       "问汝平生功业，黄州惠州儋州。"
@@ -3372,8 +3540,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "1101",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "1101",
@@ -3382,7 +3550,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "茅屋为秋风所破歌": {
     "alias": [
@@ -3397,7 +3568,7 @@ window.ATLAS_WORKS = {
     "placeZh": "成都",
     "placeEn": "",
     "genre": "shi",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "八月秋高风怒号，卷我屋上三重茅。",
       "茅飞度江洒江郊，高者挂罥长林梢。",
@@ -3445,8 +3616,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "761",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "761",
@@ -3455,7 +3626,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "quanshi-cp-2026",
+    "traditionalDerived": false,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "虞美人·听雨": {
     "alias": [
@@ -3470,7 +3644,7 @@ window.ATLAS_WORKS = {
     "placeZh": "宜兴",
     "placeEn": "",
     "genre": "ci",
-    "certainty": "probable",
+    "certainty": "unknown",
     "text": [
       "少年听雨歌楼上，红烛昏罗帐。",
       "壮年听雨客舟中，江阔云低、断雁叫西风。",
@@ -3509,8 +3683,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "1305",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 probable",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "1305",
@@ -3519,7 +3693,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "蜀相": {
     "alias": [
@@ -3533,7 +3710,7 @@ window.ATLAS_WORKS = {
     "placeZh": "成都",
     "placeEn": "",
     "genre": "shi",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "丞相祠堂何处寻，锦官城外柏森森。",
       "映阶碧草自春色，隔叶黄鹂空好音。",
@@ -3580,8 +3757,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "760",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "760",
@@ -3590,7 +3767,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "quanshi-cp-2026",
+    "traditionalDerived": false,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "观刈麦": {
     "alias": [
@@ -3604,7 +3784,7 @@ window.ATLAS_WORKS = {
     "placeZh": "盩厔",
     "placeEn": "",
     "genre": "shi",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "田家少闲月，五月人倍忙。",
       "夜来南风起，小麦覆陇黄。",
@@ -3653,8 +3833,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "806",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "806",
@@ -3663,7 +3843,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "quanshi-cp-2026",
+    "traditionalDerived": false,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "赋得古原草送别": {
     "alias": [
@@ -3679,7 +3862,7 @@ window.ATLAS_WORKS = {
     "placeZh": "长安",
     "placeEn": "",
     "genre": "shi",
-    "certainty": "probable",
+    "certainty": "unknown",
     "text": [
       "离离原上草，一岁一枯荣。",
       "野火烧不尽，春风吹又生。",
@@ -3715,8 +3898,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "787",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 probable",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "787",
@@ -3725,7 +3908,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "quanshi-cp-2026",
+    "traditionalDerived": false,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "赠汪伦": {
     "alias": [
@@ -3740,7 +3926,7 @@ window.ATLAS_WORKS = {
     "placeZh": "泾县",
     "placeEn": "",
     "genre": "shi",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "李白乘舟将欲行，忽闻岸上踏歌声。",
       "桃花潭水深千尺，不及汪伦送我情。"
@@ -3770,8 +3956,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "755",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "755",
@@ -3780,7 +3966,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "quanshi-cp-2026",
+    "traditionalDerived": false,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "进西域记表": {
     "alias": [
@@ -3794,7 +3983,7 @@ window.ATLAS_WORKS = {
     "placeZh": "于阗",
     "placeEn": "",
     "genre": "wen",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "冒越宪章，私往天竺……历览周游，一十七载。"
     ],
@@ -3819,8 +4008,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "644",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "644",
@@ -3829,7 +4018,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "钱塘湖春行": {
     "alias": [
@@ -3844,7 +4036,7 @@ window.ATLAS_WORKS = {
     "placeZh": "杭州",
     "placeEn": "",
     "genre": "shi",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "孤山寺北贾亭西，水面初平云脚低。",
       "几处早莺争暖树，谁家新燕啄春泥。",
@@ -3884,8 +4076,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "823",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "823",
@@ -3894,7 +4086,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "quanshi-cp-2026",
+    "traditionalDerived": false,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "阿房宫赋": {
     "alias": [
@@ -3908,7 +4103,7 @@ window.ATLAS_WORKS = {
     "placeZh": "临淄",
     "placeEn": "",
     "genre": "fu",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "六王毕，四海一。"
     ],
@@ -3933,8 +4128,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "-221",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "-221",
@@ -3943,7 +4138,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "食荔枝": {
     "alias": [
@@ -3959,7 +4157,7 @@ window.ATLAS_WORKS = {
     "placeZh": "惠州",
     "placeEn": "",
     "genre": "shi",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "罗浮山下四时春，卢橘杨梅次第新。",
       "日啖荔枝三百颗，不辞长作岭南人。"
@@ -4000,8 +4198,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "1096",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "1096",
@@ -4010,7 +4208,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "饮湖上初晴后雨": {
     "alias": [
@@ -4025,7 +4226,7 @@ window.ATLAS_WORKS = {
     "placeZh": "杭州",
     "placeEn": "",
     "genre": "shi",
-    "certainty": "confirmed",
+    "certainty": "unknown",
     "text": [
       "水光潋滟晴方好，山色空蒙雨亦奇。",
       "欲把西湖比西子，淡妆浓抹总相宜。"
@@ -4063,8 +4264,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "1073",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 confirmed",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "1073",
@@ -4073,7 +4274,10 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "upstream-quote-baseline",
+    "traditionalDerived": true,
+    "researchStatus": "待核：结构检查不等于史实审校"
   },
   "黄鹤楼送孟浩然之广陵": {
     "alias": [
@@ -4087,7 +4291,7 @@ window.ATLAS_WORKS = {
     "placeZh": "江夏",
     "placeEn": "",
     "genre": "shi",
-    "certainty": "probable",
+    "certainty": "unknown",
     "text": [
       "故人西辞黄鹤楼，烟花三月下扬州。",
       "孤帆远影碧空尽，唯见长江天际流。"
@@ -4125,8 +4329,8 @@ window.ATLAS_WORKS = {
     "dating": [
       {
         "claim": "730",
-        "stance": "adopted",
-        "note": "与 composed.year 一致；系年可信度 probable",
+        "stance": "pending",
+        "note": "历史系年保留，所附年份仅为占位，不是史料原句；待取得可定位证据后重新采信。",
         "evidence": [
           {
             "quote": "730",
@@ -4135,6 +4339,9 @@ window.ATLAS_WORKS = {
           }
         ]
       }
-    ]
+    ],
+    "sourceEdition": "quanshi-cp-2026",
+    "traditionalDerived": false,
+    "researchStatus": "待核：结构检查不等于史实审校"
   }
 };

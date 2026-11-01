@@ -12,6 +12,13 @@ const fs = require('fs');
 const path = require('path');
 
 const TARGET = path.resolve(__dirname, '..', 'js', 'atlas_works.js');
+// 现为生成物：结构归一必须回到唯一源头，不能重写生成器头部或产生第二份手写数据。
+if (fs.readFileSync(TARGET, 'utf8').includes('本文件由 poem-data/scripts/emit-atlas.mjs 生成')) {
+  const generator = path.resolve(__dirname, '../../poem-data/scripts/emit-atlas.mjs');
+  if (!fs.existsSync(generator)) throw new Error('请在兄弟 poem-data 仓库运行 emit-atlas；禁止手改生成物');
+  const result = require('child_process').spawnSync(process.execPath, [generator, '--target', path.resolve(__dirname, '..')], { stdio: 'inherit' });
+  process.exit(result.status == null ? 1 : result.status);
+}
 
 const FIELD_ORDER = [
   'alias',
