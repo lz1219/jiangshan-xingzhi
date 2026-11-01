@@ -2,7 +2,7 @@
  * 人物与行迹（生成物）
  * ⚠ 本文件由 poem-data/scripts/emit-atlas.mjs 生成，请勿手动编辑。
  *   内容源头：poem-data/data/*.json
- * 人物 19 位；新建行迹 12 条；补站 1 组 */
+ * 人物 20 位；新建行迹 13 条；补站 1 组 */
 
 (function () {
   'use strict';
@@ -345,6 +345,31 @@
       "东坡居士",
       "Su Dongpo",
       "Dongpo"
+    ]
+  });
+
+  mergePerson({
+    "key": "wangwei",
+    "zh": "王维",
+    "en": "Wang Wei",
+    "courtesyZh": "字摩诘 · 世称王右丞",
+    "courtesyEn": "",
+    "dynastyKey": "tang",
+    "span": [
+      701,
+      761
+    ],
+    "journeyKey": "wangwei",
+    "aliases": [
+      "摩诘",
+      "王右丞",
+      "诗佛"
+    ],
+    "tokens": [
+      "王维",
+      "摩诘",
+      "王右丞",
+      "诗佛"
     ]
   });
 
@@ -2542,6 +2567,204 @@
           "ouyangxiu"
         ],
         "source": "CBDB 1384（c_deathyear=1072）；《宋史》卷三一九《欧阳修传》"
+      }
+    ]
+  });
+
+  pushJourney({
+    "key": "wangwei",
+    "dynastyKey": "tang",
+    "color": "#7a5c3e",
+    "shortZh": "王维：从蒲州到长安",
+    "shortEn": "",
+    "titleZh": "王维：从蒲州到长安",
+    "titleEn": "Wang Wei: From Puzhou to Chang'an",
+    "spanZh": "701年 — 761年",
+    "spanEn": "",
+    "stops": [
+      {
+        "year": 701,
+        "eraZh": "长安元年",
+        "coord": [
+          110.32,
+          34.84
+        ],
+        "labelPos": "top",
+        "ancientZh": "蒲州",
+        "modernZh": "山西永济",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "生于蒲州",
+        "titleEn": "",
+        "descZh": "王维生于蒲州（今山西永济），祖籍太原祁县。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "wangwei"
+        ],
+        "source": "CBDB 32174（c_birthyear=701）；籍贯据《旧唐书》卷一九〇下《王维传》"
+      },
+      {
+        "year": 721,
+        "eraZh": "开元九年",
+        "coord": [
+          108.941,
+          34.341
+        ],
+        "labelPos": "top",
+        "ancientZh": "长安",
+        "modernZh": "陕西西安",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "太乐丞",
+        "titleEn": "",
+        "descZh": "登进士第，为大乐丞；同年因伶人舞黄狮子事获罪，出为济州司仓参军。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "wangwei"
+        ],
+        "source": "CBDB 32174（太樂丞，長安，721）；贬济州据《旧唐书》本传"
+      },
+      {
+        "year": 721,
+        "eraZh": "开元九年",
+        "coord": [
+          116.2077,
+          36.3784
+        ],
+        "labelPos": "top",
+        "ancientZh": "济州",
+        "modernZh": "山东茌平",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "济州司仓参军",
+        "titleEn": "",
+        "descZh": "贬济州司仓参军，在济州约五年。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "wangwei"
+        ],
+        "source": "CBDB 32174（州司倉參軍，濟州，721—726）"
+      },
+      {
+        "year": 735,
+        "eraZh": "开元二十三年",
+        "coord": [
+          108.941,
+          34.341
+        ],
+        "labelPos": "top",
+        "ancientZh": "长安",
+        "modernZh": "陕西西安",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "右拾遗",
+        "titleEn": "",
+        "descZh": "得张九龄擢用，回朝为右拾遗，此后历监察御史、右补阙。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "wangwei"
+        ],
+        "source": "CBDB 32174（右拾遺 735；監察御史 737；右補闕 742）"
+      },
+      {
+        "year": 752,
+        "eraZh": "天宝十一载",
+        "coord": [
+          108.941,
+          34.341
+        ],
+        "labelPos": "top",
+        "ancientZh": "长安",
+        "modernZh": "陕西西安",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "吏部郎中",
+        "titleEn": "",
+        "descZh": "历库部员外郎、吏部郎中，在朝掌选事。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "wangwei"
+        ],
+        "source": "CBDB 32174（郎中 746—750；庫部員外郎 746；吏部郎中 752）"
+      },
+      {
+        "year": 756,
+        "eraZh": "至德元载",
+        "coord": [
+          112.451,
+          34.621
+        ],
+        "labelPos": "top",
+        "ancientZh": "洛阳",
+        "modernZh": "河南洛阳",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "陷贼，受伪署",
+        "titleEn": "",
+        "descZh": "安禄山陷两京，王维被拘，送至洛阳，迫受给事中伪职；曾服药取痢以免，仍不免。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "wangwei"
+        ],
+        "source": "《旧唐书》卷一九〇下《王维传》；CBDB 32174（給事中 755、756）"
+      },
+      {
+        "year": 758,
+        "eraZh": "乾元元年",
+        "coord": [
+          108.941,
+          34.341
+        ],
+        "labelPos": "top",
+        "ancientZh": "长安",
+        "modernZh": "陕西西安",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "太子中允",
+        "titleEn": "",
+        "descZh": "两京收复后，以陷贼官论罪，因《凝碧池》诗与弟王缙请赎，责授太子中允。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "wangwei"
+        ],
+        "source": "CBDB 32174（太子中允，758）；责授缘由据《旧唐书》本传"
+      },
+      {
+        "year": 761,
+        "eraZh": "上元二年",
+        "coord": [
+          108.941,
+          34.341
+        ],
+        "labelPos": "top",
+        "ancientZh": "长安",
+        "modernZh": "陕西西安",
+        "ancientEn": "",
+        "modernEn": "",
+        "titleZh": "卒于长安",
+        "titleEn": "",
+        "descZh": "官终尚书右丞，世称「王右丞」；上元二年卒，年六十一。",
+        "descEn": "",
+        "quoteZh": "",
+        "quoteEn": "",
+        "persons": [
+          "wangwei"
+        ],
+        "source": "CBDB 32174（尚書右丞相 760；c_deathyear=761）"
       }
     ]
   });
