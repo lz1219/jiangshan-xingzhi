@@ -29,8 +29,8 @@
 | `scripts/_serve.cjs` | 本地静态服务 |
 | `scripts/_gap_report.cjs` | 作品覆盖率盘点 |
 | `scripts/_dump_missing.cjs` | 从基线数据导出未收录作品的原文引句 |
-| `scripts/_add_missing.cjs` | 批量补录作品（原文逐字取自基线，不手抄） |
-| `scripts/_merge_works.cjs` | 数据文件结构合并工具 |
+
+早期直接改写作品数据的一次性补录及合并脚本已删除，历史实现保留于Git。现有作品、人物、行迹均以poem-data JSON为源，由其emit-atlas工具生成。
 
 ### 修改文件
 

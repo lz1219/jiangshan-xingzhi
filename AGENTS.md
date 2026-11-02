@@ -40,7 +40,7 @@ node scripts/_gap_report.cjs     # 作品覆盖率
 | `node scripts/_gap_report.cjs` | 引文作品覆盖率 | 改 `atlas_works.js` 后 |
 | `node scripts/_validate_data.cjs` | 数据校验：出处 / 枚举 / 推测依据 / 读本站序号 | 改 `atlas_works.js` 或 `atlas_journeys.js` 后 |
 | `node scripts/sync_version.js` | 重算 `?v=` 缓存戳 | 改 `js/` 下任何文件后 |
-| `node scripts/_merge_works.cjs` | 数据文件结构归一（合并/重排字段） | 数据被脚本批量改写后 |
+| `node ../poem-data/scripts/emit-atlas.mjs --target .` | 从poem-data JSON生成地图数据 | 作品/人物/行迹数据批量调整后；禁止直接改生成物 |
 | `pwsh scripts/_wikidata.ps1 -Name 苏轼` | 查 Wikidata：QID / CBDB ID / 生卒 / 籍贯（需代理） | 新增人物考据的第一步 |
 
 > 本仓库**没有构建、没有 npm 依赖**——这是上游的卖点，不要引入打包器。
