@@ -18,18 +18,21 @@
     '.person-ev-quote.is-poem-link:hover{color:#a83824;text-decoration-style:solid;}',
     '.person-ev-quote.is-poem-link:focus-visible{outline:2px solid #a83824;outline-offset:2px;}',
     '.poetry-backdrop{position:fixed;inset:0;background:rgba(30,24,16,.42);z-index:9998;',
-    'opacity:0;transition:opacity .18s ease;}',
+    'opacity:0;transition:opacity .24s ease;}',
     '.poetry-backdrop.is-open{opacity:1;}',
-    '.poetry-reader{position:fixed;z-index:9999;left:50%;top:50%;transform:translate(-50%,-50%) scale(.97);',
-    'width:min(760px,92vw);max-height:86vh;overflow:auto;background:#f7f2e6;color:#2b241a;',
-    'border:1px solid rgba(43,36,26,.18);border-radius:4px;box-shadow:0 18px 60px rgba(30,24,16,.34);',
-    'padding:26px 28px 30px;opacity:0;transition:opacity .18s ease,transform .18s ease;',
-    'font-family:var(--serif-stack,"Songti SC","SimSun",serif);}',
-    '.poetry-reader.is-open{opacity:1;transform:translate(-50%,-50%) scale(1);}',
-    '.poetry-close{position:absolute;right:12px;top:10px;border:0;background:none;font-size:22px;',
+    '.poetry-reader{position:fixed;z-index:9999;right:0;top:0;bottom:0;',
+    'width:min(520px,94vw);height:100vh;overflow-y:auto;background:#f7f2e6;color:#2b241a;',
+    'border-left:1px solid rgba(43,36,26,.18);box-shadow:-10px 0 40px rgba(30,24,16,.28);',
+    'padding:28px 28px 40px;transform:translateX(100%);transition:transform .28s cubic-bezier(.2,.7,.3,1);',
+    'font-family:var(--serif-stack,"Songti SC","SimSun",serif);box-sizing:border-box;}',
+    '.poetry-reader.is-open{transform:translateX(0);}',
+    '@media(max-width:640px){.poetry-reader{right:0;left:0;top:auto;bottom:0;width:100vw;max-height:85vh;height:auto;border-left:none;border-top:1px solid rgba(43,36,26,.18);border-radius:12px 12px 0 0;transform:translateY(100%);box-shadow:0 -8px 35px rgba(30,24,16,.25);}.poetry-reader.is-open{transform:translateY(0);}}',
+    '.poetry-close{position:absolute;right:14px;top:12px;border:0;background:none;font-size:24px;',
     'line-height:1;color:#9c8d74;cursor:pointer;padding:4px 8px;}',
     '.poetry-close:hover{color:#a83824;}',
-    '.poetry-kicker{font-size:10.5px;letter-spacing:.32em;color:#a83824;margin-bottom:8px;}',
+    '.poetry-kicker{font-size:10.5px;letter-spacing:.28em;color:#a83824;margin-bottom:8px;}',
+    '.poetry-source-badge{font-size:10px;padding:2px 8px;border-radius:10px;border:1px solid rgba(168,56,36,.3);background:rgba(168,56,36,.04);color:#a83824;cursor:pointer;}',
+    '.poetry-source-badge:hover{background:rgba(168,56,36,.1);}',
     '.poetry-title{margin:0 0 4px;font-size:23px;font-weight:600;letter-spacing:.05em;line-height:1.4;}',
     '.poetry-subtitle{margin:0 0 6px;font-size:12px;color:#9c8d74;letter-spacing:.04em;}',
     '.poetry-meta{font-size:11px;color:#6a5c47;letter-spacing:.05em;display:flex;gap:8px;flex-wrap:wrap;}',
@@ -336,6 +339,9 @@
       var kickerLabel =
         poem.genre === 'history' ? '史传' : poem.genre === 'wen' ? '文' : '诗词';
 
+      var currentSourceMode = localStorage.getItem('atlas_data_source') || 'local';
+      var isOnline = currentSourceMode === 'online';
+
       var wrap = document.createElement('div');
       wrap.id = 'atlas-poetry-reader';
       wrap.innerHTML =
@@ -344,7 +350,11 @@
         kickerLabel +
         '">' +
         '<button type="button" class="poetry-close" aria-label="关闭">×</button>' +
-        '<div class="poetry-kicker">笺 · 江山行止</div>' +
+        '<div class="poetry-kicker" style="display:flex;justify-content:space-between;align-items:center;padding-right:32px;">' +
+        '<span>笺 · 江山行止</span>' +
+        '<button type="button" class="poetry-source-badge" title="点击在【本地底本】与【文献站实时直连】之间切换">' +
+        '数据源：<strong class="source-mode-val">' + (isOnline ? '实时直连' : '本地底本') + '</strong> ⇄</button>' +
+        '</div>' +
         '<h2 class="poetry-title">' +
         esc(poem.titleZh) +
         '</h2>' +
@@ -360,6 +370,7 @@
         (bodyKind === 'prose' ? '<span class="dot">·</span><span class="poetry-cert">摘录</span>' : '') +
         '</div>' +
         bodyHtml +
+        '<div id="atlas-drawer-live-witness"></div>' +
         (poem.meaning
           ? '<section class="poetry-block"><h3>大意</h3><p>' + esc(poem.meaning) + '</p></section>'
           : '') +
@@ -390,7 +401,7 @@
         (window.ATLAS_LINKS && poem.__key
           ? '<p class="poetry-more"><a class="atlas-action-link" href="' +
             window.ATLAS_LINKS.corpusWork(poem.__key) +
-            '" target="_blank" rel="noopener" title="在新窗口打开"><span>在文献站读全篇</span><span class="atlas-action-link__arrow" aria-hidden="true">↗</span></a></p>'
+            '" target="_blank" rel="noopener" title="在新窗口打开"><span>在文献站读全篇与多版本见证</span><span class="atlas-action-link__arrow" aria-hidden="true">↗</span></a></p>'
           : '') +
         '</div>';
       document.body.appendChild(wrap);
@@ -398,6 +409,50 @@
       var backdrop = wrap.querySelector('.poetry-backdrop');
       var panel = wrap.querySelector('.poetry-reader');
       var closeBtn = wrap.querySelector('.poetry-close');
+      var badgeBtn = wrap.querySelector('.poetry-source-badge');
+      var witnessSlot = wrap.querySelector('#atlas-drawer-live-witness');
+
+      var fetchWitnesses = function () {
+        if (!witnessSlot || !poem.__key) return;
+        var mode = localStorage.getItem('atlas_data_source') || 'local';
+        if (mode !== 'online') {
+          witnessSlot.innerHTML = '';
+          return;
+        }
+        witnessSlot.innerHTML = '<div style="font-size:11px;color:#9c8d74;margin:12px 0;">正在实时连接文献站获取最新版本考证…</div>';
+        fetch('http://47.94.110.181:8081/api/works/' + encodeURIComponent(poem.__key) + '/links')
+          .then(function (r) { if (!r.ok) throw new Error('API unavailable'); return r.json(); })
+          .then(function (data) {
+            if (!data.items || !data.items.length) {
+              witnessSlot.innerHTML = '<div style="font-size:11px;color:#9c8d74;margin:10px 0;">文献站已连通 · 当前诗作暂无额外版本考据</div>';
+              return;
+            }
+            witnessSlot.innerHTML = data.items.map(function (item) {
+              return '<section class="poetry-block" style="background:rgba(168,56,36,.04);border:1px dashed rgba(168,56,36,.35);padding:10px 12px;border-radius:4px;margin:14px 0;">' +
+                '<h3 style="margin:0 0 6px;color:#a83824;font-size:11px;">版本见证与异文考证 · 实时直连</h3>' +
+                '<p style="margin:0;font-size:12px;line-height:1.7;color:#3a3126;">' + esc(item.differences) + '</p>' +
+                '<div style="margin-top:6px;font-size:10.5px;color:#9c8d74;">语料底本 Poem ID ' + esc(item.poemId) + ' · 状态: ' + esc(data.scope || '候选') + '</div>' +
+                '</section>';
+            }).join('');
+          })
+          .catch(function () {
+            witnessSlot.innerHTML = '<div style="font-size:11px;color:#9c8d74;margin:10px 0;">文献站连接未就绪，使用本地静态底本阅读。</div>';
+          });
+      };
+
+      if (badgeBtn) {
+        badgeBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          var cur = localStorage.getItem('atlas_data_source') || 'local';
+          var next = cur === 'online' ? 'local' : 'online';
+          localStorage.setItem('atlas_data_source', next);
+          var label = wrap.querySelector('.source-mode-val');
+          if (label) label.textContent = next === 'online' ? '实时直连' : '本地底本';
+          fetchWitnesses();
+        });
+      }
+
+      fetchWitnesses();
 
       var close = function () {
         document.removeEventListener('keydown', onKey);

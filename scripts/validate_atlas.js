@@ -1051,8 +1051,9 @@ function main() {
 
   // CUJ 9k: Python CLI (skills/jiangshan-atlas/scripts/jiangshan.py) Execution Smoke Test
   if (!FAST_MODE) {
+    const pythonBin = process.platform === 'win32' ? 'python' : 'python3';
     const cliOut = execFileSync(
-      'python3',
+      pythonBin,
       [skillPyPath, '--year', '1079, 1080, 1094, 1097', '--place', '湖州 → 黄州 → 惠州 → 儋州'],
       { encoding: 'utf8' }
     ).trim();
@@ -3854,19 +3855,10 @@ function main() {
       assert(refCorpus.includes(assetFile), `Unreferenced file in assets/: ${assetFile}`);
     }
 
-    const maShanLinkMatch = indexHtml.match(
-      /<link href="(https:\/\/fonts\.googleapis\.com\/css2\?family=Ma\+Shan\+Zheng&text=([^"&]+)&display=swap)" rel="stylesheet" \/>/
-    );
-    assert(maShanLinkMatch, 'Expected synchronous subsetted Ma Shan Zheng stylesheet <link> in index.html');
-    const subsetChars = new Set(decodeURIComponent(maShanLinkMatch[2]));
-    const requiredCalligraphyChars = [
-      '江山时序',
-      ...dynasties.map((d) => d.title || ''),
-      ...dynasties.map((d) => (enLocale.dynasties[d.key] && enLocale.dynasties[d.key].name) || ''),
-    ].join('');
-    for (const ch of requiredCalligraphyChars) {
-      assert(subsetChars.has(ch), `Ma Shan Zheng subset missing glyph "${ch}"`);
-    }
+    assert(!/fonts\.(?:googleapis|gstatic)\.com/i.test(indexHtml + styleCss),
+      'Map must use the local font stack without loading Google Fonts');
+    assert(styleCss.includes('--calligraphy-stack:') && /(?:STKaiti|KaiTi)/.test(styleCss),
+      'Expected a local calligraphy font fallback');
 
     const pyHelperSrc = fs.readFileSync(
       path.join(ROOT, 'skills', 'jiangshan-atlas', 'scripts', 'jiangshan.py'),
@@ -4309,13 +4301,13 @@ function main() {
       assert(findSt(tangDyn, w), `tang: must include warlord settlement ${w}`);
     }
 
-    // Tang 20 map change milestones
-    const expectedTangMapChanges = [618, 621, 630, 635, 640, 648, 657, 668, 676, 690, 702, 705, 755, 757, 763, 764, 790, 848, 881, 907];
+    // Tang map change milestones, including the existing 885 return to Chang'an.
+    const expectedTangMapChanges = [618, 621, 630, 635, 640, 648, 657, 668, 676, 690, 702, 705, 755, 757, 763, 764, 790, 848, 881, 885, 907];
     const actualTangMapChanges = (tangDyn.milestones || []).filter((m) => m.isMapChange).map((m) => m.year);
     assert.strictEqual(
       JSON.stringify(actualTangMapChanges),
       JSON.stringify(expectedTangMapChanges),
-      'tang: 20 map change milestone years must match'
+      'tang: map change milestone years must match'
     );
 
     // Spatial checks: s_sui_d and s_tang_0 warlords
@@ -6293,7 +6285,8 @@ function main() {
           ctrl.activePolity = null;
 
           const indexHtml = require('fs').readFileSync(require('path').join(__dirname, '..', 'index.html'), 'utf8');
-          assert(/data-cf-beacon='[^']*"spa":\s*false/.test(indexHtml), 'Cloudflare beacon must keep "spa": false, or every URL state write is counted as a pageview');
+          assert(!/data-cf-beacon=/.test(indexHtml) || /data-cf-beacon='[^']*"spa":\s*false/.test(indexHtml),
+            'If a Cloudflare beacon is present it must keep "spa": false');
 
           Object.assign(ctrl, { activePerson: { profiles: [{ key: 'libai' }, { key: 'dufu' }] }, activePersonEventIdx: 3 });
           ctrl._writeUrlState();

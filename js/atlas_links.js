@@ -16,7 +16,7 @@
 
   var BASE =
     window.ATLAS_CORPUS_BASE ||
-    (isLocal ? 'http://127.0.0.1:5322/' : 'https://lz1219.github.io/poem-data/');
+    (isLocal ? 'http://127.0.0.1:5322/' : 'http://47.94.110.181:8081/');
 
   function join(path) {
     return BASE.replace(/\/+$/, '') + '/' + String(path).replace(/^\/+/, '');
@@ -31,6 +31,11 @@
     /** 文献站的人物页 */
     corpusPerson: function (key) {
       return key ? join('#/person/' + encodeURIComponent(key)) : '';
+    },
+    /** 文献站的行迹页 */
+    corpusJourney: function (key, stopSeq) {
+      if (!key) return '';
+      return join('#/journey/' + encodeURIComponent(key) + (stopSeq ? '?stop=' + encodeURIComponent(stopSeq) : ''));
     },
     /** 文献站的检索页 */
     corpusSearch: function (q) {

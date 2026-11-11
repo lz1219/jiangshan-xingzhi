@@ -77,8 +77,12 @@
       var more = document.createElement('li');
       more.className = 'cr-link cr-more';
       more.innerHTML =
+        '<span style="display:flex;gap:12px;flex-wrap:wrap;">' +
+        '<a class="atlas-action-link" href="' + window.ATLAS_LINKS.corpusJourney(jkey) +
+        '" target="_blank" rel="noopener" title="在新窗口打开"><span>在文献站读行迹与驻足名作</span><span class="atlas-action-link__arrow" aria-hidden="true">↗</span></a>' +
         '<a class="atlas-action-link" href="' + window.ATLAS_LINKS.corpusPerson(resolvePersonKey(ctx)) +
-        '" target="_blank" rel="noopener" title="在新窗口打开"><span>在文献站查此人</span><span class="atlas-action-link__arrow" aria-hidden="true">↗</span></a>';
+        '" target="_blank" rel="noopener" title="在新窗口打开"><span>查此人生平与仕历</span><span class="atlas-action-link__arrow" aria-hidden="true">↗</span></a>' +
+        '</span>';
       list.appendChild(more); // 先渲染，随后插到导语/首站正确位置
     }
 
